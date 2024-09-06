@@ -11,9 +11,11 @@ body {
 }
 
 .logo {
-    width: 200px; /* Ajusta este tamaño según lo que necesites */
-    margin-bottom: 30px;
+    width: 150px;
+    height: auto;
+    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.5)); /* Añade sombra para mejorar contraste */
 }
+
 
 button {
     display: block;

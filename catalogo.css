@@ -1,0 +1,105 @@
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #F3F3F3;
+    color: #333;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #784AF0;
+    padding: 20px 0;
+}
+
+.logo {
+    width: 150px;
+}
+
+main {
+    margin-top: 20px;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #89253e;
+}
+
+.search-container {
+    margin: 20px auto;
+}
+
+#search-bar {
+    width: 90%; /* El ancho se ajusta en pantallas pequeñas */
+    padding: 10px;
+    font-size: 1.2em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Estilo base: mobile-first (1 álbum por fila) */
+.catalog-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Un álbum por fila en pantallas pequeñas */
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Estilos de los álbumes */
+.album-item {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.album-cover {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.genre-tags {
+    display: none;
+}
+
+h2 {
+    font-size: 1.2em;
+    margin: 10px 0 5px;
+}
+
+p {
+    margin: 5px 0;
+    color: #666;
+}
+
+footer {
+    margin-top: 50px;
+}
+
+footer a {
+    color: #784AF0;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Media queries para pantallas más grandes */
+
+/* En pantallas medianas, mostrar 2 álbumes por fila */
+@media (min-width: 200px) {
+    .catalog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #search-bar {
+        width: 80%;
+    }
+}
+
