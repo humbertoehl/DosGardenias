@@ -14,6 +14,41 @@
     <main>
         <h1>Catálogo de Discos</h1>
         
+        <!-- Botón para buscar por género -->
+        <button id="open-modal">Buscar por género</button>
+
+        <!-- Ventana emergente para seleccionar géneros -->
+        <div id="genre-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Selecciona géneros</h2>
+                <div class="genre-list">
+                    <label><input type="checkbox" value="Art Rock"> Art Rock</label>
+                    <label><input type="checkbox" value="Pop Rock"> Pop Rock</label>
+                    <label><input type="checkbox" value="Glam Rock"> Glam Rock</label>
+                    <label><input type="checkbox" value="Art Rock"> Art Rock</label>
+                    <label><input type="checkbox" value="Rock Progresivo"> Rock Progresivo</label>
+                    <label><input type="checkbox" value="Rock Psicodélico"> Rock Psicodélico</label>
+                    <label><input type="checkbox" value="Rock Sinfónico"> Rock Sinfónico</label>
+                    <label><input type="checkbox" value="Pop Psicodélico"> Pop Psicodélico</label>
+                    <label><input type="checkbox" value="Pop Rock"> Pop Rock</label>
+                    <label><input type="checkbox" value="Folk"> Folk</label>
+                    <label><input type="checkbox" value="Pop Progresivo"> Pop Progresivo</label>
+                    <label><input type="checkbox" value="Hard Rock"> Hard Rock</label>
+                    <label><input type="checkbox" value="Blues"> Blues</label>
+                    <label><input type="checkbox" value="Son Jarocho"> Son Jarocho</label>
+                    <label><input type="checkbox" value="Cantautor"> Cantautor</label>
+                    <label><input type="checkbox" value="Nueva Canción Latinoamericana"> Nueva Canción Latinoamericana</label>
+                    <label><input type="checkbox" value="Hip Hop"> Hip Hop</label>
+                    <label><input type="checkbox" value="Jazz"> Jazz</label>
+                    <label><input type="checkbox" value="Pop"> Pop</label>
+                    <label><input type="checkbox" value="Vocal"> Vocal</label>
+                    <!-- Añade más géneros según tus necesidades -->
+                </div>
+                <button id="apply-genre-filter">Aplicar filtro</button>
+            </div>
+        </div>
+
         <!-- Motor de búsqueda -->
         <div class="search-container">
             <input type="text" id="search-bar" onkeyup="filterCatalog()" placeholder="Buscar por álbum, artista o año...">
@@ -23,26 +58,132 @@
         <div class="catalog-grid" id="catalog-grid">
             <!-- Ejemplo de disco -->
             <div class="album-item">
-                <img src="covers/bellas-artes.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Juan Gabriel en el Palacio de Bellas Artes</h2>
-                <p>Juan Gabriel</p>
-                <p>1990</p>
-                <p class="genre-tags"> 	Mariachi, Ranchera, Bolero, Orquestral</p>
+                <img src="covers/The Rise and Fall of Ziggy Stardust and the Spiders From Mars.jpg" alt="Carátula Álbum" class="album-cover">
+                <h2>The Rise and Fall of Ziggy Stardust and the Spiders From Mars</h2>
+                <p>David Bowie</p>
+                <p>1972</p>
+                <p class="genre-tags">Glam Rock, Art Rock, Pop Rock</p>
             </div>
             <div class="album-item">
-                <img src="covers/dark-side-of-the-moon.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>The Dark Side of the Moon</h2>
+                <img src="covers/Potpourri par Piaf .jpg" alt="Carátula Álbum" class="album-cover">
+                <h2>Potpourri par Piaf</h2>
+                <p>Édith Piaf</p>
+                <p>1962</p>
+                <p class="genre-tags">Cabaret, Balada, Pop, Vocal</p>
+            </div>
+            <div class="album-item">
+                <img src="covers/Violines Mágicos.jpeg" alt="Carátula Álbum" class="album-cover">
+                <h2>Violines Mágicos</h2>
+                <p>Violines Mágicos Villafontana</p>
+                <p>1955</p>
+                <p class="genre-tags">Clásica, Orquestral</p>
+            </div>
+            <div class="album-item">
+                <img src="covers/Atom Heart Mother.jpg" alt="Carátula Álbum" class="album-cover">
+                <h2>Atom Heart Mother</h2>
                 <p>Pink Floyd</p>
-                <p>1973</p>
-                <p class="genre-tags">Art Rock,Rock Progresivo, Rock Psicodélico</p>
+                <p>1970</p>
+                <p class="genre-tags">Rock Progresivo, Rock Psicodélico, Rock Sinfónico</p>
             </div>
             <div class="album-item">
-                <img src="covers/off-the-wall.webp" alt="Carátula Álbum" class="album-cover">
+                <img src="covers/Sgt. Pepper's Lonely Hearts Club Band .jpg" alt="Carátula Álbum" class="album-cover">
+                <h2>Sgt. Pepper's Lonely Hearts Club Band</h2>
+                <p>The Beatles</p>
+                <p>1967</p>
+                <p class="genre-tags">Pop Psicodélico, Pop Rock, Art Rock, Rock Psicodélico</p>
+            </div>
+            <div class="album-item">
+                <img src="covers/The Turn of a Friendly Card .jpg" alt="Carátula Álbum" class="album-cover">
+                <h2>The Turn of a Friendly Card</h2>
+                <p>The Alan Parsons Project</p>
+                <p>1980</p>
+                <p class="genre-tags">Art Rock, Rock Progresivo, Pop Progresivo, Pop Rock</p>
+            </div>
+            <div class="album-item">
+                <img src="covers/Live Album .jpg" alt="Carátula Álbum" class="album-cover">
+                <h2>Live Album</h2>
+                <p>Grand Funk Railroad</p>
+                <p>1970</p>
+                <p class="genre-tags">Hard Rock, Blues</p>
+            </div>
+            <div class="album-item">
+                <img src="covers/Led Zeppelin.jpg" alt="Carátula Álbum" class="album-cover">
+                <h2>Led Zeppelin</h2>
+                <p>Led Zeppelin</p>
+                <p>1969</p>
+                <p class="genre-tags">Hard Rock, Blues, Rock Psicodélico</p>
+            </div>
+            <div class="album-item">
+                <img src="covers/Rubber Soul.jpg" alt="Carátula Álbum" class="album-cover">
+                <h2>Rubber Soul</h2>
+                <p>The Beatles</p>
+                <p>1965</p>
+                <p class="genre-tags">Pop Rock, Folk Rock, Rock Psicodélico</p>
+            </div>
+            <div class="album-item">
+                <img src="covers/The Book of Taliesyn.jpg" alt="Carátula Álbum" class="album-cover">
+                <h2>The Book of Taliesyn</h2>
+                <p>Deep Purple</p>
+                <p>1969</p>
+                <p class="genre-tags">Rock Progresivo, Hard Rock, Rock Psicodélico</p>
+            </div>
+            <div class="album-item">
+                <img src="covers/¡Viva Veracruz!.jpeg" alt="Carátula Álbum" class="album-cover">
+                <h2>¡Viva Veracruz!</h2>
+                <p>Conjunto Sotavento</p>
+                <p>1981</p>
+                <p class="genre-tags">Son Jarocho, Folk</p>
+            </div>
+            <div class="album-item">
+                <img src="covers/Canto A Lo Humano.jpeg" alt="Carátula Álbum" class="album-cover">
+                <h2>Canto A Lo Humano</h2>
+                <p>Victor Jara</p>
+                <p>1979</p>
+                <p class="genre-tags">Nueva Canción Latinoamericana, Cantautor, Folk</p>
+            </div>
+            <div class="album-item">
+                <img src="covers/Para cuando me vaya.jpg" alt="Carátula Álbum" class="album-cover">
+                <h2>Para cuando me vaya</h2>
+                <p>Nacha Guevara</p>
+                <p>1978</p>
+                <p class="genre-tags">Nueva Canción Latinoamericana, Cantautor, Folk</p>
+            </div>
+            <div class="album-item">
+                <img src="covers/good kid mAAd city.jpg" alt="Carátula Álbum" class="album-cover">
+                <h2>good kid, m.A.A.d city</h2>
+                <p>Kendrick Lamar</p>
+                <p>2012</p>
+                <p class="genre-tags">Hip Hop</p>
+            </div>
+            <div class="album-item">
+                <img src="covers/To Pimp a Butterfly.jpg" alt="Carátula Álbum" class="album-cover">
+                <h2>To Pimp a Butterfly</h2>
+                <p>Kendrick Lamar</p>
+                <p>2015</p>
+                <p class="genre-tags">Hip Hop, Jazz</p>
+            </div>
+            <div class="album-item">
+                <img src="covers/Melody And Percussion For Two Pianos.jpeg" alt="Carátula Álbum" class="album-cover">
+                <h2>Melody And Percussion For Two Pianos</h2>
+                <p>Ronnie Aldrich And His Two Pianos</p>
+                <p>1961</p>
+                <p class="genre-tags">Jazz, Clásica</p>
+            </div>
+            <div class="album-item">
+                <img src="covers/Los Beatles En Clásico.jpeg" alt="Carátula Álbum" class="album-cover">
+                <h2>Los Beatles En Clásico</h2>
+                <p>Los 12 Cellistas De La Filarmónica De Berlín</p>
+                <p>1984</p>
+                <p class="genre-tags">Clásica, Pop</p>
+            </div>
+            <div class="album-item">
+                <img src="covers/Off The Wall.jpg" alt="Carátula Álbum" class="album-cover">
                 <h2>Off The Wall</h2>
                 <p>Michael Jackson</p>
                 <p>1979</p>
-                <p class="genre-tags">Disco, Funk, R&B</p>
+                <p class="genre-tags">Disco, R&B, Pop</p>
             </div>
+            
             <!-- Añade más discos aquí -->
         </div>
     </main>

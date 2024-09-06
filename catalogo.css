@@ -39,6 +39,74 @@ h1 {
     border-radius: 5px;
 }
 
+/* Estilos para el botón "Buscar por género" */
+#open-modal {
+    padding: 10px 20px;
+    background-color: #784AF0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+#open-modal:hover {
+    background-color: #6A3ED9;
+}
+
+/* Estilos para la ventana emergente (modal) */
+.modal {
+    display: none; /* Oculta el modal por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+}
+
+.close {
+    float: right;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.genre-list {
+    margin: 20px 0;
+}
+
+.genre-list label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+#apply-genre-filter {
+    padding: 10px 20px;
+    background-color: #784AF0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#apply-genre-filter:hover {
+    background-color: #6A3ED9;
+}
+
+
 /* Estilo base: mobile-first (1 álbum por fila) */
 .catalog-grid {
     display: grid;
