@@ -1,0 +1,60 @@
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    text-align: center;
+    margin-top: 50px;
+    color: #fff;
+    
+    background: #3a6186;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #89253e, #3a6186);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #89253e, #3a6186); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: 100vh;
+}
+
+.logo {
+    width: 200px; /* Ajusta este tamaño según lo que necesites */
+    margin-bottom: 30px;
+}
+
+button {
+    display: block;
+    width: 250px;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: #784AF0;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #6A3ED9;
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.instagram-btn {
+    background-color: #E1306C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 30px;
+}
+
+.instagram-btn img {
+    width: 20px;
+    height: 20px;
+}
+
+.instagram-logo {
+    vertical-align: middle;
+}
