@@ -110,7 +110,7 @@ h1 {
 /* Estilo base: mobile-first (1 álbum por fila) */
 .catalog-grid {
     display: grid;
-    grid-template-columns: 1fr; /* Un álbum por fila en pantallas pequeñas */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Número automático de columnas según el ancho */
     gap: 20px;
     padding: 20px;
 }
@@ -122,11 +122,17 @@ h1 {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+    width: 150px; /* Fija el ancho del contenedor */
+    height: 350px; /* Fija la altura total */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .album-cover {
     width: 100%;
-    height: auto;
+    height: 150px; /* Fija la altura de la carátula */
+    object-fit: cover; /* Asegura que la imagen se ajuste sin deformarse */
     border-radius: 5px;
 }
 
@@ -135,15 +141,19 @@ h1 {
 }
 
 h2 {
-    font-size: 1.2em;
+    font-size: 1.1em;
     margin: 10px 0 5px;
+    text-align: center;
+    overflow: auto;
+    text-overflow: ellipsis;
+    white-space: nowrap; /* Para evitar que el texto se desborde */
 }
 
 p {
     margin: 5px 0;
     color: #666;
+    font-size: 0.9em;
 }
-
 footer {
     margin-top: 50px;
 }
