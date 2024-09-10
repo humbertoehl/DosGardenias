@@ -1,15 +1,15 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Helvetica Neue', sans-serif;
     text-align: center;
-    margin: 0;
-    padding: 0;
-    background-color: #F3F3F3;
-    color: #333;
-    min-height: 100vh;
+    margin-top: 50px;
+    color: #000000;
+    background: #3a6186;  
+    background: -webkit-linear-gradient(to right, #89253e, #3a6186);  
+    background: linear-gradient(to right, #89253e, #3a6186); 
+    height: 100vh;
 }
 
 header {
-    background-color: #784AF0;
     padding: 20px 0;
 }
 
@@ -18,13 +18,13 @@ header {
 }
 
 main {
-    margin-top: 20px;
-    padding: 20px;
+    margin-top: 0px;
+    padding: 5px;
 }
 
 h1 {
     font-size: 2.5em;
-    color: #89253e;
+    color: #fff;
 }
 
 /* FILTROS DE GÉNERO */
@@ -58,15 +58,17 @@ h1 {
 #search-bar {
     width: 80%; 
     padding: 10px;
+    color: #ccc;
+    background-color: #353b48;
     font-size: 1.2em;
-    border: 1px solid #ccc;
+    border: 1px solid #353b48;
     border-radius: 5px;
 }
 
 /* BOTÓN DE BÚSQUEDA POR GENERO */
 #open-modal {
     padding: 10px 20px;
-    background-color: #784AF0;
+    background-color: #353b48;
     color: white;
     border: none;
     border-radius: 5px;
@@ -93,7 +95,9 @@ h1 {
 }
 
 .modal-content {
-    background-color: white;
+    background: #3a6186;  
+    background: -webkit-linear-gradient(to right, #89253e, #3a6186);  
+    background: linear-gradient(to right, #89253e, #3a6186);
     padding: 20px;
     border-radius: 10px;
     width: 80%;
@@ -118,7 +122,7 @@ h1 {
 
 #apply-genre-filter {
     padding: 10px 20px;
-    background-color: #784AF0;
+    background-color: #353b48;
     color: white;
     border: none;
     border-radius: 5px;
@@ -140,7 +144,8 @@ h1 {
 }
 
 .album-item {
-    background-color: #fff;
+    color: #ccc;
+    background-color: #353b48;
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -197,6 +202,7 @@ footer a:hover {
 }
 
 .sort-container select {
+    background-color: #353b48;
     padding: 10px;
     font-size: 1.1em;
     border: 1px solid #ccc;

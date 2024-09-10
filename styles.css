@@ -4,16 +4,16 @@ body {
     margin-top: 50px;
     color: #fff;
     
-    background: #3a6186;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #89253e, #3a6186);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #89253e, #3a6186); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #3a6186;  
+    background: -webkit-linear-gradient(to right, #89253e, #3a6186);  
+    background: linear-gradient(to right, #89253e, #3a6186); 
     height: 100vh;
 }
 
 .logo {
     width: 150px;
     height: auto;
-    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.5)); /* Añade sombra para mejorar contraste */
+    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.5)); 
 }
 
 
