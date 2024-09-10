@@ -13,17 +13,16 @@
 
     <main>
         <h1>Catálogo de Discos</h1>
-        
 
-        <!-- Motor de búsqueda -->
+        <div id="selected-genres" class="selected-genres-container">
+        </div>
+
         <div class="search-container">
             <input type="text" id="search-bar" onkeyup="filterCatalog()" placeholder="Buscar por álbum, artista o año...">
         </div>
 
-        <!-- Botón para buscar por género -->
         <button id="open-modal">Buscar por género</button>
 
-        <!-- Ventana emergente para seleccionar géneros -->
         <div id="genre-modal" class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>
@@ -38,13 +37,11 @@
                     <label><input type="checkbox" value="Electrónica"> Electrónica</label>
                     <label><input type="checkbox" value="Clásica"> Clásica</label>
                     <label><input type="checkbox" value="Otro"> Otro</label>
-                    <!-- Añade más géneros según tus necesidades -->
                 </div>
                 <button id="apply-genre-filter">Aplicar filtro</button>
             </div>
         </div>
 
-        <!-- Botón para ordenar por -->
         <div class="sort-container">
             <label for="sort-options">Ordenar por:</label>
             <select id="sort-options" onchange="sortCatalog()">
@@ -59,9 +56,7 @@
         </div>
         
 
-        <!-- Cuadrícula del catálogo -->
         <div class="catalog-grid" id="catalog-grid">
-            <!-- Ejemplo de disco -->
             <div class="album-item">
                 <img src="Covers/The Rise and Fall of Ziggy Stardust and the Spiders From Mars.jpg" alt="Carátula Álbum" class="album-cover">
                 <h2>The Rise and Fall of Ziggy Stardust and the Spiders From Mars</h2>
@@ -399,7 +394,6 @@
                 <p class="genre-tags">Pop</p>
             </div>
             
-            <!-- Añade más discos aquí -->
         </div>
     </main>
 

@@ -27,19 +27,43 @@ h1 {
     color: #89253e;
 }
 
+/* FILTROS DE GÉNERO */
+.selected-genres-container {
+    margin-bottom: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.selected-genre {
+    background-color: #f0f0f0;
+    border-radius: 15px;
+    padding: 5px 10px;
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+}
+
+.selected-genre .remove-genre {
+    margin-left: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* BARRA DE BÚSQUEDA */
 .search-container {
     margin: 20px auto;
 }
 
 #search-bar {
-    width: 90%; /* El ancho se ajusta en pantallas pequeñas */
+    width: 80%; 
     padding: 10px;
     font-size: 1.2em;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-/* Estilos para el botón "Buscar por género" */
+/* BOTÓN DE BÚSQUEDA POR GENERO */
 #open-modal {
     padding: 10px 20px;
     background-color: #784AF0;
@@ -55,9 +79,9 @@ h1 {
     background-color: #6A3ED9;
 }
 
-/* Estilos para la ventana emergente (modal) */
+/* EMERGENTE */
 .modal {
-    display: none; /* Oculta el modal por defecto */
+    display: none; 
     position: fixed;
     top: 0;
     left: 0;
@@ -107,23 +131,22 @@ h1 {
 }
 
 
-/* Estilo base: mobile-first (1 álbum por fila) */
+/* GRID DE ÁLBUMES */
 .catalog-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Número automático de columnas según el ancho */
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     padding: 10px;
 }
 
-/* Estilos de los álbumes */
 .album-item {
     background-color: #fff;
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 150px; /* Fija el ancho del contenedor */
-    height: 350px; /* Fija la altura total */
+    width: 140px; 
+    height: 350px; 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -131,8 +154,8 @@ h1 {
 
 .album-cover {
     width: 100%;
-    height: 150px; /* Fija la altura de la carátula */
-    object-fit: cover; /* Asegura que la imagen se ajuste sin deformarse */
+    height: 150px; 
+    object-fit: cover; 
     border-radius: 5px;
 }
 
@@ -146,7 +169,7 @@ h2 {
     text-align: center;
     overflow: hidden;
     overflow-wrap: normal;
-    white-space: wrap; /* Para evitar que el texto se desborde */
+    white-space: wrap; 
 }
 
 p {
@@ -168,7 +191,7 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Estilos para el menú "Ordenar por" */
+/* ORDENAMIENTO */
 .sort-container {
     margin: 20px 0;
 }
@@ -178,20 +201,5 @@ footer a:hover {
     font-size: 1.1em;
     border: 1px solid #ccc;
     border-radius: 5px;
-}
-
-
-
-/* Media queries para pantallas más grandes */
-
-/* En pantallas medianas, mostrar 2 álbumes por fila */
-@media (min-width: 200px) {
-    .catalog-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    #search-bar {
-        width: 80%;
-    }
 }
 

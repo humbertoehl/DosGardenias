@@ -1,16 +1,14 @@
+//BARRA DE BÚSQUEDA
 function filterCatalog() {
-    // Obtén el valor de la barra de búsqueda
     let input = document.getElementById('search-bar').value.toLowerCase();
     let albums = document.getElementsByClassName('album-item');
     
-    // Filtra los álbumes según el valor de la búsqueda
     for (let i = 0; i < albums.length; i++) {
         let albumName = albums[i].getElementsByTagName('h2')[0].innerText.toLowerCase();
         let artist = albums[i].getElementsByTagName('p')[0].innerText.toLowerCase();
         let year = albums[i].getElementsByTagName('p')[1].innerText.toLowerCase();
         let genres = albums[i].getElementsByClassName('genre-tags')[0].innerText.toLowerCase();
         
-        // Comprobar si la búsqueda coincide con el nombre, artista, año o género
         if (albumName.includes(input) || artist.includes(input) || year.includes(input) || genres.includes(input)) {
             albums[i].style.display = '';
         } else {
@@ -19,51 +17,81 @@ function filterCatalog() {
     }
 }
 
+// MOSTRAR GÉNEROS SELECCIONADOS
+function updateSelectedGenresDisplay(selectedGenres) {
+    const selectedGenresContainer = document.getElementById('selected-genres');
+    selectedGenresContainer.innerHTML = ''; 
 
-// Abrir y cerrar la ventana emergente (modal)
+    if (selectedGenres.length === 0) {
+        selectedGenresContainer.innerHTML = '<span>No hay géneros seleccionados.</span>';
+        return;
+    }
+
+    selectedGenres.forEach(genre => {
+        const genreElement = document.createElement('div');
+        genreElement.classList.add('selected-genre');
+        genreElement.textContent = genre;
+
+        const removeBtn = document.createElement('span');
+        removeBtn.classList.add('remove-genre');
+        removeBtn.textContent = '×'; 
+        removeBtn.onclick = () => {
+
+            const checkbox = document.querySelector(`.genre-list input[type="checkbox"][value="${genre}"]`);
+            if (checkbox) {
+                checkbox.checked = false;
+                applyGenreFilter();
+            }
+        };
+
+        genreElement.appendChild(removeBtn);
+        selectedGenresContainer.appendChild(genreElement);
+    });
+}
+
+
+
+// VENTANA EMERGENTE DE GÉNEROS
 let modal = document.getElementById('genre-modal');
 let openModalBtn = document.getElementById('open-modal');
 let closeModalBtn = document.getElementsByClassName('close')[0];
 
 openModalBtn.onclick = function() {
-    modal.style.display = 'flex'; // Muestra el modal
+    modal.style.display = 'flex'; 
 }
 
 closeModalBtn.onclick = function() {
-    modal.style.display = 'none'; // Oculta el modal
+    modal.style.display = 'none'; 
 }
 
-// Ocultar el modal cuando se hace clic fuera de él
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = 'none';
     }
 }
 
-// Filtrar catálogo según los géneros seleccionados
-document.getElementById('apply-genre-filter').onclick = function() {
-    // Obtén los géneros seleccionados
+// FILTRO DE GÉNEROS
+function applyGenreFilter() {
     let selectedGenres = [];
     let checkboxes = document.querySelectorAll('.genre-list input[type="checkbox"]:checked');
-    
+
     checkboxes.forEach(checkbox => {
-        selectedGenres.push(checkbox.value.toLowerCase());
+        selectedGenres.push(checkbox.value);
     });
 
     let albums = document.getElementsByClassName('album-item');
 
-    // Si no hay géneros seleccionados, muestra todos los álbumes
     if (selectedGenres.length === 0) {
         for (let i = 0; i < albums.length; i++) {
-            albums[i].style.display = ''; // Muestra todos los álbumes
+            albums[i].style.display = ''; 
         }
     } else {
-        // Filtrar los álbumes por los géneros seleccionados
         for (let i = 0; i < albums.length; i++) {
             let genres = albums[i].getElementsByClassName('genre-tags')[0].innerText.toLowerCase();
-            
-            // Mostrar el álbum si coincide con alguno de los géneros seleccionados
-            if (selectedGenres.some(genre => genres.includes(genre))) {
+
+            let lowerSelectedGenres = selectedGenres.map(g => g.toLowerCase());
+
+            if (lowerSelectedGenres.some(genre => genres.includes(genre))) {
                 albums[i].style.display = '';
             } else {
                 albums[i].style.display = 'none';
@@ -71,33 +99,34 @@ document.getElementById('apply-genre-filter').onclick = function() {
         }
     }
 
-    // Cerrar el modal después de aplicar el filtro
+    updateSelectedGenresDisplay(selectedGenres);
+
     modal.style.display = 'none';
 }
 
+document.getElementById('apply-genre-filter').onclick = applyGenreFilter;
 
 
-// Función para ordenar el catálogo
+
+// ORDENAMIENTO
 function sortCatalog() {
-    // Obtén la opción seleccionada en el menú desplegable
     let sortOption = document.getElementById('sort-options').value;
-    let albums = Array.from(document.getElementsByClassName('album-item')); // Convierte en array para poder ordenar
+    let albums = Array.from(document.getElementsByClassName('album-item')); 
     let catalogGrid = document.getElementById('catalog-grid');
 
-    // Ordenar por la opción seleccionada
     switch (sortOption) {
         case 'year-asc':
             albums.sort((a, b) => {
-                let yearA = parseInt(a.getElementsByTagName('p')[1].innerText); // Año en el tercer <p>
+                let yearA = parseInt(a.getElementsByTagName('p')[1].innerText); 
                 let yearB = parseInt(b.getElementsByTagName('p')[1].innerText);
-                return yearB - yearA; // Orden ascendente
+                return yearB - yearA; 
             });
             break;
         case 'year-desc':
             albums.sort((a, b) => {
-                let yearA = parseInt(a.getElementsByTagName('p')[1].innerText); // Año en el tercer <p>
+                let yearA = parseInt(a.getElementsByTagName('p')[1].innerText); 
                 let yearB = parseInt(b.getElementsByTagName('p')[1].innerText);
-                return yearA - yearB; // Orden descendente
+                return yearA - yearB; 
             });
             break;
         case 'artist-asc':
@@ -111,7 +140,7 @@ function sortCatalog() {
             albums.sort((a, b) => {
                 let artistA = a.getElementsByTagName('p')[0].innerText.toLowerCase();
                 let artistB = b.getElementsByTagName('p')[0].innerText.toLowerCase();
-                return artistB.localeCompare(artistA); // Orden descendente
+                return artistB.localeCompare(artistA); 
             });
             break;
         case 'title-asc':
@@ -125,14 +154,13 @@ function sortCatalog() {
             albums.sort((a, b) => {
                 let titleA = a.getElementsByTagName('h2')[0].innerText.toLowerCase();
                 let titleB = b.getElementsByTagName('h2')[0].innerText.toLowerCase();
-                return titleB.localeCompare(titleA); // Orden descendente
+                return titleB.localeCompare(titleA); 
             });
             break;
         default:
-            return; // No hacer nada si no se selecciona una opción válida
+            return; 
     }
 
-    // Limpia la cuadrícula actual y agrega los álbumes ordenados
     catalogGrid.innerHTML = '';
     albums.forEach(album => catalogGrid.appendChild(album));
 }
