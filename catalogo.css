@@ -112,7 +112,7 @@ h1 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Número automático de columnas según el ancho */
     gap: 10px;
-    padding: 20px;
+    padding: 10px;
 }
 
 /* Estilos de los álbumes */
