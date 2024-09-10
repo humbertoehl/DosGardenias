@@ -50,19 +50,89 @@ document.getElementById('apply-genre-filter').onclick = function() {
         selectedGenres.push(checkbox.value.toLowerCase());
     });
 
-    // Filtrar los álbumes por los géneros seleccionados
     let albums = document.getElementsByClassName('album-item');
-    for (let i = 0; i < albums.length; i++) {
-        let genres = albums[i].getElementsByClassName('genre-tags')[0].innerText.toLowerCase();
-        
-        // Mostrar el álbum si coincide con alguno de los géneros seleccionados
-        if (selectedGenres.some(genre => genres.includes(genre))) {
-            albums[i].style.display = '';
-        } else {
-            albums[i].style.display = 'none';
+
+    // Si no hay géneros seleccionados, muestra todos los álbumes
+    if (selectedGenres.length === 0) {
+        for (let i = 0; i < albums.length; i++) {
+            albums[i].style.display = ''; // Muestra todos los álbumes
+        }
+    } else {
+        // Filtrar los álbumes por los géneros seleccionados
+        for (let i = 0; i < albums.length; i++) {
+            let genres = albums[i].getElementsByClassName('genre-tags')[0].innerText.toLowerCase();
+            
+            // Mostrar el álbum si coincide con alguno de los géneros seleccionados
+            if (selectedGenres.some(genre => genres.includes(genre))) {
+                albums[i].style.display = '';
+            } else {
+                albums[i].style.display = 'none';
+            }
         }
     }
 
     // Cerrar el modal después de aplicar el filtro
     modal.style.display = 'none';
+}
+
+
+
+// Función para ordenar el catálogo
+function sortCatalog() {
+    // Obtén la opción seleccionada en el menú desplegable
+    let sortOption = document.getElementById('sort-options').value;
+    let albums = Array.from(document.getElementsByClassName('album-item')); // Convierte en array para poder ordenar
+    let catalogGrid = document.getElementById('catalog-grid');
+
+    // Ordenar por la opción seleccionada
+    switch (sortOption) {
+        case 'year-asc':
+            albums.sort((a, b) => {
+                let yearA = parseInt(a.getElementsByTagName('p')[1].innerText); // Año en el tercer <p>
+                let yearB = parseInt(b.getElementsByTagName('p')[1].innerText);
+                return yearB - yearA; // Orden ascendente
+            });
+            break;
+        case 'year-desc':
+            albums.sort((a, b) => {
+                let yearA = parseInt(a.getElementsByTagName('p')[1].innerText); // Año en el tercer <p>
+                let yearB = parseInt(b.getElementsByTagName('p')[1].innerText);
+                return yearA - yearB; // Orden descendente
+            });
+            break;
+        case 'artist-asc':
+            albums.sort((a, b) => {
+                let artistA = a.getElementsByTagName('p')[0].innerText.toLowerCase();
+                let artistB = b.getElementsByTagName('p')[0].innerText.toLowerCase();
+                return artistA.localeCompare(artistB);
+            });
+            break;
+        case 'artist-desc':
+            albums.sort((a, b) => {
+                let artistA = a.getElementsByTagName('p')[0].innerText.toLowerCase();
+                let artistB = b.getElementsByTagName('p')[0].innerText.toLowerCase();
+                return artistB.localeCompare(artistA); // Orden descendente
+            });
+            break;
+        case 'title-asc':
+            albums.sort((a, b) => {
+                let titleA = a.getElementsByTagName('h2')[0].innerText.toLowerCase();
+                let titleB = b.getElementsByTagName('h2')[0].innerText.toLowerCase();
+                return titleA.localeCompare(titleB);
+            });
+            break;
+        case 'title-desc':
+            albums.sort((a, b) => {
+                let titleA = a.getElementsByTagName('h2')[0].innerText.toLowerCase();
+                let titleB = b.getElementsByTagName('h2')[0].innerText.toLowerCase();
+                return titleB.localeCompare(titleA); // Orden descendente
+            });
+            break;
+        default:
+            return; // No hacer nada si no se selecciona una opción válida
+    }
+
+    // Limpia la cuadrícula actual y agrega los álbumes ordenados
+    catalogGrid.innerHTML = '';
+    albums.forEach(album => catalogGrid.appendChild(album));
 }

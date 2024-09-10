@@ -14,6 +14,12 @@
     <main>
         <h1>Catálogo de Discos</h1>
         
+
+        <!-- Motor de búsqueda -->
+        <div class="search-container">
+            <input type="text" id="search-bar" onkeyup="filterCatalog()" placeholder="Buscar por álbum, artista o año...">
+        </div>
+
         <!-- Botón para buscar por género -->
         <button id="open-modal">Buscar por género</button>
 
@@ -23,25 +29,35 @@
                 <span class="close">&times;</span>
                 <h2>Selecciona géneros</h2>
                 <div class="genre-list">
-                    <label><input type="checkbox" value="Art Rock"> Art Rock</label>
-                    <label><input type="checkbox" value="Pop Rock"> Rock</label>
-                    <label><input type="checkbox" value="Glam Rock"> Folk</label>
-                    <label><input type="checkbox" value="Art Rock"> Pop</label>
-                    <label><input type="checkbox" value="Art Rock"> Cantautor</label>
-                    <label><input type="checkbox" value="Rock Progresivo"> Hip Hop</label>
-                    <label><input type="checkbox" value="Rock Progresivo"> Jazz</label>
-                    <label><input type="checkbox" value="Rock Progresivo"> Electrónica</label>
-                    <label><input type="checkbox" value="Rock Psicodélico"> Clásica</label>
+                    <label><input type="checkbox" value="Rock"> Rock</label>
+                    <label><input type="checkbox" value="Folk"> Folk</label>
+                    <label><input type="checkbox" value="Pop"> Pop</label>
+                    <label><input type="checkbox" value="Cantautor"> Cantautor</label>
+                    <label><input type="checkbox" value="Hip Hop"> Hip Hop</label>
+                    <label><input type="checkbox" value="Jazz"> Jazz</label>
+                    <label><input type="checkbox" value="Electrónica"> Electrónica</label>
+                    <label><input type="checkbox" value="Clásica"> Clásica</label>
+                    <label><input type="checkbox" value="Otro"> Otro</label>
                     <!-- Añade más géneros según tus necesidades -->
                 </div>
                 <button id="apply-genre-filter">Aplicar filtro</button>
             </div>
         </div>
 
-        <!-- Motor de búsqueda -->
-        <div class="search-container">
-            <input type="text" id="search-bar" onkeyup="filterCatalog()" placeholder="Buscar por álbum, artista o año...">
+        <!-- Botón para ordenar por -->
+        <div class="sort-container">
+            <label for="sort-options">Ordenar por:</label>
+            <select id="sort-options" onchange="sortCatalog()">
+                <option value="default">Selecciona una opción</option>
+                <option value="year-asc">Año ↓</option>
+                <option value="year-desc">Año ↑</option>
+                <option value="artist-asc">Artista ↓</option>
+                <option value="artist-desc">Artista ↑</option>
+                <option value="title-asc">Título ↓</option>
+                <option value="title-desc">Título ↑</option>
+            </select>
         </div>
+        
 
         <!-- Cuadrícula del catálogo -->
         <div class="catalog-grid" id="catalog-grid">

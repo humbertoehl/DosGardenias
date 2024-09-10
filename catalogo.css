@@ -168,6 +168,20 @@ footer a:hover {
     text-decoration: underline;
 }
 
+/* Estilos para el menú "Ordenar por" */
+.sort-container {
+    margin: 20px 0;
+}
+
+.sort-container select {
+    padding: 10px;
+    font-size: 1.1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+
 /* Media queries para pantallas más grandes */
 
 /* En pantallas medianas, mostrar 2 álbumes por fila */
