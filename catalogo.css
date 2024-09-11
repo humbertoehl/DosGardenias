@@ -2,10 +2,12 @@ body {
     font-family: 'Helvetica Neue', sans-serif;
     text-align: center;
     margin-top: 50px;
-    color: #000000;
-    background: #3a6186;  
-    background: -webkit-linear-gradient(to right, #89253e, #3a6186);  
-    background: linear-gradient(to right, #89253e, #3a6186); 
+    color: #fff;
+    background-color: #173b7c; 
+    background-image: url('resources/noisy.png');
+    background-size: contain;
+    background-repeat: repeat; 
+    background-blend-mode: screen; 
     height: 100vh;
 }
 
@@ -23,20 +25,23 @@ main {
 }
 
 h1 {
-    font-size: 2.5em;
-    color: #fff;
+    font-size: 2em;
+    color: #F9F6EE;
+    margin-top: -20px;
 }
 
 /* FILTROS DE GÉNERO */
 .selected-genres-container {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
 }
 
 .selected-genre {
-    background-color: #f0f0f0;
+    background-color: #F9F6EE;
+    color: #353b48;
+    font-weight: bold;
     border-radius: 15px;
     padding: 5px 10px;
     font-size: 0.9em;
@@ -58,8 +63,9 @@ h1 {
 #search-bar {
     width: 80%; 
     padding: 10px;
-    color: #ccc;
-    background-color: #353b48;
+    color: #353935;
+    font-weight: bold;
+    background-color: #F9F6EE;
     font-size: 1.2em;
     border: 1px solid #353b48;
     border-radius: 5px;
@@ -68,8 +74,9 @@ h1 {
 /* BOTÓN DE BÚSQUEDA POR GENERO */
 #open-modal {
     padding: 10px 20px;
-    background-color: #353b48;
-    color: white;
+    background-color: #F9F6EE;
+    color: #353935;
+    font-weight: bold;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -90,18 +97,23 @@ h1 {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
+    align-items: start;
+    color: #353935;
 }
 
 .modal-content {
-    background: #3a6186;  
-    background: -webkit-linear-gradient(to right, #89253e, #3a6186);  
-    background: linear-gradient(to right, #89253e, #3a6186);
+    background-color: #173a7c; 
+    background-image: url('resources/noisy.png');
+    background-size: contain;
+    background-repeat: repeat; 
+    background-blend-mode: screen;
+    font-weight: bold; 
     padding: 20px;
     border-radius: 10px;
     width: 80%;
     max-width: 500px;
+    
 }
 
 .close {
@@ -122,8 +134,8 @@ h1 {
 
 #apply-genre-filter {
     padding: 10px 20px;
-    background-color: #353b48;
-    color: white;
+    background-color: #F9F6EE;
+    color: #353935;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -144,8 +156,9 @@ h1 {
 }
 
 .album-item {
-    color: #ccc;
-    background-color: #353b48;
+    color: #353935;
+    font-weight: bold;
+    background-color: #f9f6ee86;
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -183,11 +196,11 @@ p {
     font-size: 0.9em;
 }
 footer {
-    margin-top: 50px;
+    margin: 20px;
 }
 
 footer a {
-    color: #784AF0;
+    color: #F9F6EE;
     text-decoration: none;
     font-size: 1.2em;
 }
@@ -198,11 +211,14 @@ footer a:hover {
 
 /* ORDENAMIENTO */
 .sort-container {
-    margin: 20px 0;
+
+    margin-bottom: 15px;
 }
 
 .sort-container select {
-    background-color: #353b48;
+    background-color: #F9F6EE;
+    color: #353935;
+    font-weight: bold;
     padding: 10px;
     font-size: 1.1em;
     border: 1px solid #ccc;

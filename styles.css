@@ -3,10 +3,12 @@ body {
     text-align: center;
     margin-top: 50px;
     color: #fff;
-    
-    background: #3a6186;  
-    background: -webkit-linear-gradient(to right, #89253e, #3a6186);  
-    background: linear-gradient(to right, #89253e, #3a6186); 
+
+    background-color: #173b7c; /* A blue color similar to your image */
+    background-image: url('resources/noisy.png'); /* Granular texture image */
+    background-size: contain; /* Makes the image fit without zooming */
+    background-repeat: repeat; /* Repeats the texture to fill the space */
+    background-blend-mode: screen; /* You can experiment with other blend modes */
     height: 100vh;
 }
 
@@ -22,8 +24,8 @@ button {
     width: 250px;
     margin: 20px auto;
     padding: 15px;
-    background-color: #784AF0;
-    color: white;
+    background-color: #F9F6EE;
+    color: #353935;
     border: none;
     border-radius: 30px;
     font-size: 18px;
@@ -44,7 +46,7 @@ button:active {
 }
 
 .instagram-btn {
-    background-color: #E1306C;
+    background-color: #F9F6EE;
     display: flex;
     align-items: center;
     justify-content: center;
