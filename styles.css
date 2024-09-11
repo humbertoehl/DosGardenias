@@ -3,12 +3,11 @@ body {
     text-align: center;
     margin-top: 50px;
     color: #fff;
-
-    background-color: #173b7c; /* A blue color similar to your image */
-    background-image: url('resources/noisy.png'); /* Granular texture image */
-    background-size: contain; /* Makes the image fit without zooming */
-    background-repeat: repeat; /* Repeats the texture to fill the space */
-    background-blend-mode: screen; /* You can experiment with other blend modes */
+    background-color: #173b7c; 
+    background-image: url('resources/noisy.png');
+    background-size: contain;
+    background-repeat: repeat; 
+    background-blend-mode: screen; 
     height: 100vh;
 }
 
