@@ -127,8 +127,10 @@ h1 {
 }
 
 .genre-list label {
-    display: block;
+    display: flex;
+    justify-content: flex-start;
     margin-bottom: 10px;
+    margin-left: 100px;
     font-size: 1.2em;
 }
 
