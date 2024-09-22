@@ -1,6 +1,6 @@
 /* Estilos globales */
 body {
-    font-family: 'Helvetica Neue', sans-serif;
+    font-family: "Playfair Display", serif;
     text-align: center;
     margin-top: 50px;
     color: #fff;
@@ -10,6 +10,8 @@ body {
     background-repeat: repeat; 
     background-blend-mode: screen; 
     height: 100vh;
+    font-optical-sizing: auto;
+    font-weight: 800;
 }
 
 /* Logo */
@@ -134,4 +136,53 @@ button:active {
         margin-right: 0;
         margin-bottom: 10px;
     }
+}
+
+/* Sección de contacto para eventos */
+.contact-event {
+    margin: 40px auto;
+    text-align: center;
+    color: #fff;
+}
+
+.contact-event h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.contact-event p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #f9f6ee;
+}
+
+/* Estilo del botón de WhatsApp */
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #25D366;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.whatsapp-btn:hover {
+    background-color: #128C7E;
+}
+
+.whatsapp-btn:active {
+    background-color: #0a604f;
+}
+
+.whatsapp-logo {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
 }

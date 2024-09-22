@@ -1,5 +1,5 @@
 body {
-    font-family: 'Helvetica Neue', sans-serif;
+    font-family: "Playfair Display", serif;
     text-align: center;
     margin-top: 50px;
     color: #fff;
@@ -9,6 +9,8 @@ body {
     background-repeat: repeat; 
     background-blend-mode: screen; 
     height: 100vh;
+    font-optical-sizing: auto;
+    font-weight: 800;
 }
 
 header {
@@ -280,6 +282,7 @@ h1 {
     height: 350px; 
     display: flex;
     flex-direction: column;
+    justify-self: center;
     justify-content: space-between;
 }
 
