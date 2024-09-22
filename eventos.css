@@ -70,17 +70,20 @@ h1 {
     border-radius: 10px;
     padding: 10px;
     margin-bottom: 10px;
+    text-decoration: none;
 }
 
 .event-date h2 {
     font-size: 1.5em;
     margin: 0;
+    text-decoration: none;
 }
 
 /* Contenido del evento (foto + descripción) */
 .event-content {
     display: flex;
     align-items: center;
+    text-decoration: none;
 }
 
 /* Foto del evento */
@@ -97,11 +100,13 @@ h1 {
     font-size: 1.5em;
     margin-bottom: 10px;
     color: #353935;
+    text-decoration: none;
 }
 
 .event-info p {
     font-size: 1em;
     color: #353935;
+    text-decoration: none;
 }
 
 /* Botón de acción */
