@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ERQ8S7YXX0"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-ERQ8S7YXX0');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Dos Gardenias - Café en Xalapa con un toque musical. Disfruta de un ambiente acogedor, buena música y eventos en vivo. ¡Explora nuestro menú y catálogo de discos!">
@@ -26,9 +37,9 @@
     <main>
         <h1>Bienvenido a Dos Gardenias</h1>
 
-        <button onclick="window.location.href='menu.html'" aria-label="Ver Menú">Ver Menú</button>
-        <button onclick="window.location.href='catalogo.html'" aria-label="Ver Catálogo de Discos">Catálogo de Discos</button>
-        <button onclick="window.location.href='eventos.html'" aria-label="Ver Eventos">Eventos</button>
+        <button onclick="gtag('event', 'click', { 'event_category': 'menu', 'event_label': 'menu' }); window.location.href='menu.html'" aria-label="Ver Menú">Ver Menú</button>
+        <button onclick="gtag('event', 'click', { 'event_category': 'catalogo', 'event_label': 'catalogo_discos' }); window.location.href='catalogo.html'" aria-label="Ver Catálogo de Discos">Catálogo de Discos</button>
+        <button onclick="gtag('event', 'click', { 'event_category': 'eventos', 'event_label': 'eventos_page' }); window.location.href='eventos.html'" aria-label="Ver Eventos">Eventos</button>
         <button class="instagram-btn" onclick="window.location.href='https://instagram.com/dosgardeniasxal'" aria-label="Ver Instagram de Dos Gardenias">
             <img src="resources/instagram_logo.png" alt="Logo Instagram" class="instagram-logo"> Instagram</button>
             <button class="instagram-btn" onclick="window.location.href='https://www.facebook.com/profile.php?id=61565397737991'" aria-label="Ver Facebook de Dos Gardenias">
