@@ -77,3 +77,31 @@ button:active {
     gap: 10px;
     border-radius: 20px;
 }
+/* Botón de CUPÓN 30% */
+.cupon-btn {
+    display: block;
+    width: 250px;
+    margin: 20px auto;
+    padding: 15px 20px;
+    background-color: #007BFF; /* Azul vistoso */
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.cupon-btn:hover {
+    background-color: #0056b3; /* Azul más oscuro en hover */
+    transform: translateY(-3px);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.cupon-btn:active {
+    transform: translateY(0);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}

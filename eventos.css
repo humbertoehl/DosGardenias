@@ -214,3 +214,51 @@ button:active {
     height: 24px;
     margin-right: 10px;
 }
+
+/* Estilo para la sección de instrucciones */
+.cupon-instructions {
+    text-align: left; /* Alineación para una mejor lectura */
+    color: #fff;
+    margin: 10px;
+    font-size: 1.2em;
+}
+
+.cupon-instructions h2 {
+    font-size: 2.5em;
+    margin-top: -20px;
+    text-align: center;
+}
+
+.cupon-instructions p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.cupon-instructions ol {
+    margin-left: 20px;
+    padding-left: 20px;
+}
+
+.cupon-instructions ol li {
+    margin-bottom: 10px;
+    list-style-type: decimal;
+}
+.cupon-instructions ol li strong {
+    color: #0a1831; /* Color amarillo dorado para resaltar */
+    font-size: 1em; /* Tamaño ligeramente más grande */
+}
+
+
+
+/* Contenedor del mapa */
+.map-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+/* Contenedor del mapa con bordes redondeados */
+.map-container iframe {
+    border-radius: 25px; 
+    overflow: hidden; 
+    border: none; 
+}
