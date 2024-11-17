@@ -245,7 +245,7 @@ button:active {
 }
 .cupon-instructions ol li strong {
     color: #0a1831; /* Color amarillo dorado para resaltar */
-    font-size: 1em; /* Tamaño ligeramente más grande */
+    font-size: .8em; /* Tamaño ligeramente más grande */
 }
 
 
