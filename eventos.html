@@ -41,6 +41,48 @@
             </div>
         </a>
     -->
+    <div class="event-card">
+        <div class="event-date">
+            <h2>12 de Diciembre 19:00</h2>
+        </div>
+        <div class="event-content">
+            <a href="#" class="open-popup" data-image="event_photos/12-dic-1.webp">
+                <img src="event_photos/12-dic-1.webp" alt="Evento Foto" class="event-photo">
+            </a>
+            <div class="event-info">
+                <h3>CONCIERTO - Mascaritas y Diablitos Tour</h3>
+                <p>Cover: $60</p>
+                <p>Cierre del Tour con <strong>Diego Marte</strong>, <strong>Love, the artifact</strong> e invitados especiales</p>
+                <a href="https://www.instagram.com/diego_martee/" class="event-link"><p>click aquí para más</p></a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="event-card">
+        <div class="event-date">
+            <h2>13 de Diciembre 20:00</h2>
+        </div>
+        <div class="event-content">
+            <a href="#" class="open-popup" data-image="event_photos/13-dic-1.webp">
+                <img src="event_photos/13-dic-1.webp" alt="Evento Foto" class="event-photo">
+            </a>
+            <div class="event-info">
+                <h3>CONCIERTO - Yahir Paz</h3>
+                <p>Cover: $80 en preventa | $100 día del evento</p>
+                <p>Concierto íntimo de @yahirpazz junto con dos músicos invitados</p>
+                <a href="https://www.instagram.com/yahirpazz/" class="event-link"><p>click aquí para más</p></a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Pop-up Container -->
+    <div id="popup" class="popup hidden">
+        <span class="close-popup">&times;</span>
+        <img id="popup-image" src="" alt="Popup Image">
+    </div>
+    
+ 
+    
 
     <!-- Sección para crear eventos -->
     <section class="contact-event">
@@ -50,7 +92,34 @@
             Contáctanos
         </button>
     </section>
-
+    <script>
+        // Select the pop-up and image
+        const popup = document.getElementById('popup');
+        const popupImage = document.getElementById('popup-image');
+    
+        // Open pop-up when clicking on an image link
+        document.querySelectorAll('.open-popup').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const imageUrl = link.getAttribute('data-image');
+                popupImage.src = imageUrl;
+                popup.classList.add('visible');
+            });
+        });
+    
+        // Close pop-up when clicking the close button
+        document.querySelector('.close-popup').addEventListener('click', () => {
+            popup.classList.remove('visible');
+        });
+    
+        // Close pop-up when clicking outside the image
+        popup.addEventListener('click', (e) => {
+            if (e.target === popup) {
+                popup.classList.remove('visible');
+            }
+        });
+    </script>
+    
 
     </main>
 </body>
