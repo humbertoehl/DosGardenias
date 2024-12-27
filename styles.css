@@ -59,11 +59,11 @@ button:active {
 
 /* Social button style */
 .social-btn {
-    width: 60px; /* Square size */
-    height: 60px;
+    width: 65px; /* Square size */
+    height: 65px;
     background-color: #fff; /* Background color */
     border: none; /* Remove default border */
-    border-radius: 0px; /* Slight rounding for aesthetics */
+    border-radius: 20px; /* Slight rounding for aesthetics */
     display: flex;
     justify-content: center;
     align-items: center;
