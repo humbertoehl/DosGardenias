@@ -82,8 +82,8 @@ button:active {
 
 /* Logo inside the button */
 .social-logo {
-    width: 95%; /* Adjust size of the logo */
-    height: auto;
+    width: 50px; /* Adjust size of the logo */
+    height: 50px;
 }
 
 
