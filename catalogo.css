@@ -1,24 +1,24 @@
 body {
-    font-family: "Playfair Display", serif;
+    font-family: "Montserrat", serif;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 30px;
     color: #fff;
     background-color: #305ba0; 
     background-image: url('resources/noisy.png');
     background-size: contain;
     background-repeat: repeat; 
     background-blend-mode: screen; 
-    height: 100vh;
+    height: 700vh;
     font-optical-sizing: auto;
     font-weight: 800;
 }
 
 header {
-    padding: 20px 0;
+    padding:5px 0;
 }
 
 .logo {
-    width: 150px;
+    width: 120px;
 }
 
 main {
@@ -67,7 +67,7 @@ h1 {
     padding: 10px;
     color: #353935;
     font-weight: bold;
-    background-color: #F9F6EE;
+    background-color: #f7efd2ea;
     font-size: 1.2em;
     border: 1px solid #353b48;
     border-radius: 5px;
@@ -249,7 +249,7 @@ h1 {
 
 #apply-genre-filter {
     padding: 10px 20px;
-    background-color: #F9F6EE;
+    background-color: #f7efd2ea;
     color: #353935;
     border: none;
     border-radius: 5px;
@@ -273,13 +273,13 @@ h1 {
 .album-item {
     color: #353935;
     font-weight: bold;
-    background-color: #f9f6ee86;
+    background-color: #f7efd2ea;
     padding: 15px;
-    border-radius: 10px;
+    border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     width: 140px; 
-    height: 350px; 
+    height: 280px; 
     display: flex;
     flex-direction: column;
     justify-self: center;
@@ -291,7 +291,22 @@ h1 {
     height: 150px; 
     object-fit: cover; 
     border-radius: 5px;
+    margin-bottom: -20px;
 }
+
+.album-item h2 {
+    margin-top: 10px; /* Adjust the top margin */
+    margin-bottom: 5px; /* Add a small bottom margin for spacing */
+    font-size: 1em; /* Optional: Adjust font size if necessary */
+}
+
+.album-item p {
+    margin-top: -5px; /* Reduce vertical space above the paragraphs */
+    margin-bottom: 1px; /* Add a small bottom margin for spacing */
+    font-size: 0.9em; /* Optional: Keep the text consistent */
+    line-height: 1.2; /* Adjust line spacing for tighter text */
+}
+
 
 .genre-tags {
     display: none;

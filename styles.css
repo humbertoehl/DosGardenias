@@ -1,16 +1,17 @@
 body {
-    font-family: "Playfair Display", serif;
+    font-family: "Montserrat", serif;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 30px;
     color: #fff;
     background-color: #173b7c; 
     background-image: url('resources/noisy.png');
     background-size: contain;
     background-repeat: repeat; 
     background-blend-mode: screen; 
-    height: 100vh;
+    height: 70vh;
     font-optical-sizing: auto;
-    font-weight: 800;
+    font-weight: lighter;
+    font-style: normal;
 }
 
 .logo {
@@ -47,25 +48,44 @@ button:active {
     transform: translateY(0);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
-
-.instagram-btn {
-    background-color: #F9F6EE;
-    font-weight: bold;
+/* Social buttons container */
+.social-buttons {
     display: flex;
-    align-items: center;
     justify-content: center;
-    gap: 10px;
-    border-radius: 20px;
+    align-items: center;
+    gap: -5px; /* Space between buttons */
+    margin-top: -15px;
 }
 
-.instagram-btn img {
-    width: 20px;
-    height: 20px;
+/* Social button style */
+.social-btn {
+    width: 65px; /* Square size */
+    height: 65px;
+    background-color: #fff; /* Background color */
+    border: none; /* Remove default border */
+    border-radius: 20px; /* Slight rounding for aesthetics */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 13px;
+    margin-right: 13px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.instagram-logo {
-    vertical-align: middle;
+/* Hover effect */
+.social-btn:hover {
+    transform: scale(1.1); /* Slightly enlarge */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
 }
+
+/* Logo inside the button */
+.social-logo {
+    width: 95%; /* Adjust size of the logo */
+    height: auto;
+}
+
 
 .special-btn {
     background-color: #173b7c;
