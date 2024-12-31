@@ -236,6 +236,7 @@ button:active {
 }
 
 .cupon-instructions ol {
+    font-size:  medium;
     margin-left: 20px;
     padding-left: 20px;
 }
