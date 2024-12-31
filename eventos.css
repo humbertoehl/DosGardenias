@@ -11,7 +11,7 @@ body {
     background-blend-mode: screen; 
     height: 100vh;
     font-optical-sizing: auto;
-    font-weight: 800;
+    font-weight: 600;
 }
 
 a {
@@ -244,7 +244,7 @@ button:active {
     margin-bottom: 10px;
     list-style-type: decimal;
 }
-.cupon-instructions ol li strong {
+.cupon-instructions p strong {
     color: #ffcc00; /* Color amarillo dorado para resaltar */
     font-size: .8em; /* Tamaño ligeramente más grande */
 }
