@@ -246,6 +246,7 @@ button:active {
     list-style-type: decimal;
 }
 .cupon-instructions p strong {
+    font-size: small;
     color: #ffcc00; /* Color amarillo dorado para resaltar */
     font-size: .8em; /* Tamaño ligeramente más grande */
 }
