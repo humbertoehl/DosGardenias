@@ -22,94 +22,20 @@
     <header>
         <img src="resources/logo-dos-gardenias-blanco.png" alt="Logo Dos Gardenias" class="logo">
     </header>
-
+    
     <main>
-        <h1>Catálogo de Discos</h1>
-        <h2>¡Pide al staff que ponga uno!</h2>
-
-        <div id="selected-genres" class="selected-genres-container">
+        <div class="title-container">
+            <h1>Catálogo de Discos</h1>
+            <h2>¡Pide al staff que ponga uno!</h2>
         </div>
-
+    
         <div class="search-container">
-            <input type="text" id="search-bar" onkeyup="filterCatalog()" placeholder="Buscar por álbum, artista, género...">
+            <input type="text" id="search-bar" onkeyup="filterCatalog()" placeholder="Buscar álbum, artista, género...">
         </div>
-       <!-- <button id="open-modal">Buscar por género</button> -->
-
-        <div id="genre-modal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2>Selecciona géneros</h2>
-                <div class="genre-list">
-                    <label class="checkbox-wrapper-12">
-                        <div class="cbx">
-                            <input id="rock" type="checkbox" value="Rock">
-                            <label for="rock"></label>
-                            <svg width="15" height="14" viewbox="0 0 15 14" fill="none">
-                                <path d="M2 8.36364L6.23077 12L13 2"></path>
-                            </svg>
-                        </div>
-                        Rock
-                    </label>
-                    <label class="checkbox-wrapper-12">
-                        <div class="cbx">
-                            <input id="folk" type="checkbox" value="Folk">
-                            <label for="folk"></label>
-                            <svg width="15" height="14" viewbox="0 0 15 14" fill="none">
-                                <path d="M2 8.36364L6.23077 12L13 2"></path>
-                            </svg>
-                        </div>
-                        Folk
-                    </label>
-                    <label class="checkbox-wrapper-12">
-                        <div class="cbx">
-                            <input id="pop" type="checkbox" value="Pop">
-                            <label for="pop"></label>
-                            <svg width="15" height="14" viewbox="0 0 15 14" fill="none">
-                                <path d="M2 8.36364L6.23077 12L13 2"></path>
-                            </svg>
-                        </div>
-                        Pop
-                    </label>
-                    <label class="checkbox-wrapper-12">
-                        <div class="cbx">
-                            <input id="jazz" type="checkbox" value="Jazz">
-                            <label for="jazz"></label>
-                            <svg width="15" height="14" viewbox="0 0 15 14" fill="none">
-                                <path d="M2 8.36364L6.23077 12L13 2"></path>
-                            </svg>
-                        </div>
-                        Jazz
-                    </label>
-                    <label class="checkbox-wrapper-12">
-                        <div class="cbx">
-                            <input id="hip hop" type="checkbox" value="Hip Hop">
-                            <label for="hip hop"></label>
-                            <svg width="15" height="14" viewbox="0 0 15 14" fill="none">
-                                <path d="M2 8.36364L6.23077 12L13 2"></path>
-                            </svg>
-                        </div>
-                        Hip Hop
-                    </label>
-                    <label class="checkbox-wrapper-12">
-                        <div class="cbx">
-                            <input id="bolero" type="checkbox" value="Bolero">
-                            <label for="bolero"></label>
-                            <svg width="15" height="14" viewbox="0 0 15 14" fill="none">
-                                <path d="M2 8.36364L6.23077 12L13 2"></path>
-                            </svg>
-                        </div>
-                        Bolero
-                    </label>
-                </div>
-                <button id="apply-genre-filter">Aplicar filtro</button>
-            </div>
-        </div>
-        
 
         <div class="sort-container">
-            <label for="sort-options"></label>
             <select id="sort-options" onchange="sortCatalog()">
-                <option value="default">Ordenar por</option>
+                <option value="default" disabled selected>📌 Ordenar por</option>
                 <option value="year-asc">Año ↓</option>
                 <option value="year-desc">Año ↑</option>
                 <option value="artist-asc">Artista ↓</option>
@@ -118,6 +44,7 @@
                 <option value="title-desc">Título ↑</option>
             </select>
         </div>
+        
         
         <div class="catalog-grid" id="catalog-grid">
             <div class="album-item">
