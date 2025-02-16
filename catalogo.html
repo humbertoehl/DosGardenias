@@ -35,774 +35,1412 @@
 
         <div class="sort-container">
             <select id="sort-options" onchange="sortCatalog()">
-                <option value="default" disabled selected>📌 Ordenar por</option>
-                <option value="year-asc">Año ↓</option>
-                <option value="year-desc">Año ↑</option>
-                <option value="artist-asc">Artista ↓</option>
-                <option value="artist-desc">Artista ↑</option>
-                <option value="title-asc">Título ↓</option>
-                <option value="title-desc">Título ↑</option>
+                <option value="default" disabled selected> Ordenar por</option>
+                <option value="random">🎲 Random</option> 
+                <option value="year-asc">📅 Año 🔽</option>
+                <option value="year-desc">📅 Año 🔼</option>
+                <option value="artist-asc">🎤 Artista 🔽</option>
+                <option value="artist-desc">🎤 Artista 🔼</option>
+                <option value="title-asc">📖 Título 🔽</option>
+                <option value="title-desc">📖 Título 🔼</option>
             </select>
         </div>
-        
-        
-        <div class="catalog-grid" id="catalog-grid">
-            <div class="album-item">
-                <img src="Covers/la nube en el jardin-1.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>La nube en el jardín</h2>
-                <p>Ed Maverick</p>
-                <p>2024</p>
-                <p class="genre-tags">Cantautor, Folk, Balada</p>
+
+
+        <section class="catalog-grid">
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/GNX.webp" alt="GNX Cover" class="album-cover">
+                    <span class="album-year">2024</span>
+                </div>
+                <div class="album-info">
+                    <h2>GNX</h2>
+                    <h3>Kendrick Lamar</h3>
+                    <p class="genre-tags">Hip Hop, Rap</p>
+                </div>
             </div>
-            <div class="album-item">
-                <img src="Covers/amadeus.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Amadeus</h2>
-                <p>The Academy Of St. Martin-in-the-Fields</p>
-                <p>1984</p>
-                <p class="genre-tags">Soundtrack, Clásica, Musical</p>
+            
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/In the aeroplane over the sea.webp" alt="In the Aeroplane Over the Sea Cover" class="album-cover">
+                    <span class="album-year">1998</span>
+                </div>
+                <div class="album-info">
+                    <h2>In the Aeroplane Over the Sea</h2>
+                    <h3>Neutral Milk Hotel</h3>
+                    <p class="genre-tags">Indie Folk, Indie Rock, Folk Psicodélico, Cantautor</p>
+                </div>
             </div>
-            <div class="album-item">
-                <img src="Covers/los grandes exitos de the platers.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Los Grandes Éxitos De The Platters</h2>
-                <p>The Platters</p>
-                <p>~1980</p>
-                <p class="genre-tags">Funk, Soul, R&B</p>
+            
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/igor.webp" alt="Igor Cover" class="album-cover">
+                    <span class="album-year">2019</span>
+                </div>
+                <div class="album-info">
+                    <h2>Igor</h2>
+                    <h3>Tyler, The Creator</h3>
+                    <p class="genre-tags">Neo-Soul, R&B alternativo, Neo-psicodélia, Synth Funk</p>
+                </div>
             </div>
-            <div class="album-item">
-                <img src="Covers/tiempo pa matar.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Tiempo Pá Matar</h2>
-                <p>Willie Colón</p>
-                <p>1985</p>
-                <p class="genre-tags">Salsa, Son Latino</p>
+            
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/the now now.webp" alt="The Now Now Cover" class="album-cover">
+                    <span class="album-year">2018</span>
+                </div>
+                <div class="album-info">
+                    <h2>The Now Now</h2>
+                    <h3>Gorillaz</h3>
+                    <p class="genre-tags">Electropop, Synthpop, Synth Funk</p>
+                </div>
             </div>
-            <div class="album-item">
-                <img src="Covers/los 3 grandes.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Los 3 Grandes</h2>
-                <p>Varios (Hendrix, Clapton, Bourdon)</p>
-                <p>1973</p>
-                <p class="genre-tags">Rock, Blues, Psicodélico</p>
+            
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/A day at the races.webp" alt="A Day at the Races Cover" class="album-cover">
+                    <span class="album-year">1976</span>
+                </div>
+                <div class="album-info">
+                    <h2>A Day at the Races</h2>
+                    <h3>Queen</h3>
+                    <p class="genre-tags">Hard Rock, Art Rock, Glam Rock</p>
+                </div>
             </div>
-            <div class="album-item">
-                <img src="Covers/music inspired by star wars.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Music Inspired By Star Wars And Other Galactic Funk</h2>
-                <p>Meco</p>
-                <p>1977</p>
-                <p class="genre-tags">Funk, Soul, Electrónica, Disco</p>
+            
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/minutes to midnight.webp" alt="Minutes To Midnight Cover" class="album-cover">
+                    <span class="album-year">2007</span>
+                </div>
+                <div class="album-info">
+                    <h2>Minutes To Midnight</h2>
+                    <h3>Linkin Park</h3>
+                    <p class="genre-tags">Rock Alternativo, Pop Rock, Metal Alternativo</p>
+                </div>
             </div>
-            <div class="album-item">
-                <img src="Covers/super salsa singers vol3.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Super Salsa Singers Vol. III</h2>
-                <p>Jerry Masucci Presents Various</p>
-                <p>1981</p>
-                <p class="genre-tags">Latino, Salsa, Afro-Cubano</p>
+            
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/canciones del solar de los aburridos.webp" alt="Canciones del solar de los aburridos Cover" class="album-cover">
+                    <span class="album-year">1981</span>
+                </div>
+                <div class="album-info">
+                    <h2>Canciones del solar de los aburridos</h2>
+                    <h3>Willie Colón, Rubén Blades</h3>
+                    <p class="genre-tags">Salsa Dura, Latino, Salsa</p>
+                </div>
+            </div>
+            
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/future nostalgia.webp" alt="Future Nostalgia Cover" class="album-cover">
+                    <span class="album-year">2020</span>
+                </div>
+                <div class="album-info">
+                    <h2>Future Nostalgia</h2>
+                    <h3>Dua Lipa</h3>
+                    <p class="genre-tags">Dance-pop, Nu-Disco, Synthpop</p>
+                </div>
+            </div>
+            
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/ballads 1.webp" alt="Ballads 1 Cover" class="album-cover">
+                    <span class="album-year">2018</span>
+                </div>
+                <div class="album-info">
+                    <h2>Ballads 1</h2>
+                    <h3>Joji</h3>
+                    <p class="genre-tags">R&B Alternativo, Emo Rap, Lo-Fi Hip Hop</p>
+                </div>
             </div>
 
-            
-            <div class="album-item">
-                <img src="Covers/rizoma.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Rizoma</h2>
-                <p>Austin TV</p>
-                <p>2023</p>
-                <p class="genre-tags">Post-Rock, Math Rock</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/animals.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Animals</h2>
-                <p>Pink Floyd</p>
-                <p>1977</p>
-                <p class="genre-tags">Rock Progresivo, Art Rock, Rock Psicodélico</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/4.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>4</h2>
-                <p>Foreigner</p>
-                <p>1981</p>
-                <p class="genre-tags">AOR, Hard Rock, Pop Rock</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/mas canciones del grillito.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Más Canciones de El Grillito Cantor</h2>
-                <p>Francisco Gabilondo Soler "Cri-Cri"</p>
-                <p>1958</p>
-                <p class="genre-tags">Música Infantil</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/bachata rosa.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Bachata rosa</h2>
-                <p>Juan Luis Guerra y 4.40</p>
-                <p>1990</p>
-                <p class="genre-tags">Merengue, Bachata, Salsa Romántica</p>
-            </div>
-            
-            <div class="album-item">
-                <img src="Covers/exodus.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Exodus</h2>
-                <p>Bob Marley & The Wailers</p>
-                <p>1977</p>
-                <p class="genre-tags">Reggae</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/amy-winehouse-back-to-black-Cover-Art-1.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Back to Black</h2>
-                <p>Amy Winehouse</p>
-                <p>2006</p>
-                <p class="genre-tags">Pop Soul, Rythm & Blues, Neo-soul, Jazz Pop</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/joji-smithereens-Cover-Art-1.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>SMITHEREENS</h2>
-                <p>Joji</p>
-                <p>2022</p>
-                <p class="genre-tags">Alternative R&B, Alt-Pop, Trap</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/the-strokes-the-new-abnormal-Cover-Art-1.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>The New Abnormal</h2>
-                <p>The Strokes</p>
-                <p>2020</p>
-                <p class="genre-tags">Indie Rock, Post-Punk Revival, New Wave, Synthpop, Neo-Psychedelia</p>
-            </div>            
-            <div class="album-item">
-                <img src="Covers/alaizquierda.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>A la Izquierda de la Tierra</h2>
-                <p>Panteón Rococó</p>
-                <p>1999</p>
-                <p class="genre-tags">Ska, Punk, Alternativo</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/toxicity_1.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Toxicity</h2>
-                <p>System Of A Down</p>
-                <p>2001</p>
-                <p class="genre-tags">Metal Alternativo</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/remaininlight_1.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Remain In Light</h2>
-                <p>Talking Heads</p>
-                <p>1980</p>
-                <p class="genre-tags">New Wave, Post-Punk</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/variouspositions_1.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Various Positions</h2>
-                <p>Leonard Cohen</p>
-                <p>1984</p>
-                <p class="genre-tags">Cantautor</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/thebeggar_1.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>The Beggar</h2>
-                <p>Swans</p>
-                <p>2023</p>
-                <p class="genre-tags">Post-Rock, Rock Experimental</p>
-            </div>   
-
-            <div class="album-item">
-                <img src="Covers/Íntimamente.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Íntimamente...</h2>
-                <p>Emmanuel</p>
-                <p>1980</p>
-                <p class="genre-tags">Balada, Pop</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/greatest-hits-donna-summer.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Greatest Hits - Volume Two</h2>
-                <p>Donna Summer</p>
-                <p>1979</p>
-                <p class="genre-tags">Disco, Funk</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/bandido.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Bandido</h2>
-                <p>Miguel Bosé</p>
-                <p>1984</p>
-                <p class="genre-tags">Pop, New Wave, Art Pop</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Black Lipstick.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Black Lipstick</h2>
-                <p>Chicano Batman</p>
-                <p>2015</p>
-                <p class="genre-tags">Pop, Rock</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Mambo.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Mambo</h2>
-                <p>Perez Prado</p>
-                <p>1965</p>
-                <p class="genre-tags">Mambo, Jazz Latino</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Tons Que Mami.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Ton's Que Mami</h2>
-                <p>Chico Che Y La Crisis</p>
-                <p>1984</p>
-                <p class="genre-tags">Cumbia, Tropical, Latino</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Tim Burtons The Nightmare Before Christmas.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Tim Burton's The Nightmare Before Christmas (Original Motion Picture Soundtrack)</h2>
-                <p>Danny Elfman</p>
-                <p>1993</p>
-                <p class="genre-tags">Soundtrack</p>
-            </div>                    
-            <div class="album-item">
-                <img src="Covers/The Rise and Fall of Ziggy Stardust and the Spiders From Mars.jpg" alt="Carátula Álbum" class="album-cover">
-                <h2>The Rise and Fall of Ziggy Stardust and the Spiders From Mars</h2>
-                <p>David Bowie</p>
-                <p>1972</p>
-                <p class="genre-tags">Rock</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/unicornio.jpg" alt="Carátula Álbum" class="album-cover">
-                <h2>Unicornio</h2>
-                <p>Silvio Rodríguez</p>
-                <p>1982</p>
-                <p class="genre-tags">Cantautor, Folk</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/vol1pablosilvio.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Colección Vol. 1</h2>
-                <p>Pablo Milanés & Silvio Rodriguez</p>
-                <p>1987</p>
-                <p class="genre-tags">Cantautor, Trova</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/vol2pablosilvio.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Colección Vol. 2</h2>
-                <p>Pablo Milanés & Silvio Rodriguez</p>
-                <p>1987</p>
-                <p class="genre-tags">Cantautor, Trova</p>
-            </div>
-            
-            <div class="album-item">
-                <img src="Covers/Eydie Gormé & the Trio Los Panch.jpg" alt="Carátula Álbum" class="album-cover">
-                <h2>Amor</h2>
-                <p>Eydie Gormé & the Trio Los Panchos</p>
-                <p>1964</p>
-                <p class="genre-tags">Bolero</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Veracruz Hermoso.jpg" alt="Carátula Álbum" class="album-cover">
-                <h2>Veracruz Hermoso</h2>
-                <p>Conjunto Jarocho Medellin de Lino Chavez</p>
-                <p>1961</p>
-                <p class="genre-tags">Folk</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Amor amor.jpg" alt="Carátula Álbum" class="album-cover">
-                <h2>Amor amor</h2>
-                <p>José José</p>
-                <p>1980</p>
-                <p class="genre-tags">Pop</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/El príncipe.jpg" alt="Carátula Álbum" class="album-cover">
-                <h2>El príncipe</h2>
-                <p>José José</p>
-                <p>1976</p>
-                <p class="genre-tags">Pop</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/A Salute To Glenn Miller.jpg" alt="Carátula Álbum" class="album-cover">
-                <h2>A Salute To Glenn Miller</h2>
-                <p>Jerry Gray</p>
-                <p>1958</p>
-                <p class="genre-tags">Jazz</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/La Colección De John Lennon.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>La Colección De John Lennon</h2>
-                <p>John Lennon</p>
-                <p>1982</p>
-                <p class="genre-tags">Rock, Pop</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Wings Greatest.jpg" alt="Carátula Álbum" class="album-cover">
-                <h2>Wings Greatest</h2>
-                <p>Wings</p>
-                <p>1978</p>
-                <p class="genre-tags">Rock, Folk</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Reflexiones.jpg" alt="Carátula Álbum" class="album-cover">
-                <h2>Reflexiones</h2>
-                <p>José José</p>
-                <p>1984</p>
-                <p class="genre-tags">Pop</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Gracias.jpg" alt="Carátula Álbum" class="album-cover">
-                <h2>Gracias</h2>
-                <p>José José</p>
-                <p>1981</p>
-                <p class="genre-tags">Pop</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Love for Sale.jpg" alt="Carátula Álbum" class="album-cover">
-                <h2>Love for Sale</h2>
-                <p>Boney M.</p>
-                <p>1977</p>
-                <p class="genre-tags">Pop</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Inolvidable - Nat King Cole En Español.jpg" alt="Carátula Álbum" class="album-cover">
-                <h2>Inolvidable - Nat King Cole En Español</h2>
-                <p>Nat King Cole</p>
-                <p>1981</p>
-                <p class="genre-tags">Folk, Bolero</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Rock 'N' Roll Music Volume 2.jpg" alt="Carátula Álbum" class="album-cover">
-                <h2>Rock 'N' Roll Music Volume 2</h2>
-                <p>The Beatles</p>
-                <p>1982</p>
-                <p class="genre-tags">Rock, Pop</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Canciones urgentes.jpg" alt="Carátula Álbum" class="album-cover">
-                <h2>Canciones urgentes</h2>
-                <p>Silvio Rodríguez</p>
-                <p>2015</p>
-                <p class="genre-tags">Cantautor</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Querida.jpg" alt="Carátula Álbum" class="album-cover">
-                <h2>Querida</h2>
-                <p>Juan Gabriel</p>
-                <p>1984</p>
-                <p class="genre-tags">Pop</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Bocanada.jpg" alt="Carátula Álbum" class="album-cover">
-                <h2>Bocanada</h2>
-                <p>Gustavo Cerati</p>
-                <p>1999</p>
-                <p class="genre-tags">Pop, Rock, Hip Hop</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Live Vol1.jpg" alt="Carátula Álbum" class="album-cover">
-                <h2>Live Vol.1</h2>
-                <p>Parcels</p>
-                <p>2020</p>
-                <p class="genre-tags">Electrónica, Otro</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Living Eyes.jpg" alt="Carátula Álbum" class="album-cover">
-                <h2>Living Eyes</h2>
-                <p>Bee Gees</p>
-                <p>1981</p>
-                <p class="genre-tags">Rock, Pop</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/A Night at the Opera.jpg" alt="Carátula Álbum" class="album-cover">
-                <h2>A Night at the Opera</h2>
-                <p>Queen</p>
-                <p>1975</p>
-                <p class="genre-tags">Rock</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Burning Love.jpg" alt="Carátula Álbum" class="album-cover">
-                <h2>Burning Love</h2>
-                <p>Elvis Presley</p>
-                <p>1999</p>
-                <p class="genre-tags">Pop</p>
-            </div>            
-            <div class="album-item">
-                <img src="Covers/Potpourri par Piaf .jpg" alt="Carátula Álbum" class="album-cover">
-                <h2>Potpourri par Piaf</h2>
-                <p>Édith Piaf</p>
-                <p>1962</p>
-                <p class="genre-tags">Pop </p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Violines Mágicos.jpeg" alt="Carátula Álbum" class="album-cover">
-                <h2>Violines Mágicos</h2>
-                <p>Violines Mágicos Villafontana</p>
-                <p>1955</p>
-                <p class="genre-tags">Clásica</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Atom Heart Mother.jpg" alt="Carátula Álbum" class="album-cover">
-                <h2>Atom Heart Mother</h2>
-                <p>Pink Floyd</p>
-                <p>1970</p>
-                <p class="genre-tags">Rock</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Sgt. Pepper's Lonely Hearts Club Band .jpg" alt="Carátula Álbum" class="album-cover">
-                <h2>Sgt. Pepper's Lonely Hearts Club Band</h2>
-                <p>The Beatles</p>
-                <p>1967</p>
-                <p class="genre-tags">Pop, Rock</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/The Turn of a Friendly Card .jpg" alt="Carátula Álbum" class="album-cover">
-                <h2>The Turn of a Friendly Card</h2>
-                <p>The Alan Parsons Project</p>
-                <p>1980</p>
-                <p class="genre-tags"> Pop, Rock</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Live Album .jpg" alt="Carátula Álbum" class="album-cover">
-                <h2>Live Album</h2>
-                <p>Grand Funk Railroad</p>
-                <p>1970</p>
-                <p class="genre-tags">Rock</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Led Zeppelin.jpg" alt="Carátula Álbum" class="album-cover">
-                <h2>Led Zeppelin</h2>
-                <p>Led Zeppelin</p>
-                <p>1969</p>
-                <p class="genre-tags"> Rock </p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Rubber Soul.jpg" alt="Carátula Álbum" class="album-cover">
-                <h2>Rubber Soul</h2>
-                <p>The Beatles</p>
-                <p>1965</p>
-                <p class="genre-tags">Pop, Rock</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/The Book of Taliesyn.jpg" alt="Carátula Álbum" class="album-cover">
-                <h2>The Book of Taliesyn</h2>
-                <p>Deep Purple</p>
-                <p>1969</p>
-                <p class="genre-tags">Rock</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/¡Viva Veracruz!.jpeg" alt="Carátula Álbum" class="album-cover">
-                <h2>¡Viva Veracruz!</h2>
-                <p>Conjunto Sotavento</p>
-                <p>1981</p>
-                <p class="genre-tags">Folk</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Canto A Lo Humano.jpeg" alt="Carátula Álbum" class="album-cover">
-                <h2>Canto A Lo Humano</h2>
-                <p>Victor Jara</p>
-                <p>1979</p>
-                <p class="genre-tags">Cantautor, Folk</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Hot Space.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Hot Space</h2>
-                <p>Queen</p>
-                <p>1982</p>
-                <p class="genre-tags">Rock, Pop</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Historia de un amor.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Historia de un amor</h2>
-                <p>Pedro Infante</p>
-                <p>1959</p>
-                <p class="genre-tags">Bolero</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/15 Exitazos Tropicales De Rigo Tovar Y Su Costa Azul.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>15 Exitazos Tropicales De Rigo Tovar Y Su Costa Azul</h2>
-                <p>Rigo Tovar Y Su Costa Azul</p>
-                <p>1981</p>
-                <p class="genre-tags">Otro</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/El madrileño.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>El madrileño</h2>
-                <p>C. Tangana</p>
-                <p>2021</p>
-                <p class="genre-tags">Pop, Bolero, Otro</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Jungle.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Jungle</h2>
-                <p>Jungle</p>
-                <p>2014</p>
-                <p class="genre-tags">Otro</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Dawn FM.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Dawn FM</h2>
-                <p>The Weeknd</p>
-                <p>2022</p>
-                <p class="genre-tags">Pop</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Nectar.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Nectar</h2>
-                <p>Joji</p>
-                <p>2020</p>
-                <p class="genre-tags">Pop, Hip Hop</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Speak Now.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Speak Now</h2>
-                <p>Taylor Swift</p>
-                <p>2010</p>
-                <p class="genre-tags">Pop, Cantautor</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/The Divine Feminine.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>The Divine Feminine</h2>
-                <p>Mac Miller</p>
-                <p>2016</p>
-                <p class="genre-tags">Hip Hop</p>
-            </div>            
-            <div class="album-item">
-                <img src="Covers/Para cuando me vaya.jpg" alt="Carátula Álbum" class="album-cover">
-                <h2>Para cuando me vaya</h2>
-                <p>Nacha Guevara</p>
-                <p>1978</p>
-                <p class="genre-tags">Cantautor, Folk</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/good kid mAAd city.jpg" alt="Carátula Álbum" class="album-cover">
-                <h2>good kid, m.A.A.d city</h2>
-                <p>Kendrick Lamar</p>
-                <p>2012</p>
-                <p class="genre-tags">Hip Hop</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/To Pimp a Butterfly.jpg" alt="Carátula Álbum" class="album-cover">
-                <h2>To Pimp a Butterfly</h2>
-                <p>Kendrick Lamar</p>
-                <p>2015</p>
-                <p class="genre-tags">Hip Hop, Jazz</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Melody And Percussion For Two Pianos.jpeg" alt="Carátula Álbum" class="album-cover">
-                <h2>Melody And Percussion For Two Pianos</h2>
-                <p>Ronnie Aldrich And His Two Pianos</p>
-                <p>1961</p>
-                <p class="genre-tags">Jazz, Clásica</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Los Beatles En Clásico.jpeg" alt="Carátula Álbum" class="album-cover">
-                <h2>Los Beatles En Clásico</h2>
-                <p>Los 12 Cellistas De La Filarmónica De Berlín</p>
-                <p>1984</p>
-                <p class="genre-tags">Clásica, Pop</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Off The Wall.jpg" alt="Carátula Álbum" class="album-cover">
-                <h2>Off The Wall</h2>
-                <p>Michael Jackson</p>
-                <p>1979</p>
-                <p class="genre-tags"> Pop</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Canciones Zapotecas Del Istmo Oaxaca.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Canciones Zapotecas Del Istmo. Oaxaca</h2>
-                <p>Gabriel Lopez Chiñas, Martin Chacon Carrasco</p>
-                <p>1996</p>
-                <p class="genre-tags">Folk</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/El Silencio.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>El Silencio</h2>
-                <p>Caifanes</p>
-                <p>1992</p>
-                <p class="genre-tags">Rock, Folk</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Tlen Huicani – Música y Canto Vol I.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Tlen Huicani - Música y Canto Vol. I</h2>
-                <p>Tlen Huicani</p>
-                <p>2000</p>
-                <p class="genre-tags">Folk</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Kind Of Blue.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Kind Of Blue</h2>
-                <p>Miles Davis</p>
-                <p>1959</p>
-                <p class="genre-tags">Jazz</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Marimba Chiapaneca .webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Marimba Chiapaneca</h2>
-                <p>Hnos. Moreno García</p>
-                <p>1972</p>
-                <p class="genre-tags">Folk</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/★ (Blackstar).webp" alt="Carátula Álbum" class="album-cover">
-                <h2>★ (Blackstar)</h2>
-                <p>David Bowie</p>
-                <p>2016</p>
-                <p class="genre-tags">Rock, Jazz</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Eye In The Sky.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Eye In The Sky</h2>
-                <p>The Alan Parsons Project</p>
-                <p>1982</p>
-                <p class="genre-tags">Pop, Rock</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/For The First Time.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>For The First Time</h2>
-                <p>Black Country, New Road</p>
-                <p>2021</p>
-                <p class="genre-tags">Rock</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Anatomia Musical de.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Anatomia Musical de</h2>
-                <p>Oscar Chávez</p>
-                <p>1974</p>
-                <p class="genre-tags">Cantautor, Folk</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Vulture Culture.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Vulture Culture</h2>
-                <p>The Alan Parsons Project</p>
-                <p>1985</p>
-                <p class="genre-tags">Rock, Pop</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Tommy.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Tommy</h2>
-                <p>The Who</p>
-                <p>1969</p>
-                <p class="genre-tags">Rock</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Never A Dull Moment.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Never A Dull Moment</h2>
-                <p>Rod Stewart</p>
-                <p>1972</p>
-                <p class="genre-tags">Folk, Rock</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Wild Life.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Wild Life</h2>
-                <p>Wings</p>
-                <p>1971</p>
-                <p class="genre-tags">Rock, Folk, Pop</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Dvořák Symphony No8 In G Major.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Dvořák Symphony No.8 In G Major, Op.88 / Tchaikovsky Romeo & Juliet - Fantasy Overture</h2>
-                <p>Wiener Philharmoniker, Herbert von Karajan</p>
-                <p>1979</p>
-                <p class="genre-tags">Clásica</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/The Dark Side Of The Moon.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>The Dark Side Of The Moon</h2>
-                <p>Pink Floyd</p>
-                <p>1973</p>
-                <p class="genre-tags">Rock</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/From Every Stage.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>From Every Stage</h2>
-                <p>Joan Baez</p>
-                <p>1976</p>
-                <p class="genre-tags">Folk, Pop</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/McCartney.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>McCartney</h2>
-                <p>Paul McCartney</p>
-                <p>1970</p>
-                <p class="genre-tags">Pop, Rock, Cantautor</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Thriller.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Thriller</h2>
-                <p>Michael Jackson</p>
-                <p>1982</p>
-                <p class="genre-tags">Pop</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Íntimamente.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Íntimamente...</h2>
-                <p>Emmanuel</p>
-                <p>1980</p>
-                <p class="genre-tags">Pop</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Musica Del Istmo De Tehuantepec Oaxaca.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Musica Del Istmo De Tehuantepec Oaxaca</h2>
-                <p>Various</p>
-                <p>1972</p>
-                <p class="genre-tags">Folk</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Canción Por La Unidad Latinoamericana.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Canción Por La Unidad Latinoamericana</h2>
-                <p>Pablo Milanés</p>
-                <p>1978</p>
-                <p class="genre-tags"> Cantautor</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Ants From Up There.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Ants From Up There</h2>
-                <p>Black Country, New Road</p>
-                <p>2022</p>
-                <p class="genre-tags">Rock</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Latinoamerica Canta.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Latinoamerica Canta</h2>
-                <p>Oscar Chávez</p>
-                <p>1972</p>
-                <p class="genre-tags">Cantautor, Folk</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Discurso Del Cmdte Ernesto Guevara En La XIX Asemblea.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Discurso Del Cmdte. Ernesto Guevara En La XIX Asemblea General De Las Naciones Unidas</h2>
-                <p>Ernesto Guevara</p>
-                <p>1964</p>
-                <p class="genre-tags">Otro</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Songs In The Key Of Life.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Songs In The Key Of Life</h2>
-                <p>Stevie Wonder</p>
-                <p>1976</p>
-                <p class="genre-tags">Pop, Otro</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Lo mato.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Lo mato</h2>
-                <p>Willie Colón</p>
-                <p>1973</p>
-                <p class="genre-tags">Otro</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/En El Palacio De Bellas Artes.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>En El Palacio De Bellas Artes</h2>
-                <p>Juan Gabriel</p>
-                <p>1990</p>
-                <p class="genre-tags">Pop, Otro, Cantautor</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Tracy Chapman.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Tracy Chapman</h2>
-                <p>Tracy Chapman</p>
-                <p>1988</p>
-                <p class="genre-tags">Cantautor, Folk, Rock</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Random Access Memory.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Random Access Memory</h2>
-                <p>Daft Punk</p>
-                <p>2013</p>
-                <p class="genre-tags">Pop, Electrónica</p>
-            </div>
-            <div class="album-item">
-                <img src="Covers/Secretos.webp" alt="Carátula Álbum" class="album-cover">
-                <h2>Secretos</h2>
-                <p>José José</p>
-                <p>1983</p>
-                <p class="genre-tags">Pop</p>
-            </div>
-            
-        </div>
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/la nube en el jardin-1.webp" alt="La nube en el jardín Cover" class="album-cover">
+                    <span class="album-year">2024</span>
+                </div>
+                <div class="album-info">
+                    <h2>La nube en el jardín</h2>
+                    <h3>Ed Maverick</h3>
+                    <p class="genre-tags">Cantautor, Folk, Balada</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/amadeus.webp" alt="Amadeus Cover" class="album-cover">
+                    <span class="album-year">1984</span>
+                </div>
+                <div class="album-info">
+                    <h2>Amadeus</h2>
+                    <h3>The Academy Of St. Martin-in-the-Fields</h3>
+                    <p class="genre-tags">Soundtrack, Clásica, Musical</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/los grandes exitos de the platers.webp" alt="Los Grandes Éxitos De The Platters Cover" class="album-cover">
+                    <span class="album-year">1980</span>
+                </div>
+                <div class="album-info">
+                    <h2>Los Grandes Éxitos De The Platters</h2>
+                    <h3>The Platters</h3>
+                    <p class="genre-tags">Funk, Soul, R&B</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/tiempo pa matar.webp" alt="Tiempo Pá Matar Cover" class="album-cover">
+                    <span class="album-year">1985</span>
+                </div>
+                <div class="album-info">
+                    <h2>Tiempo Pá Matar</h2>
+                    <h3>Willie Colón</h3>
+                    <p class="genre-tags">Salsa, Son Latino</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/los 3 grandes.webp" alt="Los 3 Grandes Cover" class="album-cover">
+                    <span class="album-year">1973</span>
+                </div>
+                <div class="album-info">
+                    <h2>Los 3 Grandes</h2>
+                    <h3>Varios (Hendrix, Clapton, Bourdon)</h3>
+                    <p class="genre-tags">Rock, Blues, Psicodélico</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/music inspired by star wars.webp" alt="Music Inspired By Star Wars And Other Galactic Funk Cover" class="album-cover">
+                    <span class="album-year">1977</span>
+                </div>
+                <div class="album-info">
+                    <h2>Music Inspired By Star Wars And Other Galactic Funk</h2>
+                    <h3>Meco</h3>
+                    <p class="genre-tags">Funk, Soul, Electrónica, Disco</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/super salsa singers vol3.webp" alt="Super Salsa Singers Vol. III Cover" class="album-cover">
+                    <span class="album-year">1981</span>
+                </div>
+                <div class="album-info">
+                    <h2>Super Salsa Singers Vol. III</h2>
+                    <h3>Jerry Masucci Presents Various</h3>
+                    <p class="genre-tags">Latino, Salsa, Afro-Cubano</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/rizoma.webp" alt="Rizoma Cover" class="album-cover">
+                    <span class="album-year">2023</span>
+                </div>
+                <div class="album-info">
+                    <h2>Rizoma</h2>
+                    <h3>Austin TV</h3>
+                    <p class="genre-tags">Post-Rock, Math Rock</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/animals.webp" alt="Animals Cover" class="album-cover">
+                    <span class="album-year">1977</span>
+                </div>
+                <div class="album-info">
+                    <h2>Animals</h2>
+                    <h3>Pink Floyd</h3>
+                    <p class="genre-tags">Rock Progresivo, Art Rock, Rock Psicodélico</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/4.webp" alt="4 Cover" class="album-cover">
+                    <span class="album-year">1981</span>
+                </div>
+                <div class="album-info">
+                    <h2>4</h2>
+                    <h3>Foreigner</h3>
+                    <p class="genre-tags">AOR, Hard Rock, Pop Rock</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/mas canciones del grillito.webp" alt="Más Canciones de El Grillito Cantor Cover" class="album-cover">
+                    <span class="album-year">1958</span>
+                </div>
+                <div class="album-info">
+                    <h2>Más Canciones de El Grillito Cantor</h2>
+                    <h3>Francisco Gabilondo Soler "Cri-Cri"</h3>
+                    <p class="genre-tags">Música Infantil</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/bachata rosa.webp" alt="Bachata rosa Cover" class="album-cover">
+                    <span class="album-year">1990</span>
+                </div>
+                <div class="album-info">
+                    <h2>Bachata rosa</h2>
+                    <h3>Juan Luis Guerra y 4.40</h3>
+                    <p class="genre-tags">Merengue, Bachata, Salsa Romántica</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/exodus.webp" alt="Exodus Cover" class="album-cover">
+                    <span class="album-year">1977</span>
+                </div>
+                <div class="album-info">
+                    <h2>Exodus</h2>
+                    <h3>Bob Marley & The Wailers</h3>
+                    <p class="genre-tags">Reggae</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/amy-winehouse-back-to-black-Cover-Art-1.webp" alt="Back to Black Cover" class="album-cover">
+                    <span class="album-year">2006</span>
+                </div>
+                <div class="album-info">
+                    <h2>Back to Black</h2>
+                    <h3>Amy Winehouse</h3>
+                    <p class="genre-tags">Pop Soul, Rythm & Blues, Neo-soul, Jazz Pop</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/joji-smithereens-Cover-Art-1.webp" alt="SMITHEREENS Cover" class="album-cover">
+                    <span class="album-year">2022</span>
+                </div>
+                <div class="album-info">
+                    <h2>SMITHEREENS</h2>
+                    <h3>Joji</h3>
+                    <p class="genre-tags">Alternative R&B, Alt-Pop, Trap</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/the-strokes-the-new-abnormal-Cover-Art-1.webp" alt="The New Abnormal Cover" class="album-cover">
+                    <span class="album-year">2020</span>
+                </div>
+                <div class="album-info">
+                    <h2>The New Abnormal</h2>
+                    <h3>The Strokes</h3>
+                    <p class="genre-tags">Indie Rock, Post-Punk Revival, New Wave, Synthpop, Neo-Psychedelia</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/alaizquierda.webp" alt="A la Izquierda de la Tierra Cover" class="album-cover">
+                    <span class="album-year">1999</span>
+                </div>
+                <div class="album-info">
+                    <h2>A la Izquierda de la Tierra</h2>
+                    <h3>Panteón Rococó</h3>
+                    <p class="genre-tags">Ska, Punk, Alternativo</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/toxicity_1.webp" alt="Toxicity Cover" class="album-cover">
+                    <span class="album-year">2001</span>
+                </div>
+                <div class="album-info">
+                    <h2>Toxicity</h2>
+                    <h3>System Of A Down</h3>
+                    <p class="genre-tags">Metal Alternativo</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/remaininlight_1.webp" alt="Remain In Light Cover" class="album-cover">
+                    <span class="album-year">1980</span>
+                </div>
+                <div class="album-info">
+                    <h2>Remain In Light</h2>
+                    <h3>Talking Heads</h3>
+                    <p class="genre-tags">New Wave, Post-Punk</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/variouspositions_1.webp" alt="Various Positions Cover" class="album-cover">
+                    <span class="album-year">1984</span>
+                </div>
+                <div class="album-info">
+                    <h2>Various Positions</h2>
+                    <h3>Leonard Cohen</h3>
+                    <p class="genre-tags">Cantautor</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/thebeggar_1.webp" alt="The Beggar Cover" class="album-cover">
+                    <span class="album-year">2023</span>
+                </div>
+                <div class="album-info">
+                    <h2>The Beggar</h2>
+                    <h3>Swans</h3>
+                    <p class="genre-tags">Post-Rock, Rock Experimental</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Íntimamente.webp" alt="Íntimamente... Cover" class="album-cover">
+                    <span class="album-year">1980</span>
+                </div>
+                <div class="album-info">
+                    <h2>Íntimamente...</h2>
+                    <h3>Emmanuel</h3>
+                    <p class="genre-tags">Balada, Pop</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/greatest-hits-donna-summer.webp" alt="Greatest Hits - Volume Two Cover" class="album-cover">
+                    <span class="album-year">1979</span>
+                </div>
+                <div class="album-info">
+                    <h2>Greatest Hits - Volume Two</h2>
+                    <h3>Donna Summer</h3>
+                    <p class="genre-tags">Disco, Funk</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/bandido.webp" alt="Bandido Cover" class="album-cover">
+                    <span class="album-year">1984</span>
+                </div>
+                <div class="album-info">
+                    <h2>Bandido</h2>
+                    <h3>Miguel Bosé</h3>
+                    <p class="genre-tags">Pop, New Wave, Art Pop</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Black Lipstick.webp" alt="Black Lipstick Cover" class="album-cover">
+                    <span class="album-year">2015</span>
+                </div>
+                <div class="album-info">
+                    <h2>Black Lipstick</h2>
+                    <h3>Chicano Batman</h3>
+                    <p class="genre-tags">Pop, Rock</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Mambo.webp" alt="Mambo Cover" class="album-cover">
+                    <span class="album-year">1965</span>
+                </div>
+                <div class="album-info">
+                    <h2>Mambo</h2>
+                    <h3>Perez Prado</h3>
+                    <p class="genre-tags">Mambo, Jazz Latino</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Tons Que Mami.webp" alt="Ton's Que Mami Cover" class="album-cover">
+                    <span class="album-year">1984</span>
+                </div>
+                <div class="album-info">
+                    <h2>Ton's Que Mami</h2>
+                    <h3>Chico Che Y La Crisis</h3>
+                    <p class="genre-tags">Cumbia, Tropical, Latino</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Tim Burtons The Nightmare Before Christmas.webp" alt="Tim Burton's The Nightmare Before Christmas (Original Motion Picture Soundtrack) Cover" class="album-cover">
+                    <span class="album-year">1993</span>
+                </div>
+                <div class="album-info">
+                    <h2>Tim Burton's The Nightmare Before Christmas (Original Motion Picture Soundtrack)</h2>
+                    <h3>Danny Elfman</h3>
+                    <p class="genre-tags">Soundtrack</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/The Rise and Fall of Ziggy Stardust and the Spiders From Mars.jpg" alt="The Rise and Fall of Ziggy Stardust and the Spiders From Mars Cover" class="album-cover">
+                    <span class="album-year">1972</span>
+                </div>
+                <div class="album-info">
+                    <h2>The Rise and Fall of Ziggy Stardust and the Spiders From Mars</h2>
+                    <h3>David Bowie</h3>
+                    <p class="genre-tags">Rock</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/unicornio.jpg" alt="Unicornio Cover" class="album-cover">
+                    <span class="album-year">1982</span>
+                </div>
+                <div class="album-info">
+                    <h2>Unicornio</h2>
+                    <h3>Silvio Rodríguez</h3>
+                    <p class="genre-tags">Cantautor, Folk</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/vol1pablosilvio.webp" alt="Colección Vol. 1 Cover" class="album-cover">
+                    <span class="album-year">1987</span>
+                </div>
+                <div class="album-info">
+                    <h2>Colección Vol. 1</h2>
+                    <h3>Pablo Milanés & Silvio Rodriguez</h3>
+                    <p class="genre-tags">Cantautor, Trova</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/vol2pablosilvio.webp" alt="Colección Vol. 2 Cover" class="album-cover">
+                    <span class="album-year">1987</span>
+                </div>
+                <div class="album-info">
+                    <h2>Colección Vol. 2</h2>
+                    <h3>Pablo Milanés & Silvio Rodriguez</h3>
+                    <p class="genre-tags">Cantautor, Trova</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Eydie Gormé & the Trio Los Panch.jpg" alt="Amor Cover" class="album-cover">
+                    <span class="album-year">1964</span>
+                </div>
+                <div class="album-info">
+                    <h2>Amor</h2>
+                    <h3>Eydie Gormé & the Trio Los Panchos</h3>
+                    <p class="genre-tags">Bolero</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Veracruz Hermoso.jpg" alt="Veracruz Hermoso Cover" class="album-cover">
+                    <span class="album-year">1961</span>
+                </div>
+                <div class="album-info">
+                    <h2>Veracruz Hermoso</h2>
+                    <h3>Conjunto Jarocho Medellin de Lino Chavez</h3>
+                    <p class="genre-tags">Folk</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Amor amor.jpg" alt="Amor amor Cover" class="album-cover">
+                    <span class="album-year">1980</span>
+                </div>
+                <div class="album-info">
+                    <h2>Amor amor</h2>
+                    <h3>José José</h3>
+                    <p class="genre-tags">Pop</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/El príncipe.jpg" alt="El príncipe Cover" class="album-cover">
+                    <span class="album-year">1976</span>
+                </div>
+                <div class="album-info">
+                    <h2>El príncipe</h2>
+                    <h3>José José</h3>
+                    <p class="genre-tags">Pop</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/A Salute To Glenn Miller.jpg" alt="A Salute To Glenn Miller Cover" class="album-cover">
+                    <span class="album-year">1958</span>
+                </div>
+                <div class="album-info">
+                    <h2>A Salute To Glenn Miller</h2>
+                    <h3>Jerry Gray</h3>
+                    <p class="genre-tags">Jazz</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/La Colección De John Lennon.webp" alt="La Colección De John Lennon Cover" class="album-cover">
+                    <span class="album-year">1982</span>
+                </div>
+                <div class="album-info">
+                    <h2>La Colección De John Lennon</h2>
+                    <h3>John Lennon</h3>
+                    <p class="genre-tags">Rock, Pop</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Wings Greatest.jpg" alt="Wings Greatest Cover" class="album-cover">
+                    <span class="album-year">1978</span>
+                </div>
+                <div class="album-info">
+                    <h2>Wings Greatest</h2>
+                    <h3>Wings</h3>
+                    <p class="genre-tags">Rock, Folk</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Reflexiones.jpg" alt="Reflexiones Cover" class="album-cover">
+                    <span class="album-year">1984</span>
+                </div>
+                <div class="album-info">
+                    <h2>Reflexiones</h2>
+                    <h3>José José</h3>
+                    <p class="genre-tags">Pop</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Gracias.jpg" alt="Gracias Cover" class="album-cover">
+                    <span class="album-year">1981</span>
+                </div>
+                <div class="album-info">
+                    <h2>Gracias</h2>
+                    <h3>José José</h3>
+                    <p class="genre-tags">Pop</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Love for Sale.jpg" alt="Love for Sale Cover" class="album-cover">
+                    <span class="album-year">1977</span>
+                </div>
+                <div class="album-info">
+                    <h2>Love for Sale</h2>
+                    <h3>Boney M.</h3>
+                    <p class="genre-tags">Pop</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Inolvidable - Nat King Cole En Español.jpg" alt="Inolvidable - Nat King Cole En Español Cover" class="album-cover">
+                    <span class="album-year">1981</span>
+                </div>
+                <div class="album-info">
+                    <h2>Inolvidable - Nat King Cole En Español</h2>
+                    <h3>Nat King Cole</h3>
+                    <p class="genre-tags">Folk, Bolero</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Rock 'N' Roll Music Volume 2.jpg" alt="Rock 'N' Roll Music Volume 2 Cover" class="album-cover">
+                    <span class="album-year">1982</span>
+                </div>
+                <div class="album-info">
+                    <h2>Rock 'N' Roll Music Volume 2</h2>
+                    <h3>The Beatles</h3>
+                    <p class="genre-tags">Rock, Pop</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Canciones urgentes.jpg" alt="Canciones urgentes Cover" class="album-cover">
+                    <span class="album-year">2015</span>
+                </div>
+                <div class="album-info">
+                    <h2>Canciones urgentes</h2>
+                    <h3>Silvio Rodríguez</h3>
+                    <p class="genre-tags">Cantautor</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Querida.jpg" alt="Querida Cover" class="album-cover">
+                    <span class="album-year">1984</span>
+                </div>
+                <div class="album-info">
+                    <h2>Querida</h2>
+                    <h3>Juan Gabriel</h3>
+                    <p class="genre-tags">Pop</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Bocanada.jpg" alt="Bocanada Cover" class="album-cover">
+                    <span class="album-year">1999</span>
+                </div>
+                <div class="album-info">
+                    <h2>Bocanada</h2>
+                    <h3>Gustavo Cerati</h3>
+                    <p class="genre-tags">Pop, Rock, Hip Hop</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Live Vol1.jpg" alt="Live Vol.1 Cover" class="album-cover">
+                    <span class="album-year">2020</span>
+                </div>
+                <div class="album-info">
+                    <h2>Live Vol.1</h2>
+                    <h3>Parcels</h3>
+                    <p class="genre-tags">Electrónica, Otro</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Living Eyes.jpg" alt="Living Eyes Cover" class="album-cover">
+                    <span class="album-year">1981</span>
+                </div>
+                <div class="album-info">
+                    <h2>Living Eyes</h2>
+                    <h3>Bee Gees</h3>
+                    <p class="genre-tags">Rock, Pop</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/A Night at the Opera.jpg" alt="A Night at the Opera Cover" class="album-cover">
+                    <span class="album-year">1975</span>
+                </div>
+                <div class="album-info">
+                    <h2>A Night at the Opera</h2>
+                    <h3>Queen</h3>
+                    <p class="genre-tags">Rock</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Burning Love.jpg" alt="Burning Love Cover" class="album-cover">
+                    <span class="album-year">1999</span>
+                </div>
+                <div class="album-info">
+                    <h2>Burning Love</h2>
+                    <h3>Elvis Presley</h3>
+                    <p class="genre-tags">Pop</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Potpourri par Piaf .jpg" alt="Potpourri par Piaf Cover" class="album-cover">
+                    <span class="album-year">1962</span>
+                </div>
+                <div class="album-info">
+                    <h2>Potpourri par Piaf</h2>
+                    <h3>Édith Piaf</h3>
+                    <p class="genre-tags">Pop </p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Violines Mágicos.jpeg" alt="Violines Mágicos Cover" class="album-cover">
+                    <span class="album-year">1955</span>
+                </div>
+                <div class="album-info">
+                    <h2>Violines Mágicos</h2>
+                    <h3>Violines Mágicos Villafontana</h3>
+                    <p class="genre-tags">Clásica</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Atom Heart Mother.jpg" alt="Atom Heart Mother Cover" class="album-cover">
+                    <span class="album-year">1970</span>
+                </div>
+                <div class="album-info">
+                    <h2>Atom Heart Mother</h2>
+                    <h3>Pink Floyd</h3>
+                    <p class="genre-tags">Rock</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Sgt. Pepper's Lonely Hearts Club Band .jpg" alt="Sgt. Pepper's Lonely Hearts Club Band Cover" class="album-cover">
+                    <span class="album-year">1967</span>
+                </div>
+                <div class="album-info">
+                    <h2>Sgt. Pepper's Lonely Hearts Club Band</h2>
+                    <h3>The Beatles</h3>
+                    <p class="genre-tags">Pop, Rock</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/The Turn of a Friendly Card .jpg" alt="The Turn of a Friendly Card Cover" class="album-cover">
+                    <span class="album-year">1980</span>
+                </div>
+                <div class="album-info">
+                    <h2>The Turn of a Friendly Card</h2>
+                    <h3>The Alan Parsons Project</h3>
+                    <p class="genre-tags"> Pop, Rock</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Live Album .jpg" alt="Live Album Cover" class="album-cover">
+                    <span class="album-year">1970</span>
+                </div>
+                <div class="album-info">
+                    <h2>Live Album</h2>
+                    <h3>Grand Funk Railroad</h3>
+                    <p class="genre-tags">Rock</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Led Zeppelin.jpg" alt="Led Zeppelin Cover" class="album-cover">
+                    <span class="album-year">1969</span>
+                </div>
+                <div class="album-info">
+                    <h2>Led Zeppelin</h2>
+                    <h3>Led Zeppelin</h3>
+                    <p class="genre-tags"> Rock </p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Rubber Soul.jpg" alt="Rubber Soul Cover" class="album-cover">
+                    <span class="album-year">1965</span>
+                </div>
+                <div class="album-info">
+                    <h2>Rubber Soul</h2>
+                    <h3>The Beatles</h3>
+                    <p class="genre-tags">Pop, Rock</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/The Book of Taliesyn.jpg" alt="The Book of Taliesyn Cover" class="album-cover">
+                    <span class="album-year">1969</span>
+                </div>
+                <div class="album-info">
+                    <h2>The Book of Taliesyn</h2>
+                    <h3>Deep Purple</h3>
+                    <p class="genre-tags">Rock</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/¡Viva Veracruz!.jpeg" alt="¡Viva Veracruz! Cover" class="album-cover">
+                    <span class="album-year">1981</span>
+                </div>
+                <div class="album-info">
+                    <h2>¡Viva Veracruz!</h2>
+                    <h3>Conjunto Sotavento</h3>
+                    <p class="genre-tags">Folk</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Canto A Lo Humano.jpeg" alt="Canto A Lo Humano Cover" class="album-cover">
+                    <span class="album-year">1979</span>
+                </div>
+                <div class="album-info">
+                    <h2>Canto A Lo Humano</h2>
+                    <h3>Victor Jara</h3>
+                    <p class="genre-tags">Cantautor, Folk</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Hot Space.webp" alt="Hot Space Cover" class="album-cover">
+                    <span class="album-year">1982</span>
+                </div>
+                <div class="album-info">
+                    <h2>Hot Space</h2>
+                    <h3>Queen</h3>
+                    <p class="genre-tags">Rock, Pop</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Historia de un amor.webp" alt="Historia de un amor Cover" class="album-cover">
+                    <span class="album-year">1959</span>
+                </div>
+                <div class="album-info">
+                    <h2>Historia de un amor</h2>
+                    <h3>Pedro Infante</h3>
+                    <p class="genre-tags">Bolero</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/15 Exitazos Tropicales De Rigo Tovar Y Su Costa Azul.webp" alt="15 Exitazos Tropicales De Rigo Tovar Y Su Costa Azul Cover" class="album-cover">
+                    <span class="album-year">1981</span>
+                </div>
+                <div class="album-info">
+                    <h2>15 Exitazos Tropicales De Rigo Tovar Y Su Costa Azul</h2>
+                    <h3>Rigo Tovar Y Su Costa Azul</h3>
+                    <p class="genre-tags">Otro</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/El madrileño.webp" alt="El madrileño Cover" class="album-cover">
+                    <span class="album-year">2021</span>
+                </div>
+                <div class="album-info">
+                    <h2>El madrileño</h2>
+                    <h3>C. Tangana</h3>
+                    <p class="genre-tags">Pop, Bolero, Otro</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Jungle.webp" alt="Jungle Cover" class="album-cover">
+                    <span class="album-year">2014</span>
+                </div>
+                <div class="album-info">
+                    <h2>Jungle</h2>
+                    <h3>Jungle</h3>
+                    <p class="genre-tags">Otro</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Dawn FM.webp" alt="Dawn FM Cover" class="album-cover">
+                    <span class="album-year">2022</span>
+                </div>
+                <div class="album-info">
+                    <h2>Dawn FM</h2>
+                    <h3>The Weeknd</h3>
+                    <p class="genre-tags">Pop</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Nectar.webp" alt="Nectar Cover" class="album-cover">
+                    <span class="album-year">2020</span>
+                </div>
+                <div class="album-info">
+                    <h2>Nectar</h2>
+                    <h3>Joji</h3>
+                    <p class="genre-tags">Pop, Hip Hop</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Speak Now.webp" alt="Speak Now Cover" class="album-cover">
+                    <span class="album-year">2010</span>
+                </div>
+                <div class="album-info">
+                    <h2>Speak Now</h2>
+                    <h3>Taylor Swift</h3>
+                    <p class="genre-tags">Pop, Cantautor</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/The Divine Feminine.webp" alt="The Divine Feminine Cover" class="album-cover">
+                    <span class="album-year">2016</span>
+                </div>
+                <div class="album-info">
+                    <h2>The Divine Feminine</h2>
+                    <h3>Mac Miller</h3>
+                    <p class="genre-tags">Hip Hop</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Para cuando me vaya.jpg" alt="Para cuando me vaya Cover" class="album-cover">
+                    <span class="album-year">1978</span>
+                </div>
+                <div class="album-info">
+                    <h2>Para cuando me vaya</h2>
+                    <h3>Nacha Guevara</h3>
+                    <p class="genre-tags">Cantautor, Folk</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/good kid mAAd city.jpg" alt="good kid, m.A.A.d city Cover" class="album-cover">
+                    <span class="album-year">2012</span>
+                </div>
+                <div class="album-info">
+                    <h2>good kid, m.A.A.d city</h2>
+                    <h3>Kendrick Lamar</h3>
+                    <p class="genre-tags">Hip Hop</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/To Pimp a Butterfly.jpg" alt="To Pimp a Butterfly Cover" class="album-cover">
+                    <span class="album-year">2015</span>
+                </div>
+                <div class="album-info">
+                    <h2>To Pimp a Butterfly</h2>
+                    <h3>Kendrick Lamar</h3>
+                    <p class="genre-tags">Hip Hop, Jazz</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Melody And Percussion For Two Pianos.jpeg" alt="Melody And Percussion For Two Pianos Cover" class="album-cover">
+                    <span class="album-year">1961</span>
+                </div>
+                <div class="album-info">
+                    <h2>Melody And Percussion For Two Pianos</h2>
+                    <h3>Ronnie Aldrich And His Two Pianos</h3>
+                    <p class="genre-tags">Jazz, Clásica</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Los Beatles En Clásico.jpeg" alt="Los Beatles En Clásico Cover" class="album-cover">
+                    <span class="album-year">1984</span>
+                </div>
+                <div class="album-info">
+                    <h2>Los Beatles En Clásico</h2>
+                    <h3>Los 12 Cellistas De La Filarmónica De Berlín</h3>
+                    <p class="genre-tags">Clásica, Pop</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Off The Wall.jpg" alt="Off The Wall Cover" class="album-cover">
+                    <span class="album-year">1979</span>
+                </div>
+                <div class="album-info">
+                    <h2>Off The Wall</h2>
+                    <h3>Michael Jackson</h3>
+                    <p class="genre-tags"> Pop</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Canciones Zapotecas Del Istmo Oaxaca.webp" alt="Canciones Zapotecas Del Istmo. Oaxaca Cover" class="album-cover">
+                    <span class="album-year">1996</span>
+                </div>
+                <div class="album-info">
+                    <h2>Canciones Zapotecas Del Istmo. Oaxaca</h2>
+                    <h3>Gabriel Lopez Chiñas, Martin Chacon Carrasco</h3>
+                    <p class="genre-tags">Folk</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/El Silencio.webp" alt="El Silencio Cover" class="album-cover">
+                    <span class="album-year">1992</span>
+                </div>
+                <div class="album-info">
+                    <h2>El Silencio</h2>
+                    <h3>Caifanes</h3>
+                    <p class="genre-tags">Rock, Folk</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Tlen Huicani – Música y Canto Vol I.webp" alt="Tlen Huicani - Música y Canto Vol. I Cover" class="album-cover">
+                    <span class="album-year">2000</span>
+                </div>
+                <div class="album-info">
+                    <h2>Tlen Huicani - Música y Canto Vol. I</h2>
+                    <h3>Tlen Huicani</h3>
+                    <p class="genre-tags">Folk</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Kind Of Blue.webp" alt="Kind Of Blue Cover" class="album-cover">
+                    <span class="album-year">1959</span>
+                </div>
+                <div class="album-info">
+                    <h2>Kind Of Blue</h2>
+                    <h3>Miles Davis</h3>
+                    <p class="genre-tags">Jazz</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Marimba Chiapaneca .webp" alt="Marimba Chiapaneca Cover" class="album-cover">
+                    <span class="album-year">1972</span>
+                </div>
+                <div class="album-info">
+                    <h2>Marimba Chiapaneca</h2>
+                    <h3>Hnos. Moreno García</h3>
+                    <p class="genre-tags">Folk</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/★ (Blackstar).webp" alt="★ (Blackstar) Cover" class="album-cover">
+                    <span class="album-year">2016</span>
+                </div>
+                <div class="album-info">
+                    <h2>★ (Blackstar)</h2>
+                    <h3>David Bowie</h3>
+                    <p class="genre-tags">Rock, Jazz</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Eye In The Sky.webp" alt="Eye In The Sky Cover" class="album-cover">
+                    <span class="album-year">1982</span>
+                </div>
+                <div class="album-info">
+                    <h2>Eye In The Sky</h2>
+                    <h3>The Alan Parsons Project</h3>
+                    <p class="genre-tags">Pop, Rock</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/For The First Time.webp" alt="For The First Time Cover" class="album-cover">
+                    <span class="album-year">2021</span>
+                </div>
+                <div class="album-info">
+                    <h2>For The First Time</h2>
+                    <h3>Black Country, New Road</h3>
+                    <p class="genre-tags">Rock</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Anatomia Musical de.webp" alt="Anatomia Musical de Cover" class="album-cover">
+                    <span class="album-year">1974</span>
+                </div>
+                <div class="album-info">
+                    <h2>Anatomia Musical de</h2>
+                    <h3>Oscar Chávez</h3>
+                    <p class="genre-tags">Cantautor, Folk</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Vulture Culture.webp" alt="Vulture Culture Cover" class="album-cover">
+                    <span class="album-year">1985</span>
+                </div>
+                <div class="album-info">
+                    <h2>Vulture Culture</h2>
+                    <h3>The Alan Parsons Project</h3>
+                    <p class="genre-tags">Rock, Pop</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Tommy.webp" alt="Tommy Cover" class="album-cover">
+                    <span class="album-year">1969</span>
+                </div>
+                <div class="album-info">
+                    <h2>Tommy</h2>
+                    <h3>The Who</h3>
+                    <p class="genre-tags">Rock</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Never A Dull Moment.webp" alt="Never A Dull Moment Cover" class="album-cover">
+                    <span class="album-year">1972</span>
+                </div>
+                <div class="album-info">
+                    <h2>Never A Dull Moment</h2>
+                    <h3>Rod Stewart</h3>
+                    <p class="genre-tags">Folk, Rock</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Wild Life.webp" alt="Wild Life Cover" class="album-cover">
+                    <span class="album-year">1971</span>
+                </div>
+                <div class="album-info">
+                    <h2>Wild Life</h2>
+                    <h3>Wings</h3>
+                    <p class="genre-tags">Rock, Folk, Pop</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Dvořák Symphony No8 In G Major.webp" alt="Dvořák Symphony No.8 In G Major, Op.88 / Tchaikovsky Romeo & Juliet - Fantasy Overture Cover" class="album-cover">
+                    <span class="album-year">1979</span>
+                </div>
+                <div class="album-info">
+                    <h2>Dvořák Symphony No.8 In G Major, Op.88 / Tchaikovsky Romeo & Juliet - Fantasy Overture</h2>
+                    <h3>Wiener Philharmoniker, Herbert von Karajan</h3>
+                    <p class="genre-tags">Clásica</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/The Dark Side Of The Moon.webp" alt="The Dark Side Of The Moon Cover" class="album-cover">
+                    <span class="album-year">1973</span>
+                </div>
+                <div class="album-info">
+                    <h2>The Dark Side Of The Moon</h2>
+                    <h3>Pink Floyd</h3>
+                    <p class="genre-tags">Rock</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/From Every Stage.webp" alt="From Every Stage Cover" class="album-cover">
+                    <span class="album-year">1976</span>
+                </div>
+                <div class="album-info">
+                    <h2>From Every Stage</h2>
+                    <h3>Joan Baez</h3>
+                    <p class="genre-tags">Folk, Pop</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/McCartney.webp" alt="McCartney Cover" class="album-cover">
+                    <span class="album-year">1970</span>
+                </div>
+                <div class="album-info">
+                    <h2>McCartney</h2>
+                    <h3>Paul McCartney</h3>
+                    <p class="genre-tags">Pop, Rock, Cantautor</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Thriller.webp" alt="Thriller Cover" class="album-cover">
+                    <span class="album-year">1982</span>
+                </div>
+                <div class="album-info">
+                    <h2>Thriller</h2>
+                    <h3>Michael Jackson</h3>
+                    <p class="genre-tags">Pop</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Íntimamente.webp" alt="Íntimamente... Cover" class="album-cover">
+                    <span class="album-year">1980</span>
+                </div>
+                <div class="album-info">
+                    <h2>Íntimamente...</h2>
+                    <h3>Emmanuel</h3>
+                    <p class="genre-tags">Pop</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Musica Del Istmo De Tehuantepec Oaxaca.webp" alt="Musica Del Istmo De Tehuantepec Oaxaca Cover" class="album-cover">
+                    <span class="album-year">1972</span>
+                </div>
+                <div class="album-info">
+                    <h2>Musica Del Istmo De Tehuantepec Oaxaca</h2>
+                    <h3>Various</h3>
+                    <p class="genre-tags">Folk</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Canción Por La Unidad Latinoamericana.webp" alt="Canción Por La Unidad Latinoamericana Cover" class="album-cover">
+                    <span class="album-year">1978</span>
+                </div>
+                <div class="album-info">
+                    <h2>Canción Por La Unidad Latinoamericana</h2>
+                    <h3>Pablo Milanés</h3>
+                    <p class="genre-tags"> Cantautor</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Ants From Up There.webp" alt="Ants From Up There Cover" class="album-cover">
+                    <span class="album-year">2022</span>
+                </div>
+                <div class="album-info">
+                    <h2>Ants From Up There</h2>
+                    <h3>Black Country, New Road</h3>
+                    <p class="genre-tags">Rock</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Latinoamerica Canta.webp" alt="Latinoamerica Canta Cover" class="album-cover">
+                    <span class="album-year">1972</span>
+                </div>
+                <div class="album-info">
+                    <h2>Latinoamerica Canta</h2>
+                    <h3>Oscar Chávez</h3>
+                    <p class="genre-tags">Cantautor, Folk</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Discurso Del Cmdte Ernesto Guevara En La XIX Asemblea.webp" alt="Discurso Del Cmdte. Ernesto Guevara En La XIX Asemblea General De Las Naciones Unidas Cover" class="album-cover">
+                    <span class="album-year">1964</span>
+                </div>
+                <div class="album-info">
+                    <h2>Discurso Del Cmdte. Ernesto Guevara En La XIX Asemblea General De Las Naciones Unidas</h2>
+                    <h3>Ernesto Guevara</h3>
+                    <p class="genre-tags">Otro</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Songs In The Key Of Life.webp" alt="Songs In The Key Of Life Cover" class="album-cover">
+                    <span class="album-year">1976</span>
+                </div>
+                <div class="album-info">
+                    <h2>Songs In The Key Of Life</h2>
+                    <h3>Stevie Wonder</h3>
+                    <p class="genre-tags">Pop, Otro</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Lo mato.webp" alt="Lo mato Cover" class="album-cover">
+                    <span class="album-year">1973</span>
+                </div>
+                <div class="album-info">
+                    <h2>Lo mato</h2>
+                    <h3>Willie Colón</h3>
+                    <p class="genre-tags">Otro</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/En El Palacio De Bellas Artes.webp" alt="En El Palacio De Bellas Artes Cover" class="album-cover">
+                    <span class="album-year">1990</span>
+                </div>
+                <div class="album-info">
+                    <h2>En El Palacio De Bellas Artes</h2>
+                    <h3>Juan Gabriel</h3>
+                    <p class="genre-tags">Pop, Otro, Cantautor</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Tracy Chapman.webp" alt="Tracy Chapman Cover" class="album-cover">
+                    <span class="album-year">1988</span>
+                </div>
+                <div class="album-info">
+                    <h2>Tracy Chapman</h2>
+                    <h3>Tracy Chapman</h3>
+                    <p class="genre-tags">Cantautor, Folk, Rock</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Random Access Memory.webp" alt="Random Access Memory Cover" class="album-cover">
+                    <span class="album-year">2013</span>
+                </div>
+                <div class="album-info">
+                    <h2>Random Access Memory</h2>
+                    <h3>Daft Punk</h3>
+                    <p class="genre-tags">Pop, Electrónica</p>
+                </div>
+            </div>
+        
+            <div class="album-card">
+                <div class="album-cover-container">
+                    <img src="Covers/Secretos.webp" alt="Secretos Cover" class="album-cover">
+                    <span class="album-year">1983</span>
+                </div>
+                <div class="album-info">
+                    <h2>Secretos</h2>
+                    <h3>José José</h3>
+                    <p class="genre-tags">Pop</p>
+                </div>
+            </div>
+        
+        </section>
     </main>
 
     <footer>

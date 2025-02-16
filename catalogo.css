@@ -81,51 +81,80 @@ h2 {
 /* GRID DE ÁLBUMES */
 .catalog-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    grid-template-columns: repeat(2, 1fr); /* Two columns for mobile */
+    gap: 10px; /* Smaller gap for a tighter layout */
     padding: 10px;
 }
 
-.album-item {
-    color: #353935;
-    font-weight: bold;
-    background-color: #f7efd2ea;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 140px; 
-    height: 280px; 
-    display: flex;
-    flex-direction: column;
-    justify-self: center;
-    justify-content: space-between;
+/* ALBUM CARD */
+.album-card {
+    position: relative;
+    width: 100%;
+    max-width: 250px;
+    background-color: transparent; /* No background color */
+    border-radius: 15px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #1e1e1e;
+}
+
+/* HOVER EFFECT */
+.album-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* ALBUM COVER */
+.album-cover-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
 }
 
 .album-cover {
     width: 100%;
-    height: 150px; 
-    object-fit: cover; 
-    border-radius: 5px;
-    margin-bottom: -20px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 15px;
 }
 
-.album-item h2 {
-    margin-top: 10px; /* Adjust the top margin */
-    margin-bottom: 5px; /* Add a small bottom margin for spacing */
-    font-size: 1em; /* Optional: Adjust font size if necessary */
+/* ALBUM YEAR BADGE (Bigger Size) */
+.album-year {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #F9F6EE;
+    color: #353b48;
+    font-weight: bold;
+    padding: 8px 12px; /* Bigger size */
+    border-radius: 10px; /* Slightly rounded */
+    font-size: 1em; /* Larger font */
 }
 
-.album-item p {
-    margin-top: -5px; /* Reduce vertical space above the paragraphs */
-    margin-bottom: 1px; /* Add a small bottom margin for spacing */
-    font-size: 0.9em; /* Optional: Keep the text consistent */
-    line-height: 1.2; /* Adjust line spacing for tighter text */
+/* ALBUM INFO */
+.album-info {
+    padding: 10px;
+    text-align: center;
+}
+
+.album-info h2 {
+    font-size: 1.1em;
+    margin: 5px 0;
+    color: #F9F6EE;
+}
+
+.album-info h3 {
+    font-size: 1em;
+    font-weight: 400;
+    opacity: 0.8;
+    color: #F9F6EE;
 }
 
 
 .genre-tags {
     display: none;
+    visibility: hidden;
 }
 
 h2 {
@@ -161,7 +190,7 @@ footer a:hover {
 .sort-container {
     display: flex;
     justify-content: center;
-    position: sticky;
+    position: relative;
     top: 0;
     width: 100%;
     padding: 10px 0;
@@ -207,32 +236,12 @@ footer a:hover {
     } 
 
     .catalog-grid {
-        grid-template-columns: repeat(3, 1fr); /* Keep 2 columns as in mobile */
-        gap: 10px; /* Maintain the same gap */
-        padding: 10px;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
     }
 
-    .album-item {
-        width: 140px; /* Ensure the same width as mobile */
-        height: 350px; /* Maintain the same height */
-    }
-
-    .album-item h2 {
-        margin-top: 10px; /* Match mobile spacing */
-        margin-bottom: 5px;
-    }
-
-    .album-item p {
-        margin-top: 5px;
-        margin-bottom: 5px;
-        line-height: 1.2; /* Keep consistent spacing */
-    }
-
-    .album-cover {
-        width: 100%;
-        height: 150px; /* Same as mobile */
-        object-fit: cover;
-        border-radius: 5px;
+    .album-card {
+        max-width: 300px;
     }
     #sort-options {
         width: 100%;
