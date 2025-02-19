@@ -97,12 +97,14 @@ h2 {
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     background-color: #1e1e1e;
+    z-index: 1;
 }
 
 /* HOVER EFFECT */
 .album-card:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.2);
+    z-index: 10;
 }
 
 /* ALBUM COVER */
@@ -227,6 +229,79 @@ footer a:hover {
 /* CUSTOM DROPDOWN ARROW FOR MOBILE */
 #sort-options::-ms-expand {
     display: none; /* Hides the default arrow in IE */
+}
+
+/* pop out for album cards */
+.popup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Make the popup visible */
+.popup.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* POP-UP CONTENT */
+.popup-content {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0px 8px 20px rgba(255, 255, 255, 0.2);
+    position: relative;
+}
+
+/* CLOSE BUTTON */
+.close-popup {
+    position: absolute;
+    top: -65px;
+    right: 5px;
+    font-size: 4em;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* ALBUM COVER INSIDE POP-UP */
+.popup-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* ALBUM INFO */
+.popup-info {
+    color: #fff;
+    margin-top: 10px;
+}
+
+.popup-info h2 {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+.popup-info h3 {
+    font-size: 1.2em;
+    opacity: 0.8;
+}
+
+.popup-info p {
+    font-size: 1em;
+    opacity: 0.7;
 }
 
 /* Media query for desktop screens */

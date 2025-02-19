@@ -80,3 +80,50 @@ function sortCatalog() {
     catalogGrid.innerHTML = '';
     albums.forEach(album => catalogGrid.appendChild(album));
 }
+
+// Select elements
+const popup = document.getElementById('album-popup');
+const popupCover = document.getElementById('popup-cover');
+const popupTitle = document.getElementById('popup-title');
+const popupArtist = document.getElementById('popup-artist');
+const popupYear = document.getElementById('popup-year');
+const popupGenres = document.getElementById('popup-genres');
+const closePopup = document.querySelector('.close-popup');
+
+// Function to open pop-up with album details
+function openPopup(event) {
+    let albumCard = event.currentTarget;
+    
+    let coverSrc = albumCard.querySelector('.album-cover').src;
+    let title = albumCard.querySelector('h2').innerText;
+    let artist = albumCard.querySelector('h3').innerText;
+    let year = albumCard.querySelector('.album-year').innerText;
+    let genres = albumCard.querySelector('.genre-tags').innerText;
+
+    // Set content in the popup
+    popupCover.src = coverSrc;
+    popupTitle.innerText = title;
+    popupArtist.innerText = artist;
+    popupYear.innerText = `📅 Año: ${year}`;
+    popupGenres.innerText = `🎵 Géneros: ${genres}`;
+
+    // Show the popup
+    popup.classList.add('visible');
+}
+
+// Close pop-up
+closePopup.addEventListener('click', () => {
+    popup.classList.remove('visible');
+});
+
+// Close pop-up when clicking outside the content
+popup.addEventListener('click', (event) => {
+    if (event.target === popup) {
+        popup.classList.remove('visible');
+    }
+});
+
+// Add click event to each album card
+document.querySelectorAll('.album-card').forEach(album => {
+    album.addEventListener('click', openPopup);
+});
