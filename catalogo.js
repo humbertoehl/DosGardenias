@@ -1,3 +1,5 @@
+
+// Filtering
 function filterCatalog() {
     let input = document.getElementById('search-bar').value.toLowerCase();
     let albums = document.getElementsByClassName('album-card');
@@ -16,7 +18,7 @@ function filterCatalog() {
     }
 }
 
-// 🔽 ORDENAMIENTO (Sorting)
+// Sorting
 function sortCatalog() {
     let sortOption = document.getElementById('sort-options');
     let selectedValue = sortOption.value;
@@ -28,14 +30,14 @@ function sortCatalog() {
             albums.sort((a, b) => {
                 let yearA = parseInt(a.getElementsByClassName('album-year')[0].innerText);
                 let yearB = parseInt(b.getElementsByClassName('album-year')[0].innerText);
-                return yearA - yearB; // Ascending
+                return yearA - yearB; 
             });
             break;
         case 'year-desc':
             albums.sort((a, b) => {
                 let yearA = parseInt(a.getElementsByClassName('album-year')[0].innerText);
                 let yearB = parseInt(b.getElementsByClassName('album-year')[0].innerText);
-                return yearB - yearA; // Descending
+                return yearB - yearA; 
             });
             break;
         case 'artist-asc':
@@ -66,22 +68,20 @@ function sortCatalog() {
                 return titleB.localeCompare(titleA);
             });
             break;
-        case 'random': // 🎲 Force reshuffle every time it's selected
+        case 'random': 
             albums.sort(() => Math.random() - 0.5);
-            
-            // Reset selection to allow re-selection of "Random"
-            sortOption.selectedIndex = 0;
+            sortOption.selectedIndex = 0; // To reshuffle wen clicking again
             break;
         default:
             return;
     }
 
-    // Reorder the albums inside the grid
+    // Reorder
     catalogGrid.innerHTML = '';
     albums.forEach(album => catalogGrid.appendChild(album));
 }
 
-// Select elements
+
 const popup = document.getElementById('album-popup');
 const popupCover = document.getElementById('popup-cover');
 const popupTitle = document.getElementById('popup-title');
@@ -90,7 +90,7 @@ const popupYear = document.getElementById('popup-year');
 const popupGenres = document.getElementById('popup-genres');
 const closePopup = document.querySelector('.close-popup');
 
-// Function to open pop-up with album details
+
 function openPopup(event) {
     let albumCard = event.currentTarget;
     
@@ -100,30 +100,25 @@ function openPopup(event) {
     let year = albumCard.querySelector('.album-year').innerText;
     let genres = albumCard.querySelector('.genre-tags').innerText;
 
-    // Set content in the popup
     popupCover.src = coverSrc;
     popupTitle.innerText = title;
     popupArtist.innerText = artist;
     popupYear.innerText = `📅 Año: ${year}`;
     popupGenres.innerText = `🎵 Géneros: ${genres}`;
 
-    // Show the popup
     popup.classList.add('visible');
 }
 
-// Close pop-up
 closePopup.addEventListener('click', () => {
     popup.classList.remove('visible');
 });
 
-// Close pop-up when clicking outside the content
 popup.addEventListener('click', (event) => {
     if (event.target === popup) {
         popup.classList.remove('visible');
     }
 });
 
-// Add click event to each album card
 document.querySelectorAll('.album-card').forEach(album => {
     album.addEventListener('click', openPopup);
 });
