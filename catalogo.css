@@ -4,7 +4,7 @@ body {
     margin-top: 30px;
     color: #fff;
     background-color: #305ba0; 
-    background-image: url('resources/noisy.png');
+    background-image: url('resources/fondo.png');
     background-size: contain;
     background-repeat: repeat; 
     background-blend-mode: screen; 
@@ -21,13 +21,18 @@ header {
 }
 
 .logo {
-    width: 100px;
+    width: 150px;
     height: auto;
     filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.3)); /* Subtle shadow for depth */
+    background-color: #1e1e1e;
+    border-radius: 20px;
 }
 .title-container {
     text-align: center;
     margin-bottom: 15px;
+    background-color: #1e1e1e;
+    border-radius: 20px;
+    padding-bottom: 10px;
 }
 main {
     margin-top: 0px;
@@ -46,8 +51,8 @@ h2 {
     font-size: 1.4em;
     color: #F9F6EE;
     font-weight: 600;
-    margin-bottom: 20px;
     opacity: 0.8;
+    margin-bottom: 10px;
 }
 
 /* BARRA DE BÚSQUEDA */
@@ -64,8 +69,8 @@ h2 {
     padding: 12px;
     font-size: 1em;
     font-weight: bold;
-    color: #353935;
-    background-color: #f7efd2ea;
+    color: #ffffff;
+    background-color: #1e1e1e;
     border: 2px solid #353b48;
     border-radius: 25px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -218,8 +223,8 @@ footer a:hover {
     padding: 14px;
     font-size: 1.2em;
     font-weight: bold;
-    color: #353935;
-    background-color: #f7efd2ea;
+    color: #ffffff;
+    background-color: #1e1e1e;
     border: 2px solid #353b48;
     border-radius: 25px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);

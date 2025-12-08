@@ -5,7 +5,7 @@ body {
     margin-top: 30px;
     color: #fff;
     background-color: #305ba0; 
-    background-image: url('resources/noisy.png');
+    background-image: url('resources/fondo.png');
     background-size: contain;
     background-repeat: repeat; 
     background-blend-mode: screen; 
@@ -23,6 +23,8 @@ a {
 .logo {
     width: 150px;
     height: auto;
+    background-color: #4a67a4;
+    border-radius: 30px;
     filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.5)); 
 }
 
@@ -31,12 +33,25 @@ a {
     height: auto;
 }
 
+.menupngtemp {
+    width: 95%;
+    height: auto;
+    margin-top: 50px;
+}
+
 /* Título de la página */
 h1 {
     font-size: 2.5em;
-    margin-top: -10px;
+    margin-top: 10px;
     margin-bottom: 20px;
+    padding: auto;
     color: #fff;
+    background-color: #4a67a4;
+    border-radius: 10px;
+}
+h2 {    
+    background-color: #4a67a4;
+    border-radius: 20px;
 }
 
 /* Contenedor de eventos */
