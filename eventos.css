@@ -319,3 +319,28 @@ button:active {
     background: transparent;
     border: none;
 }
+
+
+@media (min-width: 700px) {
+  body{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    height: auto;
+  }
+  h1{
+    max-width: 600px;     /* controla el ancho */
+    margin: 40px auto 40px auto; /* centrado horizontal + espacio vertical */
+    padding: 10px 20px 10px;
+  }
+  h2{
+    min-width: 500px;
+    padding: 10px 0px 10px 0px;
+  }
+
+  img {
+    max-width: 800px;
+  }
+}
