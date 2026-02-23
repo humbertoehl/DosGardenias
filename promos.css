@@ -1,0 +1,173 @@
+body {
+    font-family: "Montserrat", serif;
+    text-align: center;
+    margin-top: 30px;
+    color: #fff;
+    background-color: #305ba0; 
+    background-image: url('resources/fondo.webp');
+    background-size: contain;
+    background-repeat: repeat; 
+    background-blend-mode: screen; 
+    height: 700vh;
+    font-optical-sizing: auto;
+    font-weight: 800;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.3)); /* Subtle shadow for depth */
+    background-color: #1e1e1e;
+    border-radius: 20px;
+}
+.title-container {
+    text-align: center;
+    margin-bottom: 15px;
+    background-color: #1e1e1e;
+    border-radius: 20px;
+    padding-bottom: 10px;
+}
+main {
+    margin-top: 0px;
+    padding: 5px;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #F9F6EE;
+    margin: 5px 0 5px; /* Adjusted for better spacing */
+    font-weight: 800;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+    font-size: 1.4em;
+    color: #F9F6EE;
+    font-weight: 600;
+    opacity: 0.8;
+    margin-bottom: 10px;
+}
+
+.promos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 15px;
+}
+
+
+.promo-card {
+    background-color: #1e1e1e;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.promo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+
+.promo-header {
+    min-height: max-content;
+    padding: 12px;
+    background: linear-gradient(135deg, #1e1e1e, #434548);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.promo-day {
+    font-size: 1.1em;
+    font-weight: 600;
+    background: #F9F6EE;
+    color: #353b48;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 6px;
+}
+
+.promo-title {
+    font-size: 1em;
+    margin: 0;
+    font-weight: 700;
+}
+
+
+
+.promo-body {
+    padding: 10px 12px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.promo-image {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.promo-description {
+    font-size: 0.9em;
+    font-weight: 400;
+    opacity: 0.85;
+    line-height: 1.4;
+    margin: 0;
+}
+
+
+
+.page-footer {
+    margin: 30px 0 40px;
+}
+
+.back-link {
+    color: #F9F6EE;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+
+@media (min-width: 768px) {
+    .title-container{
+        max-width: 600px;     
+        margin: 0 auto 0 auto;
+        padding: 10px 20px 10px;
+    }
+
+    .title-container {
+        margin: 30px auto 35px auto;
+    }
+
+    .promos-grid {
+        max-width: 1100px;
+        margin: 0 auto;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+
+    .promo-title {
+        font-size: 1.1em;
+    }
+
+    .promo-description {
+        font-size: 0.95em;
+    }
+}
