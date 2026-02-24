@@ -23,7 +23,7 @@ a {
 .logo {
     width: 150px;
     height: auto;
-    background-color: #4a67a4;
+    background-color: #1e1e1e;
     border-radius: 30px;
     filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.5)); 
 }
@@ -46,11 +46,11 @@ h1 {
     margin-bottom: 20px;
     padding: auto;
     color: #fff;
-    background-color: #4a67a4;
+    background-color: #1e1e1e;
     border-radius: 10px;
 }
 h2 {    
-    background-color: #4a67a4;
+    background-color: #1e1e1e;
     border-radius: 20px;
 }
 
