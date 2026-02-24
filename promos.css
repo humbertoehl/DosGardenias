@@ -17,7 +17,6 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px 0;
 }
 
 .logo {
@@ -25,7 +24,7 @@ header {
     height: auto;
     filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.3));
     background-color: #1e1e1e;
-    border-radius: 20px;
+    border-radius: 30px;
 }
 .title-container {
     text-align: center;
@@ -146,6 +145,14 @@ h2 {
 
 
 @media (min-width: 768px) {
+    body{
+        background-size:contain;
+        background-repeat: repeat;
+        background-position: center;
+        background-attachment: fixed;
+        min-height: 100vh;
+        height: auto;
+    }
     .title-container{
         max-width: 600px;     
         margin: 0 auto 0 auto;

@@ -306,8 +306,8 @@ button:active {
 
 @media (min-width: 700px) {
   body{
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-size:contain;
+    background-repeat: repeat;
     background-position: center;
     background-attachment: fixed;
     min-height: 100vh;

@@ -17,7 +17,6 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px 0;
 }
 
 .logo {
@@ -25,7 +24,7 @@ header {
     height: auto;
     filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.3));
     background-color: #1e1e1e;
-    border-radius: 20px;
+    border-radius: 30px;
 }
 .title-container {
     text-align: center;
@@ -328,8 +327,8 @@ footer a:hover {
 
 @media (min-width: 700px) {
   body{
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-size:contain;
+    background-repeat: repeat;
     background-position: center;
     background-attachment: fixed;
     min-height: 100vh;
