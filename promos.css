@@ -23,7 +23,7 @@ header {
 .logo {
     width: 150px;
     height: auto;
-    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.3)); /* Subtle shadow for depth */
+    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.3));
     background-color: #1e1e1e;
     border-radius: 20px;
 }
@@ -42,7 +42,7 @@ main {
 h1 {
     font-size: 2.5em;
     color: #F9F6EE;
-    margin: 5px 0 5px; /* Adjusted for better spacing */
+    margin: 5px 0 5px;
     font-weight: 800;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
 }

@@ -1,5 +1,3 @@
-
-// Filtering
 function filterCatalog() {
     let input = document.getElementById('search-bar').value.toLowerCase();
     let albums = document.getElementsByClassName('album-card');
@@ -18,7 +16,6 @@ function filterCatalog() {
     }
 }
 
-// Sorting
 function sortCatalog() {
     let sortOption = document.getElementById('sort-options');
     let selectedValue = sortOption.value;
@@ -70,13 +67,12 @@ function sortCatalog() {
             break;
         case 'random': 
             albums.sort(() => Math.random() - 0.5);
-            sortOption.selectedIndex = 0; // To reshuffle wen clicking again
+            sortOption.selectedIndex = 0; 
             break;
         default:
             return;
     }
 
-    // Reorder
     catalogGrid.innerHTML = '';
     albums.forEach(album => catalogGrid.appendChild(album));
 }

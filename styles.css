@@ -24,7 +24,7 @@ h1 {
 .logo {
     width: 150px;
     height: auto;
-    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.3)); /* Subtle shadow for depth */
+    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.3));
     background-color: #1e1e1e;
     border-radius: 20px;
 }
@@ -59,42 +59,39 @@ button:active {
     transform: translateY(0);
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
 }
-/* Social buttons container */
+
 .social-buttons {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: -5px; /* Space between buttons */
+    gap: -5px;
     margin-top: -15px;
 }
 
-/* Social button style */
 .social-btn {
-    width: 65px; /* Square size */
+    width: 65px;
     height: 65px;
     background:#fff;
-    background-color: #fff; /* Background color */
-    border: none; /* Remove default border */
-    border-radius: 20px; /* Slight rounding for aesthetics */
+    background-color: #fff;
+    border: none;
+    border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     margin-left: 13px;
     margin-right: 13px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover effect */
 .social-btn:hover {
-    transform: scale(1.1); /* Slightly enlarge */
+    transform: scale(1.1);
     box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Logo inside the button */
 .social-logo {
-    width: 40px; /* Adjust size of the logo */
+    width: 40px;
     height: 40px;
 }
 
@@ -109,13 +106,13 @@ button:active {
     gap: 10px;
     border-radius: 20px;
 }
-/* Botón de CUPÓN 30% */
+
 .cupon-btn {
     display: block;
     width: 250px;
     margin: 20px auto;
     padding: 15px 20px;
-    background-color: #305ba0; /* Azul vistoso */
+    background-color: #305ba0;
     color: white;
     font-weight: bold;
     font-size: 18px;
@@ -128,7 +125,7 @@ button:active {
 }
 
 .cupon-btn:hover {
-    background-color: #0056b3; /* Azul más oscuro en hover */
+    background-color: #0056b3;
     transform: translateY(-3px);
     box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
 }
@@ -138,7 +135,6 @@ button:active {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Media query for desktop screens */
 @media (min-width: 700px) {
   body{
     background-size: cover;

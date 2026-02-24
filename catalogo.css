@@ -23,7 +23,7 @@ header {
 .logo {
     width: 150px;
     height: auto;
-    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.3)); /* Subtle shadow for depth */
+    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.3));
     background-color: #1e1e1e;
     border-radius: 20px;
 }
@@ -42,7 +42,7 @@ main {
 h1 {
     font-size: 2.5em;
     color: #F9F6EE;
-    margin: 5px 0 5px; /* Adjusted for better spacing */
+    margin: 5px 0 5px;
     font-weight: 800;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
 }
@@ -55,7 +55,6 @@ h2 {
     margin-bottom: 10px;
 }
 
-/* BARRA DE BÚSQUEDA */
 .search-container {
     display: flex;
     justify-content: center;
@@ -65,7 +64,7 @@ h2 {
 
 #search-bar {
     width: 100%;
-    max-width: 400px; /* Prevents excessive stretching on larger screens */
+    max-width: 400px; 
     padding: 12px;
     font-size: 1em;
     font-weight: bold;
@@ -86,17 +85,17 @@ h2 {
 /* GRID DE ÁLBUMES */
 .catalog-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two columns for mobile */
-    gap: 10px; /* Smaller gap for a tighter layout */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 10px; 
     padding: 10px;
 }
 
-/* ALBUM CARD */
+
 .album-card {
     position: relative;
     width: 100%;
     max-width: 250px;
-    background-color: transparent; /* No background color */
+    background-color: transparent;
     border-radius: 15px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
     overflow: hidden;
@@ -105,14 +104,14 @@ h2 {
     z-index: 1;
 }
 
-/* HOVER EFFECT */
+
 .album-card:hover {
     transform: scale(1.05);
     box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.2);
     z-index: 10;
 }
 
-/* ALBUM COVER */
+
 .album-cover-container {
     position: relative;
     width: 100%;
@@ -126,7 +125,7 @@ h2 {
     border-radius: 15px;
 }
 
-/* ALBUM YEAR BADGE (Bigger Size) */
+
 .album-year {
     position: absolute;
     top: 10px;
@@ -134,9 +133,9 @@ h2 {
     background: #F9F6EE;
     color: #353b48;
     font-weight: bold;
-    padding: 8px 12px; /* Bigger size */
-    border-radius: 10px; /* Slightly rounded */
-    font-size: 1em; /* Larger font */
+    padding: 8px 12px; 
+    border-radius: 10px; 
+    font-size: 1em;
 }
 .album-price {
     position: absolute;
@@ -145,12 +144,11 @@ h2 {
     background: #f9c74f;
     color: #353b48;
     font-weight: bold;
-    padding: 8px 12px; /* Bigger size */
-    border-radius: 10px; /* Slightly rounded */
-    font-size: 1em; /* Larger font */
+    padding: 8px 12px;
+    border-radius: 10px;
+    font-size: 1em;
 }
 
-/* ALBUM INFO */
 .album-info {
     padding: 10px;
     text-align: center;
@@ -203,8 +201,7 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* ORDENAMIENTO */
-/* SORT CONTAINER (Mobile-First Design) */
+
 .sort-container {
     display: flex;
     justify-content: center;
@@ -216,7 +213,6 @@ footer a:hover {
     z-index: 100;
 }
 
-/* SORT DROPDOWN (Optimized for Mobile) */
 #sort-options {
     width: 90%;
     max-width: 280px;
@@ -229,12 +225,12 @@ footer a:hover {
     border-radius: 25px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease-in-out;
-    appearance: none; /* Hides default dropdown arrow */
+    appearance: none; 
     text-align: center;
     cursor: pointer;
 }
 
-/* HOVER & FOCUS EFFECT */
+
 #sort-options:focus,
 #sort-options:hover {
     border-color: #173a7c;
@@ -242,12 +238,12 @@ footer a:hover {
     outline: none;
 }
 
-/* CUSTOM DROPDOWN ARROW FOR MOBILE */
+
 #sort-options::-ms-expand {
-    display: none; /* Hides the default arrow in IE */
+    display: none;
 }
 
-/* pop out for album cards */
+
 .popup {
     display: flex;
     align-items: center;
@@ -257,7 +253,7 @@ footer a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    background-color: rgba(0, 0, 0, 0.8); 
     z-index: 1000;
     opacity: 0;
     visibility: hidden;
@@ -276,13 +272,13 @@ footer a:hover {
     text-align: center;
     box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
-/* Make the popup visible */
+
 .popup.visible {
     opacity: 1;
     visibility: visible;
 }
 
-/* POP-UP CONTENT */
+
 .popup-content {
     background-color: #1e1e1e;
     padding: 20px;
@@ -294,7 +290,6 @@ footer a:hover {
     position: relative;
 }
 
-/* CLOSE BUTTON */
 .close-popup {
     position: absolute;
     top: -65px;
@@ -304,14 +299,12 @@ footer a:hover {
     cursor: pointer;
 }
 
-/* ALBUM COVER INSIDE POP-UP */
 .popup-content img {
     width: 100%;
     height: auto;
     border-radius: 10px;
 }
 
-/* ALBUM INFO */
 .popup-info {
     color: #fff;
     margin-top: 10px;

@@ -1,4 +1,3 @@
-/* Estilos globales */
 body {
     font-family: "Montserrat", serif;
     text-align: center;
@@ -19,7 +18,6 @@ a {
     text-decoration: none;
 }
 
-/* Logo */
 .logo {
     width: 150px;
     height: auto;
@@ -39,7 +37,6 @@ a {
     margin-top: 50px;
 }
 
-/* Título de la página */
 h1 {
     font-size: 2.5em;
     margin-top: 10px;
@@ -54,7 +51,6 @@ h2 {
     border-radius: 20px;
 }
 
-/* Contenedor de eventos */
 .events-container {
     display: flex;
     flex-direction: column;
@@ -63,13 +59,11 @@ h2 {
     gap: 20px;
 }
 
-/* Tarjeta de evento */
 .event-link {
     text-decoration: none;
     color: inherit;
 }
 
-/* Tarjeta clicable con efecto hover */
 .event-card {
     background-color: rgba(249, 246, 238, 0.8);
     border-radius: 15px;
@@ -89,7 +83,6 @@ h2 {
     box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Sección de fecha del evento */
 .event-date {
     background-color: #fff;
     color: #333;
@@ -105,14 +98,12 @@ h2 {
     text-decoration: none;
 }
 
-/* Contenido del evento (foto + descripción) */
 .event-content {
     display: flex;
     align-items: center;
     text-decoration: none;
 }
 
-/* Foto del evento */
 .event-photo {
     width: 140px;
     height: 140px;
@@ -121,7 +112,6 @@ h2 {
     margin-right: 15px;
 }
 
-/* Información del evento */
 .event-info h3 {
     font-size: 1.5em;
     margin-bottom: 10px;
@@ -135,7 +125,6 @@ h2 {
     text-decoration: none;
 }
 
-/* Botón de acción */
 button {
     display: block;
     width: 250px;
@@ -164,7 +153,6 @@ button:active {
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Ajustes responsivos */
 @media (max-width: 600px) {
     .event-card {
         flex-direction: column;
@@ -182,7 +170,6 @@ button:active {
     }
 }
 
-/* Sección de contacto para eventos */
 .contact-event {
     margin: 40px auto;
     text-align: center;
@@ -200,7 +187,6 @@ button:active {
     color: #f9f6ee;
 }
 
-/* Estilo del botón de WhatsApp */
 .whatsapp-btn {
     display: inline-flex;
     align-items: center;
@@ -231,9 +217,8 @@ button:active {
     margin-right: 10px;
 }
 
-/* Estilo para la sección de instrucciones */
 .cupon-instructions {
-    text-align: left; /* Alineación para una mejor lectura */
+    text-align: left; 
     color: #fff;
     margin: 10px;
     font-size: 1.2em;
@@ -262,26 +247,24 @@ button:active {
 }
 .cupon-instructions p strong {
     font-size: small;
-    color: #ffcc00; /* Color amarillo dorado para resaltar */
-    font-size: .8em; /* Tamaño ligeramente más grande */
+    color: #ffcc00;
+    font-size: .8em; 
 }
 
-
-
-/* Contenedor del mapa */
 .map-container {
     display: flex;
     justify-content: center;
     margin: 20px 0;
 }
-/* Contenedor del mapa con bordes redondeados */
+
 .map-container iframe {
+    width: 400px;
+    height: 200px;
     border-radius: 25px; 
     overflow: hidden; 
     border: none; 
 }
 
-/* Pop-up styles */
 .popup {
     display: flex;
     align-items: center;
@@ -331,8 +314,8 @@ button:active {
     height: auto;
   }
   h1{
-    max-width: 600px;     /* controla el ancho */
-    margin: 40px auto 40px auto; /* centrado horizontal + espacio vertical */
+    max-width: 600px;
+    margin: 40px auto 40px auto;
     padding: 10px 20px 10px;
   }
   h2{

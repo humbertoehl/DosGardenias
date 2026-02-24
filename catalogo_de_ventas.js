@@ -1,4 +1,4 @@
-// --- Filtrado ---
+
 function filterCatalog() {
     const input = document.getElementById('search-bar').value.toLowerCase();
     const albums = document.getElementsByClassName('album-card');
@@ -16,7 +16,7 @@ function filterCatalog() {
     }
 }
 
-// Ordenamiento para el nuevo formato
+
 function sortCatalog() {
     let sortOption = document.getElementById('sort-options');
     let selectedValue = sortOption.value;
@@ -68,13 +68,12 @@ function sortCatalog() {
             break;
         case 'random': 
             albums.sort(() => Math.random() - 0.5);
-            sortOption.selectedIndex = 0; // Reset to default
+            sortOption.selectedIndex = 0;
             break;
         default:
             return;
     }
 
-    // Reordenar visualmente
     catalogGrid.innerHTML = '';
     albums.forEach(album => catalogGrid.appendChild(album));
 }
