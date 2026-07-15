@@ -29,24 +29,30 @@
             <h2>¡Pide al staff que ponga uno!</h2>
         </div>
     
-        <div class="search-container">
-            <input type="text" id="search-bar" onkeyup="filterCatalog()" placeholder="Buscar álbum, artista, género...">
+        <div class="controls-bar">
+            <div class="search-container">
+                <input type="text" id="search-bar" onkeyup="filterCatalog()" placeholder="Buscar álbum, artista, género...">
+            </div>
+
+            <div class="sort-container">
+                <select id="sort-options" onchange="sortCatalog()">
+                    <option value="default" disabled selected> Ordenar por</option>
+                    <option value="random">🎲 Random</option>
+                    <option value="year-asc">📅 Año 🔽</option>
+                    <option value="year-desc">📅 Año 🔼</option>
+                    <option value="artist-asc">🎤 Artista 🔽</option>
+                    <option value="artist-desc">🎤 Artista 🔼</option>
+                    <option value="title-asc">📖 Título 🔽</option>
+                    <option value="title-desc">📖 Título 🔼</option>
+                </select>
+            </div>
+
+            <div class="genre-filter" id="genre-filter"></div>
+
+            <p id="results-count" class="results-count"></p>
         </div>
 
-        <div class="sort-container">
-            <select id="sort-options" onchange="sortCatalog()">
-                <option value="default" disabled selected> Ordenar por</option>
-                <option value="random">🎲 Random</option> 
-                <option value="year-asc">📅 Año 🔽</option>
-                <option value="year-desc">📅 Año 🔼</option>
-                <option value="artist-asc">🎤 Artista 🔽</option>
-                <option value="artist-desc">🎤 Artista 🔼</option>
-                <option value="title-asc">📖 Título 🔽</option>
-                <option value="title-desc">📖 Título 🔼</option>
-            </select>
-        </div>
-
-        <div id="album-popup" class="popup hidden">
+        <div id="album-popup" class="popup">
             <div class="popup-content">
                 <span class="close-popup">&times;</span>
                 <img id="popup-cover" src="" alt="Album Cover">
@@ -58,12 +64,14 @@
                 </div>
             </div>
         </div>
-        
+
+        <p id="no-results" class="no-results">😕 No se encontraron discos con esa búsqueda.</p>
+
         <section class="catalog-grid">
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/nirvana-in-utero-Cover-Art (1).webp" alt="In Utero Cover" class="album-cover">
+                    <img src="Covers/nirvana-in-utero-Cover-Art (1).webp" alt="In Utero Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1993</span>
                 </div>
                 <div class="album-info">
@@ -73,9 +81,9 @@
                 </div>
             </div>
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/pink-floyd-the-wall-Cover-Art (1).webp" alt="The Wall Cover" class="album-cover">
+                    <img src="Covers/pink-floyd-the-wall-Cover-Art (1).webp" alt="The Wall Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1979</span>
                 </div>
                 <div class="album-info">
@@ -85,9 +93,9 @@
                 </div>
             </div>
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/tame-impala-currents-Cover-Art (1).webp" alt="Currents Cover" class="album-cover">
+                    <img src="Covers/tame-impala-currents-Cover-Art (1).webp" alt="Currents Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2015</span>
                 </div>
                 <div class="album-info">
@@ -97,9 +105,9 @@
                 </div>
             </div>
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/stromae-multitude-Cover-Art (1).webp" alt="Multitude Cover" class="album-cover">
+                    <img src="Covers/stromae-multitude-Cover-Art (1).webp" alt="Multitude Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2022</span>
                 </div>
                 <div class="album-info">
@@ -108,9 +116,9 @@
                     <p class="genre-tags">French Pop, Art Pop, Digital Cumbia, Afrobeats</p>
                 </div>
             </div>
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/la-maquina-de-hacer-pajaros-peliculas-Cover-Art (1).webp" alt="Películas Cover" class="album-cover">
+                    <img src="Covers/la-maquina-de-hacer-pajaros-peliculas-Cover-Art (1).webp" alt="Películas Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1977</span>
                 </div>
                 <div class="album-info">
@@ -120,9 +128,9 @@
                 </div>
             </div>
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/miles-davis-in-a-silent-way-Cover-Art (1).webp" alt="In A Silent Way Cover" class="album-cover">
+                    <img src="Covers/miles-davis-in-a-silent-way-Cover-Art (1).webp" alt="In A Silent Way Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1969</span>
                 </div>
                 <div class="album-info">
@@ -132,9 +140,9 @@
                 </div>
             </div>
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/福居良-ryo-fukui-シーナリィ-Cover-Art (1).webp" alt="Scenery [シーナリィ] Cover" class="album-cover">
+                    <img src="Covers/福居良-ryo-fukui-シーナリィ-Cover-Art (1).webp" alt="Scenery [シーナリィ] Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1976</span>
                 </div>
                 <div class="album-info">
@@ -144,9 +152,9 @@
                 </div>
             </div>
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/sonny-rollins-quartet-tenor-madness-Cover-Art (1).webp" alt="Tenor Madness Cover" class="album-cover">
+                    <img src="Covers/sonny-rollins-quartet-tenor-madness-Cover-Art (1).webp" alt="Tenor Madness Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1956</span>
                 </div>
                 <div class="album-info">
@@ -156,9 +164,9 @@
                 </div>
             </div>
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/parcels-loved-Cover-Art (1).webp" alt="LOVED Cover" class="album-cover">
+                    <img src="Covers/parcels-loved-Cover-Art (1).webp" alt="LOVED Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2025</span>
                 </div>
                 <div class="album-info">
@@ -168,9 +176,9 @@
                 </div>
             </div>
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/michael-jackson-bad-Cover-Art (1).webp" alt="Bad Cover" class="album-cover">
+                    <img src="Covers/michael-jackson-bad-Cover-Art (1).webp" alt="Bad Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1987</span>
                 </div>
                 <div class="album-info">
@@ -180,9 +188,9 @@
                 </div>
             </div>
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/led-zeppelin-led-zeppelin-Cover-Art (1).webp" alt="Led Zeppelin Cover" class="album-cover">
+                    <img src="Covers/led-zeppelin-led-zeppelin-Cover-Art (1).webp" alt="Led Zeppelin Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1969</span>
                 </div>
                 <div class="album-info">
@@ -192,9 +200,9 @@
                 </div>
             </div>
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/sade-the-best-of-sade-Cover-Art (1).webp" alt="The Best of Sade Cover" class="album-cover">
+                    <img src="Covers/sade-the-best-of-sade-Cover-Art (1).webp" alt="The Best of Sade Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1994</span>
                 </div>
                 <div class="album-info">
@@ -204,9 +212,9 @@
                 </div>
             </div>
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/le-sserafim-easy-crazy-hot-Cover-Art (1).webp" alt="Easy-Crazy-Hot Cover" class="album-cover">
+                    <img src="Covers/le-sserafim-easy-crazy-hot-Cover-Art (1).webp" alt="Easy-Crazy-Hot Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2025</span>
                 </div>
                 <div class="album-info">
@@ -216,9 +224,9 @@
                 </div>
             </div>
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/bad-bunny-debi-tirar-mas-fotos-Cover-Art.webp" alt="DeBÍ TiRAR MáS FOToS Cover" class="album-cover">
+                    <img src="Covers/bad-bunny-debi-tirar-mas-fotos-Cover-Art.webp" alt="DeBÍ TiRAR MáS FOToS Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2025</span>
                 </div>
                 <div class="album-info">
@@ -227,9 +235,9 @@
                     <p class="genre-tags">Reggaeton, Caribeña, Salsa</p>
                 </div>
             </div>
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/silvana-estrada-marchita-Cover-Art.webp" alt="Marchita Cover" class="album-cover">
+                    <img src="Covers/silvana-estrada-marchita-Cover-Art.webp" alt="Marchita Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2022</span>
                 </div>
                 <div class="album-info">
@@ -239,9 +247,9 @@
                 </div>
             </div>
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/ca7riel-and-paco-amoroso-papota-Cover-Art.webp" alt="PAPOTA Cover" class="album-cover">
+                    <img src="Covers/ca7riel-and-paco-amoroso-papota-Cover-Art.webp" alt="PAPOTA Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2025</span>
                 </div>
                 <div class="album-info">
@@ -251,9 +259,9 @@
                 </div>
             </div>
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/silvana-estrada-vendran-suaves-lluvias-Cover-Art.webp" alt="Vendrán suaves lluvias Cover" class="album-cover">
+                    <img src="Covers/silvana-estrada-vendran-suaves-lluvias-Cover-Art.webp" alt="Vendrán suaves lluvias Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2025</span>
                 </div>
                 <div class="album-info">
@@ -263,9 +271,9 @@
                 </div>
             </div>
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/joji-piss-in-the-wind-Cover-Art.webp" alt="Piss in the Wind Cover" class="album-cover">
+                    <img src="Covers/joji-piss-in-the-wind-Cover-Art.webp" alt="Piss in the Wind Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2026</span>
                 </div>
                 <div class="album-info">
@@ -274,9 +282,9 @@
                     <p class="genre-tags">R&B alternativo, Alt-Pop, Lo-Fi Hip Hop</p>
                 </div>
             </div>
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/zoe-mtv-unplugged-musica-de-fondo-Cover-Art.webp" alt="Música de Fondo (Unplugged On MTV) Cover" class="album-cover">
+                    <img src="Covers/zoe-mtv-unplugged-musica-de-fondo-Cover-Art.webp" alt="Música de Fondo (Unplugged On MTV) Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2011</span>
                 </div>
                 <div class="album-info">
@@ -286,9 +294,9 @@
                 </div>
             </div>
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/katseye-beautiful-chaos-Cover-Art.webp" alt="Beautiful Chaos Cover" class="album-cover">
+                    <img src="Covers/katseye-beautiful-chaos-Cover-Art.webp" alt="Beautiful Chaos Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2025</span>
                 </div>
                 <div class="album-info">
@@ -298,9 +306,9 @@
                 </div>
             </div>
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/billie-eilish-hit-me-hard-and-soft-Cover-Art.webp" alt="Hit Me Hard and Soft Cover" class="album-cover">
+                    <img src="Covers/billie-eilish-hit-me-hard-and-soft-Cover-Art.webp" alt="Hit Me Hard and Soft Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2024</span>
                 </div>
                 <div class="album-info">
@@ -310,9 +318,9 @@
                 </div>
             </div>
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/silvio-rodriguez-rabo-de-nube-Cover-Art.webp" alt="Rabo de Nube Cover" class="album-cover">
+                    <img src="Covers/silvio-rodriguez-rabo-de-nube-Cover-Art.webp" alt="Rabo de Nube Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1979</span>
                 </div>
                 <div class="album-info">
@@ -322,9 +330,9 @@
                 </div>
             </div>
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/arctic-monkeys-am-Cover-Art.webp" alt="AM Cover" class="album-cover">
+                    <img src="Covers/arctic-monkeys-am-Cover-Art.webp" alt="AM Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2013</span>
                 </div>
                 <div class="album-info">
@@ -334,9 +342,9 @@
                 </div>
             </div>
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/pescado-rabioso-artaud-Cover-Art.webp" alt="Artaud Cover" class="album-cover">
+                    <img src="Covers/pescado-rabioso-artaud-Cover-Art.webp" alt="Artaud Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1973</span>
                 </div>
                 <div class="album-info">
@@ -346,9 +354,9 @@
                 </div>
             </div>
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/charles-mingus-mingus-ah-um-Cover-Art.webp" alt="Mingus Ah Um Cover" class="album-cover">
+                    <img src="Covers/charles-mingus-mingus-ah-um-Cover-Art.webp" alt="Mingus Ah Um Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1959</span>
                 </div>
                 <div class="album-info">
@@ -358,9 +366,9 @@
                 </div>
             </div>
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/gorillaz-cracker-island-Cover-Art.webp" alt="Cracker Island Cover" class="album-cover">
+                    <img src="Covers/gorillaz-cracker-island-Cover-Art.webp" alt="Cracker Island Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2023</span>
                 </div>
                 <div class="album-info">
@@ -370,9 +378,9 @@
                 </div>
             </div>
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/linkin-park-meteora-Cover-Art.webp" alt="Meteora Cover" class="album-cover">
+                    <img src="Covers/linkin-park-meteora-Cover-Art.webp" alt="Meteora Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2003</span>
                 </div>
                 <div class="album-info">
@@ -382,9 +390,9 @@
                 </div>
             </div>
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/linkin-park-hybrid-theory-Cover-Art.webp" alt="Hybrid Theory Cover" class="album-cover">
+                    <img src="Covers/linkin-park-hybrid-theory-Cover-Art.webp" alt="Hybrid Theory Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2000</span>
                 </div>
                 <div class="album-info">
@@ -394,9 +402,9 @@
                 </div>
             </div>
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/buena-vista-social-club-buena-vista-social-club-Cover-Art (1).webp" alt="Buena Vista Social Club Cover" class="album-cover">
+                    <img src="Covers/buena-vista-social-club-buena-vista-social-club-Cover-Art (1).webp" alt="Buena Vista Social Club Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1997</span>
                 </div>
                 <div class="album-info">
@@ -406,9 +414,9 @@
                 </div>
             </div>
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/yussef-dayes-black-classical-music-Cover-Art (1).webp" alt="Black Classical Music Cover" class="album-cover">
+                    <img src="Covers/yussef-dayes-black-classical-music-Cover-Art (1).webp" alt="Black Classical Music Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2023</span>
                 </div>
                 <div class="album-info">
@@ -418,9 +426,9 @@
                 </div>
             </div>
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/gods-pee-allelujah-dont-bend-ascend-Cover-Art (1).webp" alt="'Allelujah! Don't Bend Ascend Cover" class="album-cover">
+                    <img src="Covers/gods-pee-allelujah-dont-bend-ascend-Cover-Art (1).webp" alt="'Allelujah! Don't Bend Ascend Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2012</span>
                 </div>
                 <div class="album-info">
@@ -430,9 +438,9 @@
                 </div>
             </div>
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/el-leon-pardo-viaje-sideral-Cover-Art (1).webp" alt="Viaje Sideral Cover" class="album-cover">
+                    <img src="Covers/el-leon-pardo-viaje-sideral-Cover-Art (1).webp" alt="Viaje Sideral Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2025</span>
                 </div>
                 <div class="album-info">
@@ -442,9 +450,9 @@
                 </div>
             </div>
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/tyler-the-creator-flower-boy-Cover-Art (1).webp" alt="Flower Boy Cover" class="album-cover">
+                    <img src="Covers/tyler-the-creator-flower-boy-Cover-Art (1).webp" alt="Flower Boy Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2017</span>
                 </div>
                 <div class="album-info">
@@ -454,9 +462,9 @@
                 </div>
             </div>
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/eminem-the-eminem-show-Cover-Art (1).webp" alt="The Eminem Show Cover" class="album-cover">
+                    <img src="Covers/eminem-the-eminem-show-Cover-Art (1).webp" alt="The Eminem Show Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2002</span>
                 </div>
                 <div class="album-info">
@@ -466,9 +474,9 @@
                 </div>
             </div>
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/jungle-volcano-Cover-Art (1).webp" alt="Volcano Cover" class="album-cover">
+                    <img src="Covers/jungle-volcano-Cover-Art (1).webp" alt="Volcano Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2023</span>
                 </div>
                 <div class="album-info">
@@ -478,9 +486,9 @@
                 </div>
             </div> 
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/talking-heads-fear-of-music-Cover-Art.webp" alt="Fear Of Music Cover" class="album-cover">
+                    <img src="Covers/talking-heads-fear-of-music-Cover-Art.webp" alt="Fear Of Music Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1979</span>
                 </div>
                 <div class="album-info">
@@ -490,9 +498,9 @@
                 </div>
             </div>
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/pentatonix-pentatonix-Cover-Art.webp" alt="Pentatonix Cover" class="album-cover">
+                    <img src="Covers/pentatonix-pentatonix-Cover-Art.webp" alt="Pentatonix Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2015</span>
                 </div>
                 <div class="album-info">
@@ -502,9 +510,9 @@
                 </div>
             </div>
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/the-flaming-lips-transmissions-from-the-satellite-heart-Cover-Art.webp" alt="Transmissions From The Satélite Heart Cover" class="album-cover">
+                    <img src="Covers/the-flaming-lips-transmissions-from-the-satellite-heart-Cover-Art.webp" alt="Transmissions From The Satélite Heart Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1993</span>
                 </div>
                 <div class="album-info">
@@ -514,9 +522,9 @@
                 </div>
             </div>
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/interpol-el-pintor-Cover-Art.webp" alt="El Pintor Cover" class="album-cover">
+                    <img src="Covers/interpol-el-pintor-Cover-Art.webp" alt="El Pintor Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2014</span>
                 </div>
                 <div class="album-info">
@@ -526,9 +534,9 @@
                 </div>
             </div>
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/soda-stereo-cancion-animal-Cover-Art.webp" alt="Canción Animal Cover" class="album-cover">
+                    <img src="Covers/soda-stereo-cancion-animal-Cover-Art.webp" alt="Canción Animal Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1990</span>
                 </div>
                 <div class="album-info">
@@ -538,9 +546,9 @@
                 </div>
             </div>
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/juan-gabriel-cosas-de-enamorados-Cover-Art.webp" alt="Cosas De Enamorados Cover" class="album-cover">
+                    <img src="Covers/juan-gabriel-cosas-de-enamorados-Cover-Art.webp" alt="Cosas De Enamorados Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1982</span>
                 </div>
                 <div class="album-info">
@@ -550,9 +558,9 @@
                 </div>
             </div>
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/david-bowie-heroes-Cover-Art.webp" alt="&quot;Heroes&quot; Cover" class="album-cover">
+                    <img src="Covers/david-bowie-heroes-Cover-Art.webp" alt="&quot;Heroes&quot; Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1977</span>
                 </div>
                 <div class="album-info">
@@ -562,9 +570,9 @@
                 </div>
             </div>
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/el-mato-a-un-policia-motorizado-la-sintesis-okonor-Cover-Art.webp" alt="La Síntesis O'Konor Cover" class="album-cover">
+                    <img src="Covers/el-mato-a-un-policia-motorizado-la-sintesis-okonor-Cover-Art.webp" alt="La Síntesis O'Konor Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2017</span>
                 </div>
                 <div class="album-info">
@@ -574,9 +582,9 @@
                 </div>
             </div>
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/mgmt-oracular-spectacular-Cover-Art.webp" alt="Oracular Spectacular Cover" class="album-cover">
+                    <img src="Covers/mgmt-oracular-spectacular-Cover-Art.webp" alt="Oracular Spectacular Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2008</span>
                 </div>
                 <div class="album-info">
@@ -586,9 +594,9 @@
                 </div>
             </div>
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/quilapayun-el-pueblo-unido-jamas-sera-vencido-Cover-Art (1).webp" alt="El pueblo unido jamas sera vencido Cover" class="album-cover">
+                    <img src="Covers/quilapayun-el-pueblo-unido-jamas-sera-vencido-Cover-Art (1).webp" alt="El pueblo unido jamas sera vencido Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1975</span>
                 </div>
                 <div class="album-info">
@@ -598,9 +606,9 @@
                 </div>
             </div>
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/rosalia-motomami-Cover-Art (1).webp" alt="Motomami Cover" class="album-cover">
+                    <img src="Covers/rosalia-motomami-Cover-Art (1).webp" alt="Motomami Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2022</span>
                 </div>
                 <div class="album-info">
@@ -610,9 +618,9 @@
                 </div>
             </div>
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/steve-lacy-gemini-rights-Cover-Art (1).webp" alt="Gemini Rights Cover" class="album-cover">
+                    <img src="Covers/steve-lacy-gemini-rights-Cover-Art (1).webp" alt="Gemini Rights Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2022</span>
                 </div>
                 <div class="album-info">
@@ -622,9 +630,9 @@
                 </div>
             </div>
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/black-sabbath-paranoid-Cover-Art (1).webp" alt="Paranoid Cover" class="album-cover">
+                    <img src="Covers/black-sabbath-paranoid-Cover-Art (1).webp" alt="Paranoid Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1970</span>
                 </div>
                 <div class="album-info">
@@ -634,9 +642,9 @@
                 </div>
             </div>
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/silvio-rodriguez-mujeres-Cover-Art (1).webp" alt="Mujeres Cover" class="album-cover">
+                    <img src="Covers/silvio-rodriguez-mujeres-Cover-Art (1).webp" alt="Mujeres Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1978</span>
                 </div>
                 <div class="album-info">
@@ -649,9 +657,9 @@
 
 
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/bob-dylan-the-freewheelin-bob-dylan-Cover-Art (1).webp" alt="The Freewheelin' Cover" class="album-cover">
+                    <img src="Covers/bob-dylan-the-freewheelin-bob-dylan-Cover-Art (1).webp" alt="The Freewheelin' Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1963</span>
                 </div>
                 <div class="album-info">
@@ -662,9 +670,9 @@
             </div>
 
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/gorillaz-plastic-beach-Cover-Art.webp" alt="Plastic Beach Cover" class="album-cover">
+                    <img src="Covers/gorillaz-plastic-beach-Cover-Art.webp" alt="Plastic Beach Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2010</span>
                 </div>
                 <div class="album-info">
@@ -674,9 +682,9 @@
                 </div>
             </div>
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/rose-rosie-Cover-Art.webp" alt="Rosie Cover" class="album-cover">
+                    <img src="Covers/rose-rosie-Cover-Art.webp" alt="Rosie Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2024</span>
                 </div>
                 <div class="album-info">
@@ -686,9 +694,9 @@
                 </div>
             </div>
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/harry-styles-harrys-house-Cover-Art.webp" alt="Harry's House Cover" class="album-cover">
+                    <img src="Covers/harry-styles-harrys-house-Cover-Art.webp" alt="Harry's House Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2022</span>
                 </div>
                 <div class="album-info">
@@ -698,9 +706,9 @@
                 </div>
             </div>
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/natalia-lafourcade-cancionera-Cover-Art.webp" alt="Cancionera Cover" class="album-cover">
+                    <img src="Covers/natalia-lafourcade-cancionera-Cover-Art.webp" alt="Cancionera Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2025</span>
                 </div>
                 <div class="album-info">
@@ -710,9 +718,9 @@
                 </div>
             </div>
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/the-weeknd-starboy-Cover-Art.webp" alt="Starboy Cover" class="album-cover">
+                    <img src="Covers/the-weeknd-starboy-Cover-Art.webp" alt="Starboy Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2016</span>
                 </div>
                 <div class="album-info">
@@ -722,9 +730,9 @@
                 </div>
             </div>
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/system-of-a-down-mezmerize-Cover-Art.webp" alt="Mezmerize Cover" class="album-cover">
+                    <img src="Covers/system-of-a-down-mezmerize-Cover-Art.webp" alt="Mezmerize Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2005</span>
                 </div>
                 <div class="album-info">
@@ -735,9 +743,9 @@
             </div>
 
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/mivida-ezgif.com-jpg-to-webp-converter.webp" alt="Mi Vida Cover" class="album-cover">
+                    <img src="Covers/mivida-ezgif.com-jpg-to-webp-converter.webp" alt="Mi Vida Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1982</span>
                 </div>
                 <div class="album-info">
@@ -747,9 +755,9 @@
                 </div>
             </div>
             
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/quilapayun-quilapayun-cover-art.webp" alt="Quilapayún Cover" class="album-cover">
+                    <img src="Covers/quilapayun-quilapayun-cover-art.webp" alt="Quilapayún Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1967</span>
                 </div>
                 <div class="album-info">
@@ -759,9 +767,9 @@
                 </div>
             </div>
             
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/el -hombre-el-paisaje-y-su-cancion-cover-art.webp" alt="El hombre el paisaje y su canción Cover" class="album-cover">
+                    <img src="Covers/el -hombre-el-paisaje-y-su-cancion-cover-art.webp" alt="El hombre el paisaje y su canción Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1968</span>
                 </div>
                 <div class="album-info">
@@ -771,9 +779,9 @@
                 </div>
             </div>
             
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Yoshimi-Battles-The-Pink-Robots-Cover.webp" alt="Yoshimi Battles The Pink Robots Cover" class="album-cover">
+                    <img src="Covers/Yoshimi-Battles-The-Pink-Robots-Cover.webp" alt="Yoshimi Battles The Pink Robots Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2002</span>
                 </div>
                 <div class="album-info">
@@ -783,9 +791,9 @@
                 </div>
             </div>
             
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Closer-Cover.webp" alt="Closer Cover" class="album-cover">
+                    <img src="Covers/Closer-Cover.webp" alt="Closer Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1980</span>
                 </div>
                 <div class="album-info">
@@ -795,9 +803,9 @@
                 </div>
             </div>
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/la-barranca-antimateria-Cover-Art.webp" alt="Antimateria Cover" class="album-cover">
+                    <img src="Covers/la-barranca-antimateria-Cover-Art.webp" alt="Antimateria Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2024</span>
                 </div>
                 <div class="album-info">
@@ -807,9 +815,9 @@
                 </div>
             </div>
             
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Orquídeas-Cover.webp" alt="ORQUÍDEAS Cover" class="album-cover">
+                    <img src="Covers/Orquídeas-Cover.webp" alt="ORQUÍDEAS Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2024</span>
                 </div>
                 <div class="album-info">
@@ -819,9 +827,9 @@
                 </div>
             </div>
             
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/childish-gambino-awaken-my-love-Cover-Art.webp" alt="Awaken, My Love! Cover" class="album-cover">
+                    <img src="Covers/childish-gambino-awaken-my-love-Cover-Art.webp" alt="Awaken, My Love! Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2016</span>
                 </div>
                 <div class="album-info">
@@ -831,9 +839,9 @@
                 </div>
             </div>
             
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/kendrick-lamar-mr-morale-and-the-big-steppers-Cover-Art.webp" alt="Mr. Morale & The Big Steppers Cover" class="album-cover">
+                    <img src="Covers/kendrick-lamar-mr-morale-and-the-big-steppers-Cover-Art.webp" alt="Mr. Morale & The Big Steppers Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2022</span>
                 </div>
                 <div class="album-info">
@@ -843,9 +851,9 @@
                 </div>
             </div>
             
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/daniel-pemberton-spider-man-across-the-spider-verse-Cover-Art.webp" alt="Spider-Man: Across the Spider-Verse Cover" class="album-cover">
+                    <img src="Covers/daniel-pemberton-spider-man-across-the-spider-verse-Cover-Art.webp" alt="Spider-Man: Across the Spider-Verse Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2023</span>
                 </div>
                 <div class="album-info">
@@ -855,9 +863,9 @@
                 </div>
             </div>
             
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/burbujitas-album-cover.webp" alt="Burbujitas Cover" class="album-cover">
+                    <img src="Covers/burbujitas-album-cover.webp" alt="Burbujitas Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1979</span>
                 </div>
                 <div class="album-info">
@@ -867,9 +875,9 @@
                 </div>
             </div>
             
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/rancheras-con-javier-solis-album-cover.webp" alt="Rancheras Con Javier Solis Cover" class="album-cover">
+                    <img src="Covers/rancheras-con-javier-solis-album-cover.webp" alt="Rancheras Con Javier Solis Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1967</span>
                 </div>
                 <div class="album-info">
@@ -879,9 +887,9 @@
                 </div>
             </div>
             
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/The-Tortured-Poets-Department-Cover.webp" alt="The Tortured Poets Department Cover" class="album-cover">
+                    <img src="Covers/The-Tortured-Poets-Department-Cover.webp" alt="The Tortured Poets Department Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2024</span>
                 </div>
                 <div class="album-info">
@@ -891,9 +899,9 @@
                 </div>
             </div>
             
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/De-Todas-Las-Flores-Cover.webp" alt="De Todas Las Flores Cover" class="album-cover">
+                    <img src="Covers/De-Todas-Las-Flores-Cover.webp" alt="De Todas Las Flores Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2022</span>
                 </div>
                 <div class="album-info">
@@ -903,9 +911,9 @@
                 </div>
             </div>
             
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Hurry-Up-Tomorrow-Cover.webp" alt="Hurry Up Tomorrow Cover" class="album-cover">
+                    <img src="Covers/Hurry-Up-Tomorrow-Cover.webp" alt="Hurry Up Tomorrow Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2025</span>
                 </div>
                 <div class="album-info">
@@ -915,9 +923,9 @@
                 </div>
             </div>
             
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Damn-Cover.webp" alt="Damn. Cover" class="album-cover">
+                    <img src="Covers/Damn-Cover.webp" alt="Damn. Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2017</span>
                 </div>
                 <div class="album-info">
@@ -927,9 +935,9 @@
                 </div>
             </div>
             
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Carrie-_-Lowell-Cover.webp" alt="Carrie & Lowell Cover" class="album-cover">
+                    <img src="Covers/Carrie-_-Lowell-Cover.webp" alt="Carrie & Lowell Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2015</span>
                 </div>
                 <div class="album-info">
@@ -939,9 +947,9 @@
                 </div>
             </div>
             
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/El Diablito Cover.webp" alt="El Diablito Cover" class="album-cover">
+                    <img src="Covers/El Diablito Cover.webp" alt="El Diablito Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1990</span>
                 </div>
                 <div class="album-info">
@@ -951,9 +959,9 @@
                 </div>
             </div>
             
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Wish You Were Here Cover.webp" alt="Wish You Were Here Cover" class="album-cover">
+                    <img src="Covers/Wish You Were Here Cover.webp" alt="Wish You Were Here Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1975</span>
                 </div>
                 <div class="album-info">
@@ -963,9 +971,9 @@
                 </div>
             </div>
             
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/GNX.webp" alt="GNX Cover" class="album-cover">
+                    <img src="Covers/GNX.webp" alt="GNX Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2024</span>
                 </div>
                 <div class="album-info">
@@ -975,9 +983,9 @@
                 </div>
             </div>
             
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/In the aeroplane over the sea.webp" alt="In the Aeroplane Over the Sea Cover" class="album-cover">
+                    <img src="Covers/In the aeroplane over the sea.webp" alt="In the Aeroplane Over the Sea Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1998</span>
                 </div>
                 <div class="album-info">
@@ -987,9 +995,9 @@
                 </div>
             </div>
             
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/igor.webp" alt="Igor Cover" class="album-cover">
+                    <img src="Covers/igor.webp" alt="Igor Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2019</span>
                 </div>
                 <div class="album-info">
@@ -999,9 +1007,9 @@
                 </div>
             </div>
             
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/the now now.webp" alt="The Now Now Cover" class="album-cover">
+                    <img src="Covers/the now now.webp" alt="The Now Now Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2018</span>
                 </div>
                 <div class="album-info">
@@ -1011,9 +1019,9 @@
                 </div>
             </div>
             
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/A day at the races.webp" alt="A Day at the Races Cover" class="album-cover">
+                    <img src="Covers/A day at the races.webp" alt="A Day at the Races Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1976</span>
                 </div>
                 <div class="album-info">
@@ -1023,9 +1031,9 @@
                 </div>
             </div>
             
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/minutes to midnight.webp" alt="Minutes To Midnight Cover" class="album-cover">
+                    <img src="Covers/minutes to midnight.webp" alt="Minutes To Midnight Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2007</span>
                 </div>
                 <div class="album-info">
@@ -1034,9 +1042,9 @@
                     <p class="genre-tags">Rock Alternativo, Pop Rock, Metal Alternativo</p>
                 </div>
             </div>
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/live-at-budokan-1.webp" alt="Bob Dylan At Budokan Cover" class="album-cover">
+                    <img src="Covers/live-at-budokan-1.webp" alt="Bob Dylan At Budokan Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1979</span>
                 </div>
                 <div class="album-info">
@@ -1046,9 +1054,9 @@
                 </div>
             </div>
             
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/joan-baez-vol-2-1.webp" alt="Joan Baez, Vol. 2 Cover" class="album-cover">
+                    <img src="Covers/joan-baez-vol-2-1.webp" alt="Joan Baez, Vol. 2 Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1974</span>
                 </div>
                 <div class="album-info">
@@ -1058,9 +1066,9 @@
                 </div>
             </div>
             
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/canciones del solar de los aburridos.webp" alt="Canciones del solar de los aburridos Cover" class="album-cover">
+                    <img src="Covers/canciones del solar de los aburridos.webp" alt="Canciones del solar de los aburridos Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1981</span>
                 </div>
                 <div class="album-info">
@@ -1070,9 +1078,9 @@
                 </div>
             </div>
             
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/future nostalgia.webp" alt="Future Nostalgia Cover" class="album-cover">
+                    <img src="Covers/future nostalgia.webp" alt="Future Nostalgia Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2020</span>
                 </div>
                 <div class="album-info">
@@ -1082,9 +1090,9 @@
                 </div>
             </div>
             
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/ballads 1.webp" alt="Ballads 1 Cover" class="album-cover">
+                    <img src="Covers/ballads 1.webp" alt="Ballads 1 Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2018</span>
                 </div>
                 <div class="album-info">
@@ -1094,9 +1102,9 @@
                 </div>
             </div>
 
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/la nube en el jardin-1.webp" alt="La nube en el jardín Cover" class="album-cover">
+                    <img src="Covers/la nube en el jardin-1.webp" alt="La nube en el jardín Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2024</span>
                 </div>
                 <div class="album-info">
@@ -1106,9 +1114,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/amadeus.webp" alt="Amadeus Cover" class="album-cover">
+                    <img src="Covers/amadeus.webp" alt="Amadeus Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1984</span>
                 </div>
                 <div class="album-info">
@@ -1118,9 +1126,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/los grandes exitos de the platers.webp" alt="Los Grandes Éxitos De The Platters Cover" class="album-cover">
+                    <img src="Covers/los grandes exitos de the platers.webp" alt="Los Grandes Éxitos De The Platters Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1980</span>
                 </div>
                 <div class="album-info">
@@ -1130,9 +1138,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/tiempo pa matar.webp" alt="Tiempo Pá Matar Cover" class="album-cover">
+                    <img src="Covers/tiempo pa matar.webp" alt="Tiempo Pá Matar Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1985</span>
                 </div>
                 <div class="album-info">
@@ -1142,9 +1150,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/los 3 grandes.webp" alt="Los 3 Grandes Cover" class="album-cover">
+                    <img src="Covers/los 3 grandes.webp" alt="Los 3 Grandes Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1973</span>
                 </div>
                 <div class="album-info">
@@ -1154,9 +1162,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/music inspired by star wars.webp" alt="Music Inspired By Star Wars And Other Galactic Funk Cover" class="album-cover">
+                    <img src="Covers/music inspired by star wars.webp" alt="Music Inspired By Star Wars And Other Galactic Funk Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1977</span>
                 </div>
                 <div class="album-info">
@@ -1166,9 +1174,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/super salsa singers vol3.webp" alt="Super Salsa Singers Vol. III Cover" class="album-cover">
+                    <img src="Covers/super salsa singers vol3.webp" alt="Super Salsa Singers Vol. III Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1981</span>
                 </div>
                 <div class="album-info">
@@ -1178,9 +1186,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/rizoma.webp" alt="Rizoma Cover" class="album-cover">
+                    <img src="Covers/rizoma.webp" alt="Rizoma Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2023</span>
                 </div>
                 <div class="album-info">
@@ -1190,9 +1198,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/animals.webp" alt="Animals Cover" class="album-cover">
+                    <img src="Covers/animals.webp" alt="Animals Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1977</span>
                 </div>
                 <div class="album-info">
@@ -1202,9 +1210,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/4.webp" alt="4 Cover" class="album-cover">
+                    <img src="Covers/4.webp" alt="4 Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1981</span>
                 </div>
                 <div class="album-info">
@@ -1214,9 +1222,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/mas canciones del grillito.webp" alt="Más Canciones de El Grillito Cantor Cover" class="album-cover">
+                    <img src="Covers/mas canciones del grillito.webp" alt="Más Canciones de El Grillito Cantor Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1958</span>
                 </div>
                 <div class="album-info">
@@ -1226,9 +1234,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/bachata rosa.webp" alt="Bachata rosa Cover" class="album-cover">
+                    <img src="Covers/bachata rosa.webp" alt="Bachata rosa Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1990</span>
                 </div>
                 <div class="album-info">
@@ -1238,9 +1246,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/exodus.webp" alt="Exodus Cover" class="album-cover">
+                    <img src="Covers/exodus.webp" alt="Exodus Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1977</span>
                 </div>
                 <div class="album-info">
@@ -1250,9 +1258,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/amy-winehouse-back-to-black-Cover-Art-1.webp" alt="Back to Black Cover" class="album-cover">
+                    <img src="Covers/amy-winehouse-back-to-black-Cover-Art-1.webp" alt="Back to Black Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2006</span>
                 </div>
                 <div class="album-info">
@@ -1262,9 +1270,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/joji-smithereens-Cover-Art-1.webp" alt="SMITHEREENS Cover" class="album-cover">
+                    <img src="Covers/joji-smithereens-Cover-Art-1.webp" alt="SMITHEREENS Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2022</span>
                 </div>
                 <div class="album-info">
@@ -1274,9 +1282,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/the-strokes-the-new-abnormal-Cover-Art-1.webp" alt="The New Abnormal Cover" class="album-cover">
+                    <img src="Covers/the-strokes-the-new-abnormal-Cover-Art-1.webp" alt="The New Abnormal Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2020</span>
                 </div>
                 <div class="album-info">
@@ -1286,9 +1294,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/alaizquierda.webp" alt="A la Izquierda de la Tierra Cover" class="album-cover">
+                    <img src="Covers/alaizquierda.webp" alt="A la Izquierda de la Tierra Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1999</span>
                 </div>
                 <div class="album-info">
@@ -1298,9 +1306,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/toxicity_1.webp" alt="Toxicity Cover" class="album-cover">
+                    <img src="Covers/toxicity_1.webp" alt="Toxicity Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2001</span>
                 </div>
                 <div class="album-info">
@@ -1310,9 +1318,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/remaininlight_1.webp" alt="Remain In Light Cover" class="album-cover">
+                    <img src="Covers/remaininlight_1.webp" alt="Remain In Light Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1980</span>
                 </div>
                 <div class="album-info">
@@ -1322,9 +1330,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/variouspositions_1.webp" alt="Various Positions Cover" class="album-cover">
+                    <img src="Covers/variouspositions_1.webp" alt="Various Positions Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1984</span>
                 </div>
                 <div class="album-info">
@@ -1334,9 +1342,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/thebeggar_1.webp" alt="The Beggar Cover" class="album-cover">
+                    <img src="Covers/thebeggar_1.webp" alt="The Beggar Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2023</span>
                 </div>
                 <div class="album-info">
@@ -1346,9 +1354,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Íntimamente.webp" alt="Íntimamente... Cover" class="album-cover">
+                    <img src="Covers/Íntimamente.webp" alt="Íntimamente... Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1980</span>
                 </div>
                 <div class="album-info">
@@ -1358,9 +1366,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/greatest-hits-donna-summer.webp" alt="Greatest Hits - Volume Two Cover" class="album-cover">
+                    <img src="Covers/greatest-hits-donna-summer.webp" alt="Greatest Hits - Volume Two Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1979</span>
                 </div>
                 <div class="album-info">
@@ -1370,9 +1378,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/bandido.webp" alt="Bandido Cover" class="album-cover">
+                    <img src="Covers/bandido.webp" alt="Bandido Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1984</span>
                 </div>
                 <div class="album-info">
@@ -1382,9 +1390,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Black Lipstick.webp" alt="Black Lipstick Cover" class="album-cover">
+                    <img src="Covers/Black Lipstick.webp" alt="Black Lipstick Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2015</span>
                 </div>
                 <div class="album-info">
@@ -1394,9 +1402,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Mambo.webp" alt="Mambo Cover" class="album-cover">
+                    <img src="Covers/Mambo.webp" alt="Mambo Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1965</span>
                 </div>
                 <div class="album-info">
@@ -1406,9 +1414,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Tons Que Mami.webp" alt="Ton's Que Mami Cover" class="album-cover">
+                    <img src="Covers/Tons Que Mami.webp" alt="Ton's Que Mami Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1984</span>
                 </div>
                 <div class="album-info">
@@ -1418,9 +1426,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Tim Burtons The Nightmare Before Christmas.webp" alt="Tim Burton's The Nightmare Before Christmas (Original Motion Picture Soundtrack) Cover" class="album-cover">
+                    <img src="Covers/Tim Burtons The Nightmare Before Christmas.webp" alt="Tim Burton's The Nightmare Before Christmas (Original Motion Picture Soundtrack) Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1993</span>
                 </div>
                 <div class="album-info">
@@ -1430,9 +1438,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/The Rise and Fall of Ziggy Stardust and the Spiders From Mars.jpg" alt="The Rise and Fall of Ziggy Stardust and the Spiders From Mars Cover" class="album-cover">
+                    <img src="Covers/The Rise and Fall of Ziggy Stardust and the Spiders From Mars.jpg" alt="The Rise and Fall of Ziggy Stardust and the Spiders From Mars Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1972</span>
                 </div>
                 <div class="album-info">
@@ -1442,9 +1450,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/unicornio.jpg" alt="Unicornio Cover" class="album-cover">
+                    <img src="Covers/unicornio.jpg" alt="Unicornio Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1982</span>
                 </div>
                 <div class="album-info">
@@ -1454,9 +1462,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/vol1pablosilvio.webp" alt="Colección Vol. 1 Cover" class="album-cover">
+                    <img src="Covers/vol1pablosilvio.webp" alt="Colección Vol. 1 Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1987</span>
                 </div>
                 <div class="album-info">
@@ -1466,9 +1474,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/vol2pablosilvio.webp" alt="Colección Vol. 2 Cover" class="album-cover">
+                    <img src="Covers/vol2pablosilvio.webp" alt="Colección Vol. 2 Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1987</span>
                 </div>
                 <div class="album-info">
@@ -1478,9 +1486,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Eydie Gormé & the Trio Los Panch.jpg" alt="Amor Cover" class="album-cover">
+                    <img src="Covers/Eydie Gormé & the Trio Los Panch.jpg" alt="Amor Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1964</span>
                 </div>
                 <div class="album-info">
@@ -1490,9 +1498,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Veracruz Hermoso.jpg" alt="Veracruz Hermoso Cover" class="album-cover">
+                    <img src="Covers/Veracruz Hermoso.jpg" alt="Veracruz Hermoso Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1961</span>
                 </div>
                 <div class="album-info">
@@ -1502,9 +1510,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Amor amor.jpg" alt="Amor amor Cover" class="album-cover">
+                    <img src="Covers/Amor amor.jpg" alt="Amor amor Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1980</span>
                 </div>
                 <div class="album-info">
@@ -1514,9 +1522,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/El príncipe.jpg" alt="El príncipe Cover" class="album-cover">
+                    <img src="Covers/El príncipe.jpg" alt="El príncipe Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1976</span>
                 </div>
                 <div class="album-info">
@@ -1526,9 +1534,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/A Salute To Glenn Miller.jpg" alt="A Salute To Glenn Miller Cover" class="album-cover">
+                    <img src="Covers/A Salute To Glenn Miller.jpg" alt="A Salute To Glenn Miller Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1958</span>
                 </div>
                 <div class="album-info">
@@ -1538,9 +1546,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/La Colección De John Lennon.webp" alt="La Colección De John Lennon Cover" class="album-cover">
+                    <img src="Covers/La Colección De John Lennon.webp" alt="La Colección De John Lennon Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1982</span>
                 </div>
                 <div class="album-info">
@@ -1550,9 +1558,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Wings Greatest.jpg" alt="Wings Greatest Cover" class="album-cover">
+                    <img src="Covers/Wings Greatest.jpg" alt="Wings Greatest Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1978</span>
                 </div>
                 <div class="album-info">
@@ -1562,9 +1570,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Reflexiones.jpg" alt="Reflexiones Cover" class="album-cover">
+                    <img src="Covers/Reflexiones.jpg" alt="Reflexiones Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1984</span>
                 </div>
                 <div class="album-info">
@@ -1574,9 +1582,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Gracias.jpg" alt="Gracias Cover" class="album-cover">
+                    <img src="Covers/Gracias.jpg" alt="Gracias Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1981</span>
                 </div>
                 <div class="album-info">
@@ -1586,9 +1594,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Love for Sale.jpg" alt="Love for Sale Cover" class="album-cover">
+                    <img src="Covers/Love for Sale.jpg" alt="Love for Sale Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1977</span>
                 </div>
                 <div class="album-info">
@@ -1598,9 +1606,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Inolvidable - Nat King Cole En Español.jpg" alt="Inolvidable - Nat King Cole En Español Cover" class="album-cover">
+                    <img src="Covers/Inolvidable - Nat King Cole En Español.jpg" alt="Inolvidable - Nat King Cole En Español Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1981</span>
                 </div>
                 <div class="album-info">
@@ -1610,9 +1618,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Rock 'N' Roll Music Volume 2.jpg" alt="Rock 'N' Roll Music Volume 2 Cover" class="album-cover">
+                    <img src="Covers/Rock 'N' Roll Music Volume 2.jpg" alt="Rock 'N' Roll Music Volume 2 Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1982</span>
                 </div>
                 <div class="album-info">
@@ -1622,9 +1630,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Canciones urgentes.jpg" alt="Canciones urgentes Cover" class="album-cover">
+                    <img src="Covers/Canciones urgentes.jpg" alt="Canciones urgentes Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2015</span>
                 </div>
                 <div class="album-info">
@@ -1634,9 +1642,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Querida.jpg" alt="Querida Cover" class="album-cover">
+                    <img src="Covers/Querida.jpg" alt="Querida Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1984</span>
                 </div>
                 <div class="album-info">
@@ -1646,9 +1654,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Bocanada.jpg" alt="Bocanada Cover" class="album-cover">
+                    <img src="Covers/Bocanada.jpg" alt="Bocanada Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1999</span>
                 </div>
                 <div class="album-info">
@@ -1658,9 +1666,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Live Vol1.jpg" alt="Live Vol.1 Cover" class="album-cover">
+                    <img src="Covers/Live Vol1.jpg" alt="Live Vol.1 Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2020</span>
                 </div>
                 <div class="album-info">
@@ -1670,9 +1678,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Living Eyes.jpg" alt="Living Eyes Cover" class="album-cover">
+                    <img src="Covers/Living Eyes.jpg" alt="Living Eyes Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1981</span>
                 </div>
                 <div class="album-info">
@@ -1682,9 +1690,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/A Night at the Opera.jpg" alt="A Night at the Opera Cover" class="album-cover">
+                    <img src="Covers/A Night at the Opera.jpg" alt="A Night at the Opera Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1975</span>
                 </div>
                 <div class="album-info">
@@ -1694,9 +1702,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Burning Love.jpg" alt="Burning Love Cover" class="album-cover">
+                    <img src="Covers/Burning Love.jpg" alt="Burning Love Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1999</span>
                 </div>
                 <div class="album-info">
@@ -1706,9 +1714,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Potpourri par Piaf .jpg" alt="Potpourri par Piaf Cover" class="album-cover">
+                    <img src="Covers/Potpourri par Piaf .jpg" alt="Potpourri par Piaf Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1962</span>
                 </div>
                 <div class="album-info">
@@ -1718,9 +1726,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Violines Mágicos.jpeg" alt="Violines Mágicos Cover" class="album-cover">
+                    <img src="Covers/Violines Mágicos.jpeg" alt="Violines Mágicos Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1955</span>
                 </div>
                 <div class="album-info">
@@ -1730,9 +1738,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Atom Heart Mother.jpg" alt="Atom Heart Mother Cover" class="album-cover">
+                    <img src="Covers/Atom Heart Mother.jpg" alt="Atom Heart Mother Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1970</span>
                 </div>
                 <div class="album-info">
@@ -1742,9 +1750,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Sgt. Pepper's Lonely Hearts Club Band .jpg" alt="Sgt. Pepper's Lonely Hearts Club Band Cover" class="album-cover">
+                    <img src="Covers/Sgt. Pepper's Lonely Hearts Club Band .jpg" alt="Sgt. Pepper's Lonely Hearts Club Band Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1967</span>
                 </div>
                 <div class="album-info">
@@ -1754,9 +1762,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/The Turn of a Friendly Card .jpg" alt="The Turn of a Friendly Card Cover" class="album-cover">
+                    <img src="Covers/The Turn of a Friendly Card .jpg" alt="The Turn of a Friendly Card Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1980</span>
                 </div>
                 <div class="album-info">
@@ -1766,9 +1774,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Live Album .jpg" alt="Live Album Cover" class="album-cover">
+                    <img src="Covers/Live Album .jpg" alt="Live Album Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1970</span>
                 </div>
                 <div class="album-info">
@@ -1778,9 +1786,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Led Zeppelin.jpg" alt="Led Zeppelin Cover" class="album-cover">
+                    <img src="Covers/Led Zeppelin.jpg" alt="Led Zeppelin Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1969</span>
                 </div>
                 <div class="album-info">
@@ -1790,9 +1798,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Rubber Soul.jpg" alt="Rubber Soul Cover" class="album-cover">
+                    <img src="Covers/Rubber Soul.jpg" alt="Rubber Soul Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1965</span>
                 </div>
                 <div class="album-info">
@@ -1802,9 +1810,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/The Book of Taliesyn.jpg" alt="The Book of Taliesyn Cover" class="album-cover">
+                    <img src="Covers/The Book of Taliesyn.jpg" alt="The Book of Taliesyn Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1969</span>
                 </div>
                 <div class="album-info">
@@ -1814,9 +1822,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/¡Viva Veracruz!.jpeg" alt="¡Viva Veracruz! Cover" class="album-cover">
+                    <img src="Covers/¡Viva Veracruz!.jpeg" alt="¡Viva Veracruz! Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1981</span>
                 </div>
                 <div class="album-info">
@@ -1826,9 +1834,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Canto A Lo Humano.jpeg" alt="Canto A Lo Humano Cover" class="album-cover">
+                    <img src="Covers/Canto A Lo Humano.jpeg" alt="Canto A Lo Humano Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1979</span>
                 </div>
                 <div class="album-info">
@@ -1838,9 +1846,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Hot Space.webp" alt="Hot Space Cover" class="album-cover">
+                    <img src="Covers/Hot Space.webp" alt="Hot Space Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1982</span>
                 </div>
                 <div class="album-info">
@@ -1850,9 +1858,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Historia de un amor.webp" alt="Historia de un amor Cover" class="album-cover">
+                    <img src="Covers/Historia de un amor.webp" alt="Historia de un amor Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1959</span>
                 </div>
                 <div class="album-info">
@@ -1862,9 +1870,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/15 Exitazos Tropicales De Rigo Tovar Y Su Costa Azul.webp" alt="15 Exitazos Tropicales De Rigo Tovar Y Su Costa Azul Cover" class="album-cover">
+                    <img src="Covers/15 Exitazos Tropicales De Rigo Tovar Y Su Costa Azul.webp" alt="15 Exitazos Tropicales De Rigo Tovar Y Su Costa Azul Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1981</span>
                 </div>
                 <div class="album-info">
@@ -1874,9 +1882,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/El madrileño.webp" alt="El madrileño Cover" class="album-cover">
+                    <img src="Covers/El madrileño.webp" alt="El madrileño Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2021</span>
                 </div>
                 <div class="album-info">
@@ -1886,9 +1894,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Jungle.webp" alt="Jungle Cover" class="album-cover">
+                    <img src="Covers/Jungle.webp" alt="Jungle Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2014</span>
                 </div>
                 <div class="album-info">
@@ -1898,9 +1906,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Dawn FM.webp" alt="Dawn FM Cover" class="album-cover">
+                    <img src="Covers/Dawn FM.webp" alt="Dawn FM Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2022</span>
                 </div>
                 <div class="album-info">
@@ -1910,9 +1918,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Nectar.webp" alt="Nectar Cover" class="album-cover">
+                    <img src="Covers/Nectar.webp" alt="Nectar Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2020</span>
                 </div>
                 <div class="album-info">
@@ -1922,9 +1930,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Speak Now.webp" alt="Speak Now Cover" class="album-cover">
+                    <img src="Covers/Speak Now.webp" alt="Speak Now Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2010</span>
                 </div>
                 <div class="album-info">
@@ -1934,9 +1942,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/The Divine Feminine.webp" alt="The Divine Feminine Cover" class="album-cover">
+                    <img src="Covers/The Divine Feminine.webp" alt="The Divine Feminine Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2016</span>
                 </div>
                 <div class="album-info">
@@ -1946,9 +1954,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Para cuando me vaya.jpg" alt="Para cuando me vaya Cover" class="album-cover">
+                    <img src="Covers/Para cuando me vaya.jpg" alt="Para cuando me vaya Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1978</span>
                 </div>
                 <div class="album-info">
@@ -1958,9 +1966,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/good kid mAAd city.jpg" alt="good kid, m.A.A.d city Cover" class="album-cover">
+                    <img src="Covers/good kid mAAd city.jpg" alt="good kid, m.A.A.d city Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2012</span>
                 </div>
                 <div class="album-info">
@@ -1970,9 +1978,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/To Pimp a Butterfly.jpg" alt="To Pimp a Butterfly Cover" class="album-cover">
+                    <img src="Covers/To Pimp a Butterfly.jpg" alt="To Pimp a Butterfly Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2015</span>
                 </div>
                 <div class="album-info">
@@ -1982,9 +1990,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Melody And Percussion For Two Pianos.jpeg" alt="Melody And Percussion For Two Pianos Cover" class="album-cover">
+                    <img src="Covers/Melody And Percussion For Two Pianos.jpeg" alt="Melody And Percussion For Two Pianos Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1961</span>
                 </div>
                 <div class="album-info">
@@ -1994,9 +2002,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Los Beatles En Clásico.jpeg" alt="Los Beatles En Clásico Cover" class="album-cover">
+                    <img src="Covers/Los Beatles En Clásico.jpeg" alt="Los Beatles En Clásico Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1984</span>
                 </div>
                 <div class="album-info">
@@ -2006,9 +2014,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Off The Wall.jpg" alt="Off The Wall Cover" class="album-cover">
+                    <img src="Covers/Off The Wall.jpg" alt="Off The Wall Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1979</span>
                 </div>
                 <div class="album-info">
@@ -2018,9 +2026,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Canciones Zapotecas Del Istmo Oaxaca.webp" alt="Canciones Zapotecas Del Istmo. Oaxaca Cover" class="album-cover">
+                    <img src="Covers/Canciones Zapotecas Del Istmo Oaxaca.webp" alt="Canciones Zapotecas Del Istmo. Oaxaca Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1996</span>
                 </div>
                 <div class="album-info">
@@ -2030,9 +2038,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/El Silencio.webp" alt="El Silencio Cover" class="album-cover">
+                    <img src="Covers/El Silencio.webp" alt="El Silencio Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1992</span>
                 </div>
                 <div class="album-info">
@@ -2042,9 +2050,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Tlen Huicani – Música y Canto Vol I.webp" alt="Tlen Huicani - Música y Canto Vol. I Cover" class="album-cover">
+                    <img src="Covers/Tlen Huicani – Música y Canto Vol I.webp" alt="Tlen Huicani - Música y Canto Vol. I Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2000</span>
                 </div>
                 <div class="album-info">
@@ -2054,9 +2062,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Kind Of Blue.webp" alt="Kind Of Blue Cover" class="album-cover">
+                    <img src="Covers/Kind Of Blue.webp" alt="Kind Of Blue Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1959</span>
                 </div>
                 <div class="album-info">
@@ -2066,9 +2074,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Marimba Chiapaneca .webp" alt="Marimba Chiapaneca Cover" class="album-cover">
+                    <img src="Covers/Marimba Chiapaneca .webp" alt="Marimba Chiapaneca Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1972</span>
                 </div>
                 <div class="album-info">
@@ -2078,9 +2086,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/★ (Blackstar).webp" alt="★ (Blackstar) Cover" class="album-cover">
+                    <img src="Covers/★ (Blackstar).webp" alt="★ (Blackstar) Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2016</span>
                 </div>
                 <div class="album-info">
@@ -2090,9 +2098,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Eye In The Sky.webp" alt="Eye In The Sky Cover" class="album-cover">
+                    <img src="Covers/Eye In The Sky.webp" alt="Eye In The Sky Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1982</span>
                 </div>
                 <div class="album-info">
@@ -2102,9 +2110,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/For The First Time.webp" alt="For The First Time Cover" class="album-cover">
+                    <img src="Covers/For The First Time.webp" alt="For The First Time Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2021</span>
                 </div>
                 <div class="album-info">
@@ -2114,9 +2122,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Anatomia Musical de.webp" alt="Anatomia Musical de Cover" class="album-cover">
+                    <img src="Covers/Anatomia Musical de.webp" alt="Anatomia Musical de Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1974</span>
                 </div>
                 <div class="album-info">
@@ -2126,9 +2134,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Vulture Culture.webp" alt="Vulture Culture Cover" class="album-cover">
+                    <img src="Covers/Vulture Culture.webp" alt="Vulture Culture Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1985</span>
                 </div>
                 <div class="album-info">
@@ -2138,9 +2146,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Tommy.webp" alt="Tommy Cover" class="album-cover">
+                    <img src="Covers/Tommy.webp" alt="Tommy Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1969</span>
                 </div>
                 <div class="album-info">
@@ -2150,9 +2158,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Never A Dull Moment.webp" alt="Never A Dull Moment Cover" class="album-cover">
+                    <img src="Covers/Never A Dull Moment.webp" alt="Never A Dull Moment Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1972</span>
                 </div>
                 <div class="album-info">
@@ -2162,9 +2170,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Wild Life.webp" alt="Wild Life Cover" class="album-cover">
+                    <img src="Covers/Wild Life.webp" alt="Wild Life Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1971</span>
                 </div>
                 <div class="album-info">
@@ -2174,9 +2182,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Dvořák Symphony No8 In G Major.webp" alt="Dvořák Symphony No.8 In G Major, Op.88 / Tchaikovsky Romeo & Juliet - Fantasy Overture Cover" class="album-cover">
+                    <img src="Covers/Dvořák Symphony No8 In G Major.webp" alt="Dvořák Symphony No.8 In G Major, Op.88 / Tchaikovsky Romeo & Juliet - Fantasy Overture Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1979</span>
                 </div>
                 <div class="album-info">
@@ -2186,9 +2194,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/The Dark Side Of The Moon.webp" alt="The Dark Side Of The Moon Cover" class="album-cover">
+                    <img src="Covers/The Dark Side Of The Moon.webp" alt="The Dark Side Of The Moon Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1973</span>
                 </div>
                 <div class="album-info">
@@ -2198,9 +2206,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/From Every Stage.webp" alt="From Every Stage Cover" class="album-cover">
+                    <img src="Covers/From Every Stage.webp" alt="From Every Stage Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1976</span>
                 </div>
                 <div class="album-info">
@@ -2210,9 +2218,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/McCartney.webp" alt="McCartney Cover" class="album-cover">
+                    <img src="Covers/McCartney.webp" alt="McCartney Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1970</span>
                 </div>
                 <div class="album-info">
@@ -2222,9 +2230,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Thriller.webp" alt="Thriller Cover" class="album-cover">
+                    <img src="Covers/Thriller.webp" alt="Thriller Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1982</span>
                 </div>
                 <div class="album-info">
@@ -2234,9 +2242,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Íntimamente.webp" alt="Íntimamente... Cover" class="album-cover">
+                    <img src="Covers/Íntimamente.webp" alt="Íntimamente... Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1980</span>
                 </div>
                 <div class="album-info">
@@ -2246,9 +2254,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Musica Del Istmo De Tehuantepec Oaxaca.webp" alt="Musica Del Istmo De Tehuantepec Oaxaca Cover" class="album-cover">
+                    <img src="Covers/Musica Del Istmo De Tehuantepec Oaxaca.webp" alt="Musica Del Istmo De Tehuantepec Oaxaca Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1972</span>
                 </div>
                 <div class="album-info">
@@ -2258,9 +2266,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Canción Por La Unidad Latinoamericana.webp" alt="Canción Por La Unidad Latinoamericana Cover" class="album-cover">
+                    <img src="Covers/Canción Por La Unidad Latinoamericana.webp" alt="Canción Por La Unidad Latinoamericana Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1978</span>
                 </div>
                 <div class="album-info">
@@ -2270,9 +2278,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Ants From Up There.webp" alt="Ants From Up There Cover" class="album-cover">
+                    <img src="Covers/Ants From Up There.webp" alt="Ants From Up There Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2022</span>
                 </div>
                 <div class="album-info">
@@ -2282,9 +2290,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Latinoamerica Canta.webp" alt="Latinoamerica Canta Cover" class="album-cover">
+                    <img src="Covers/Latinoamerica Canta.webp" alt="Latinoamerica Canta Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1972</span>
                 </div>
                 <div class="album-info">
@@ -2294,9 +2302,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Discurso Del Cmdte Ernesto Guevara En La XIX Asemblea.webp" alt="Discurso Del Cmdte. Ernesto Guevara En La XIX Asemblea General De Las Naciones Unidas Cover" class="album-cover">
+                    <img src="Covers/Discurso Del Cmdte Ernesto Guevara En La XIX Asemblea.webp" alt="Discurso Del Cmdte. Ernesto Guevara En La XIX Asemblea General De Las Naciones Unidas Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1964</span>
                 </div>
                 <div class="album-info">
@@ -2306,9 +2314,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Songs In The Key Of Life.webp" alt="Songs In The Key Of Life Cover" class="album-cover">
+                    <img src="Covers/Songs In The Key Of Life.webp" alt="Songs In The Key Of Life Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1976</span>
                 </div>
                 <div class="album-info">
@@ -2318,9 +2326,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Lo mato.webp" alt="Lo mato Cover" class="album-cover">
+                    <img src="Covers/Lo mato.webp" alt="Lo mato Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1973</span>
                 </div>
                 <div class="album-info">
@@ -2330,9 +2338,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/En El Palacio De Bellas Artes.webp" alt="En El Palacio De Bellas Artes Cover" class="album-cover">
+                    <img src="Covers/En El Palacio De Bellas Artes.webp" alt="En El Palacio De Bellas Artes Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1990</span>
                 </div>
                 <div class="album-info">
@@ -2342,9 +2350,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Tracy Chapman.webp" alt="Tracy Chapman Cover" class="album-cover">
+                    <img src="Covers/Tracy Chapman.webp" alt="Tracy Chapman Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1988</span>
                 </div>
                 <div class="album-info">
@@ -2354,9 +2362,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Random Access Memory.webp" alt="Random Access Memory Cover" class="album-cover">
+                    <img src="Covers/Random Access Memory.webp" alt="Random Access Memory Cover" class="album-cover" loading="lazy">
                     <span class="album-year">2013</span>
                 </div>
                 <div class="album-info">
@@ -2366,9 +2374,9 @@
                 </div>
             </div>
         
-            <div class="album-card">
+            <div class="album-card" tabindex="0" role="button">
                 <div class="album-cover-container">
-                    <img src="Covers/Secretos.webp" alt="Secretos Cover" class="album-cover">
+                    <img src="Covers/Secretos.webp" alt="Secretos Cover" class="album-cover" loading="lazy">
                     <span class="album-year">1983</span>
                 </div>
                 <div class="album-info">
@@ -2384,6 +2392,8 @@
     <footer>
         <a href="index.html">Volver a la página principal </a>
     </footer>
+
+    <button id="back-to-top" class="back-to-top" aria-label="Volver arriba" type="button">↑</button>
 
     <script src="catalogo.js"></script>
 </body>

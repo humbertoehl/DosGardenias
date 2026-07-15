@@ -1,5 +1,5 @@
 body {
-    font-family: "Montserrat", serif;
+    font-family: "Montserrat", sans-serif;
     text-align: center;
     margin-top: 30px;
     color: #fff;
@@ -54,6 +54,16 @@ h2 {
     margin-bottom: 10px;
 }
 
+.controls-bar {
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    background-color: rgba(17, 31, 62, 0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding-bottom: 6px;
+}
+
 .search-container {
     display: flex;
     justify-content: center;
@@ -81,11 +91,68 @@ h2 {
     outline: none;
 }
 
+.genre-filter {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding: 4px 12px 8px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.genre-filter::-webkit-scrollbar {
+    display: none;
+}
+
+.genre-chip {
+    flex: 0 0 auto;
+    padding: 8px 16px;
+    font-size: 0.85em;
+    font-weight: bold;
+    font-family: inherit;
+    color: #ffffff;
+    background-color: #1e1e1e;
+    border: 2px solid #353b48;
+    border-radius: 25px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease-in-out;
+}
+
+.genre-chip:hover {
+    border-color: #173a7c;
+}
+
+.genre-chip.active {
+    background-color: #f9c74f;
+    color: #1e1e1e;
+    border-color: #f9c74f;
+}
+
+.results-count {
+    color: #F9F6EE;
+    opacity: 0.7;
+    font-size: 0.85em;
+    margin: 4px 0 0;
+}
+
+.no-results {
+    display: none;
+    color: #F9F6EE;
+    opacity: 0.85;
+    font-size: 1.1em;
+    padding: 40px 20px;
+}
+
+.no-results.show {
+    display: block;
+}
+
 /* GRID DE ÁLBUMES */
 .catalog-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 10px; 
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
     padding: 10px;
 }
 
@@ -93,7 +160,6 @@ h2 {
 .album-card {
     position: relative;
     width: 100%;
-    max-width: 250px;
     background-color: transparent;
     border-radius: 15px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
@@ -101,6 +167,7 @@ h2 {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     background-color: #1e1e1e;
     z-index: 1;
+    cursor: pointer;
 }
 
 
@@ -108,6 +175,15 @@ h2 {
     transform: scale(1.05);
     box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.2);
     z-index: 10;
+}
+
+.album-card:active {
+    transform: scale(0.97);
+}
+
+.album-card:focus-visible {
+    outline: 3px solid #f9c74f;
+    outline-offset: 2px;
 }
 
 
@@ -120,8 +196,10 @@ h2 {
 .album-cover {
     width: 100%;
     height: auto;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
     border-radius: 15px;
+    background-color: #2a2a2a;
 }
 
 
@@ -139,7 +217,7 @@ h2 {
 .album-price {
     position: absolute;
     top: 10px;
-    right: 10px;
+    left: 10px;
     background: #f9c74f;
     color: #353b48;
     font-weight: bold;
@@ -291,11 +369,20 @@ footer a:hover {
 
 .close-popup {
     position: absolute;
-    top: -65px;
-    right: 5px;
-    font-size: 4em;
+    top: 10px;
+    right: 10px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6em;
+    line-height: 1;
     color: #fff;
+    background-color: rgba(0, 0, 0, 0.45);
+    border-radius: 50%;
     cursor: pointer;
+    z-index: 2;
 }
 
 .popup-content img {
@@ -321,6 +408,7 @@ footer a:hover {
 
 .popup-info p {
     font-size: 1em;
+    color: #fff;
     opacity: 0.7;
 }
 
@@ -347,9 +435,47 @@ footer a:hover {
     width: 100%;
   }
   .title-container{
-    max-width: 600px;     
+    max-width: 600px;
     margin: 0 auto 0 auto;
     padding: 10px 20px 10px;
   }
 
+  .controls-bar {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .genre-filter {
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow-x: visible;
+  }
+
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background-color: #f9c74f;
+    color: #1e1e1e;
+    font-size: 1.4em;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+    z-index: 150;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
