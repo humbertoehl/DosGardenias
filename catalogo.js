@@ -49,7 +49,8 @@ function filterCatalog(source) {
         let genres = albums[i].getElementsByClassName('genre-tags')[0].innerText.toLowerCase();
 
         let matchesSearch = albumName.includes(input) || artist.includes(input) || year.includes(input) || genres.includes(input);
-        let matchesGenre = !activeGenre || genres.includes(activeGenre);
+        let categoria = albums[i].dataset.categoria || 'Otros';
+        let matchesGenre = !activeGenre || categoria === activeGenre;
 
         if (matchesSearch && matchesGenre) {
             albums[i].style.display = '';
@@ -82,36 +83,49 @@ function updateResultsUI(visibleCount, total) {
     }
 }
 
+// Orden fijo e intencional. No lo generamos por frecuencia:
+// queremos que los chips no se muevan de lugar entre visitas,
+// y que el orden refleje la identidad del catálogo.
+const CATEGORIAS = [
+    'Rock',
+    'Cantautor y Folk',
+    'Latino y Tropical',
+    'Jazz',
+    'Hip Hop',
+    'Soul, Funk y R&B',
+    'Pop',
+    'Clásica y Soundtrack',
+    'Electrónica',
+    'Otros'
+];
+
 function buildGenreFilter() {
     let container = document.getElementById('genre-filter');
     if (!container) return;
 
+    // Cuenta cuántos discos hay realmente en cada categoría
     let counts = {};
-    document.querySelectorAll('.genre-tags').forEach(tagEl => {
-        tagEl.innerText.split(',').forEach(rawGenre => {
-            let genre = rawGenre.trim();
-            if (!genre) return;
-            counts[genre] = (counts[genre] || 0) + 1;
-        });
+    document.querySelectorAll('.album-card').forEach(card => {
+        let cat = card.dataset.categoria || 'Otros';
+        counts[cat] = (counts[cat] || 0) + 1;
     });
 
-    let topGenres = Object.keys(counts)
-        .sort((a, b) => counts[b] - counts[a])
-        .slice(0, 14);
+    let total = document.getElementsByClassName('album-card').length;
 
     let allChip = document.createElement('button');
     allChip.type = 'button';
     allChip.className = 'genre-chip active';
-    allChip.innerText = 'Todos';
-    allChip.dataset.genre = '';
+    allChip.innerText = `Todos (${total})`;
+    allChip.dataset.categoria = '';
     container.appendChild(allChip);
 
-    topGenres.forEach(genre => {
+    CATEGORIAS.forEach(cat => {
+        if (!counts[cat]) return;   // no dibujar chips vacíos
         let chip = document.createElement('button');
         chip.type = 'button';
         chip.className = 'genre-chip';
-        chip.innerText = genre;
-        chip.dataset.genre = genre.toLowerCase();
+        chip.innerText = `${cat} (${counts[cat]})`;
+        chip.dataset.categoria = cat;
         container.appendChild(chip);
     });
 
@@ -119,11 +133,11 @@ function buildGenreFilter() {
         chip.addEventListener('click', () => {
             container.querySelectorAll('.genre-chip').forEach(c => c.classList.remove('active'));
             chip.classList.add('active');
-            activeGenre = chip.dataset.genre || null;
+            activeGenre = chip.dataset.categoria || null;
             let visibles = filterCatalog('genre');
 
             track('genre_filter', {
-                genre_name: clip(chip.innerText),
+                genre_name: clip(chip.dataset.categoria || 'Todos'),
                 results_count: visibles
             });
         });
@@ -226,7 +240,8 @@ function openPopup(event) {
         album_title: clip(title),
         album_artist: clip(artist),
         album_year: clip(year),
-        album_genres: clip(genres)
+        album_genres: clip(genres),
+        album_category: clip(albumCard.dataset.categoria || 'Otros'),
     });
 }
 
