@@ -1,6 +1,43 @@
+/* ANALYTICS */
+
+// Envía un evento a GA4
+function track(eventName, params) {
+    if (typeof gtag !== 'function') return;
+    try {
+        gtag('event', eventName, params || {});
+    } catch (e) {
+        // si hay adblock no pasa nada
+    }
+}
+
+// Recorta strings al límite de GA4
+function clip(str) {
+    return String(str || '').trim().slice(0, 100);
+}
+
+// Búsqueda con debounce (solo un evento por búsqueda)
+let searchTimer = null;
+let lastSearchSent = '';
+
+function trackSearch(term, visibleCount) {
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(() => {
+        const clean = term.trim().toLowerCase();
+        if (clean.length < 3) return;          // ignora búsquedas de 1-2 letras
+        if (clean === lastSearchSent) return;  // no repetir la misma
+        lastSearchSent = clean;
+
+        track('catalog_search', {
+            search_term: clip(clean),
+            results_count: visibleCount,
+            has_results: visibleCount > 0 ? 'si' : 'no'
+        });
+    }, 1000); // espera 1 segundo de inactividad
+}
+
 let activeGenre = null;
 
-function filterCatalog() {
+function filterCatalog(source) {
     let input = document.getElementById('search-bar').value.toLowerCase();
     let albums = document.getElementsByClassName('album-card');
     let visibleCount = 0;
@@ -23,6 +60,11 @@ function filterCatalog() {
     }
 
     updateResultsUI(visibleCount, albums.length);
+
+    if (source === 'search') {
+        trackSearch(input, visibleCount);
+    }
+    return visibleCount;
 }
 
 function updateResultsUI(visibleCount, total) {
@@ -78,7 +120,12 @@ function buildGenreFilter() {
             container.querySelectorAll('.genre-chip').forEach(c => c.classList.remove('active'));
             chip.classList.add('active');
             activeGenre = chip.dataset.genre || null;
-            filterCatalog();
+            let visibles = filterCatalog('genre');
+
+            track('genre_filter', {
+                genre_name: clip(chip.innerText),
+                results_count: visibles
+            });
         });
     });
 }
@@ -88,6 +135,10 @@ function sortCatalog() {
     let selectedValue = sortOption.value;
     let albums = Array.from(document.getElementsByClassName('album-card'));
     let catalogGrid = document.querySelector('.catalog-grid');
+
+    if (selectedValue && selectedValue !== 'default') {
+        track('catalog_sort', { sort_option: clip(selectedValue) });
+    }
 
     switch (selectedValue) {
         case 'year-asc':
@@ -170,6 +221,13 @@ function openPopup(event) {
     popupGenres.innerText = `🎵 Géneros: ${genres}`;
 
     popup.classList.add('visible');
+
+    track('album_view', {
+        album_title: clip(title),
+        album_artist: clip(artist),
+        album_year: clip(year),
+        album_genres: clip(genres)
+    });
 }
 
 closePopup.addEventListener('click', () => {
@@ -211,3 +269,20 @@ if (backToTop) {
 buildGenreFilter();
 let totalAlbums = document.getElementsByClassName('album-card').length;
 updateResultsUI(totalAlbums, totalAlbums);
+
+// --- Profundidad de scroll: 25 / 50 / 75 / 100 % ---
+const depthsSent = {};
+window.addEventListener('scroll', () => {
+    const doc = document.documentElement;
+    const alcance = doc.scrollHeight - window.innerHeight;
+    if (alcance <= 0) return;
+
+    const pct = (window.scrollY / alcance) * 100;
+
+    [25, 50, 75, 100].forEach(hito => {
+        if (pct >= hito && !depthsSent[hito]) {
+            depthsSent[hito] = true;
+            track('catalog_scroll', { percent_scrolled: hito });
+        }
+    });
+}, { passive: true });
