@@ -8,9 +8,9 @@ body {
     background-size: contain;
     background-repeat: repeat; 
     background-blend-mode: screen; 
-    height: 100vh;
+    min-height: 100vh;
     font-optical-sizing: auto;
-    font-weight: 800;
+    font-weight: 400;
 }
 
 header {

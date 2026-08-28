@@ -1,5 +1,5 @@
 body {
-    font-family: "Montserrat", serif;
+    font-family: "Montserrat", sans-serif;
     text-align: center;
     margin-top: 30px;
     color: #fff;
@@ -8,9 +8,9 @@ body {
     background-size: contain;
     background-repeat: repeat; 
     background-blend-mode: screen; 
-    height: 100vh;
+    min-height: 100vh;
     font-optical-sizing: auto;
-    font-weight: lighter;
+    font-weight: 400;
     font-style: normal;
 }
 
@@ -64,7 +64,6 @@ button:active {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: -5px;
     margin-top: -15px;
 }
 
