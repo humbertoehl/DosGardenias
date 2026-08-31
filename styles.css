@@ -2,12 +2,11 @@ body {
     font-family: "Montserrat", sans-serif;
     text-align: center;
     margin-top: 30px;
-    color: #fff;
-    background-color: #111f3e; 
-    background-image: url('resources/fondo-oscuro.webp');
-    background-size: contain;
-    background-repeat: repeat; 
-    background-blend-mode: screen; 
+    color: #14264F;
+    background-color: #EFEAD3;   /* fallback mientras carga la imagen */
+    background-image: url('resources/trama-tile.webp');
+    background-size: 550px 550px;   /* mitad del tile real (1100px); sube o baja a gusto */
+    background-repeat: repeat;
     min-height: 100vh;
     font-optical-sizing: auto;
     font-weight: 400;
@@ -15,7 +14,9 @@ body {
 }
 
 h1 {
-    background-color: #4a67a4;
+    background-color: #FBF9F0;
+    color: #14264F;
+    border: 1.5px solid #C9A227;
     border-radius: 10px;
     width: 380px;
     justify-self: center;
@@ -24,8 +25,9 @@ h1 {
 .logo {
     width: 150px;
     height: auto;
-    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.3));
-    background-color: #1e1e1e;
+    filter: drop-shadow(2px 2px 6px rgba(20, 38, 79, 0.25));
+    background-color: #FBF9F0;
+    border: 1.5px solid #C9A227;
     border-radius: 30px;
 }
 
@@ -36,8 +38,9 @@ button {
     margin: 18px auto;
     padding: 16px;
     
-    background: linear-gradient(135deg, #1e1e1e, #434548);
-    color: #F9F6EE;
+    background: linear-gradient(135deg, #2E4A7D, #26406B);
+    color: #FBF9F0;
+    border: 1.5px solid #C9A227;
 
     font-weight: 700;
     font-size: 1.05em;
@@ -51,7 +54,7 @@ button {
 button:hover {
     transform: translateY(-4px);
     box-shadow: 0px 12px 28px rgba(0, 0, 0, 0.5);
-    border-color: rgba(255,255,255,0.2);
+    border-color: #E8B84B;
 }
 
 /* ACTIVE */
@@ -64,15 +67,16 @@ button:active {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: -5px;
     margin-top: -15px;
 }
 
 .social-btn {
     width: 65px;
     height: 65px;
-    background:#fff;
-    background-color: #fff;
-    border: none;
+    background:#FBF9F0;
+    background-color: #FBF9F0;
+    border: 1.5px solid #C9A227;
     border-radius: 20px;
     display: flex;
     justify-content: center;
@@ -96,8 +100,8 @@ button:active {
 
 
 .special-btn {
-    background-color: #173b7c;
-    color: #F9F6EE;
+    background-color: #2E4A7D;
+    color: #FBF9F0;
     font-weight: bold;
     display: flex;
     align-items: center;
@@ -111,7 +115,7 @@ button:active {
     width: 250px;
     margin: 20px auto;
     padding: 15px 20px;
-    background-color: #305ba0;
+    background-color: #2E4A7D;
     color: white;
     font-weight: bold;
     font-size: 18px;
@@ -124,7 +128,7 @@ button:active {
 }
 
 .cupon-btn:hover {
-    background-color: #0056b3;
+    background-color: #26406B;
     transform: translateY(-3px);
     box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
 }
@@ -148,7 +152,7 @@ button:active {
     width: 90px;
     height: 90px;
 
-    background: #ff2190;
+    background: #E8B84B;
     clip-path: polygon(
     50% 0%,
     61% 18%,
@@ -176,7 +180,7 @@ button:active {
 }
 
 .badge-text {
-    color: #1e1e1e;
+    color: #14264F;
     transform: translateY(-10px);
     text-align: center;
     font-size: 0.6em;

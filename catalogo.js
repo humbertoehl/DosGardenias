@@ -144,6 +144,21 @@ function buildGenreFilter() {
     });
 }
 
+// Baraja las tarjetas en el DOM con Fisher-Yates (aleatorio uniforme, sin sesgo).
+// Se usa tanto en la carga inicial como en la opción "Random" del selector.
+function shuffleCatalog() {
+    let catalogGrid = document.querySelector('.catalog-grid');
+    let albums = Array.from(document.getElementsByClassName('album-card'));
+
+    for (let i = albums.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [albums[i], albums[j]] = [albums[j], albums[i]];
+    }
+
+    catalogGrid.innerHTML = '';
+    albums.forEach(album => catalogGrid.appendChild(album));
+}
+
 function sortCatalog() {
     let sortOption = document.getElementById('sort-options');
     let selectedValue = sortOption.value;
@@ -198,9 +213,9 @@ function sortCatalog() {
             });
             break;
         case 'random':
-            albums.sort(() => Math.random() - 0.5);
+            shuffleCatalog();
             sortOption.selectedIndex = 0;
-            break;
+            return;   // shuffleCatalog ya reordena el DOM; no seguimos
         default:
             return;
     }
@@ -282,6 +297,7 @@ if (backToTop) {
 }
 
 buildGenreFilter();
+shuffleCatalog();   // orden aleatorio distinto en cada carga de la página
 let totalAlbums = document.getElementsByClassName('album-card').length;
 updateResultsUI(totalAlbums, totalAlbums);
 
